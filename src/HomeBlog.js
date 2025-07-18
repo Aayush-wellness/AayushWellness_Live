@@ -6,6 +6,20 @@ function HomeBlog() {
 
   const additionalBlogs = [
     {
+           date: "15. 07. 2025",
+      title: "Skin Glow Supplements: How Beauty Gummies Support Clearer, Healthier Skin",
+      link: "/BlogH28",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Blog_27.jpg?v=1752559874",
+        },
+
+     {
+          date: "15. 07. 2025",
+      title: "The Role of Sleep Gummies in Supporting Natural and Restful Sleep",
+      link: "/BlogH27",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Blog_26.jpg?v=1752559874",
+        },
+
+    {
           date: "12. 07. 2025",
       title: "Daily Wellness Routine for Balanced Mind and Healthy Body",
       link: "/BlogH26",
@@ -202,17 +216,17 @@ date: "21. 06. 2025",
         </h1>
 
         {renderBlog({
-         date: "15. 07. 2025",
-      title: "The Role of Sleep Gummies in Supporting Natural and Restful Sleep",
-      link: "/BlogH27",
-      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Blog_26.jpg?v=1752559874",
+        date: "17. 07. 2025",
+      title: "The Hidden Dangers of Pan Masala and Why Herbal Masala Is a Healthier Choice",
+      link: "/BlogH29",
+      image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_29.jpg?v=1752754497",
         }, 0)}
 
         {renderBlog({
-        date: "15. 07. 2025",
-      title: "Skin Glow Supplements: How Beauty Gummies Support Clearer, Healthier Skin",
-      link: "/BlogH28",
-      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Blog_27.jpg?v=1752559874",
+        date: "17. 07. 2025",
+      title: " How to Reduce Digital Fatigue Naturally with Ayurveda and Meditation",
+      link: "/BlogH30",
+      image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_28.jpg?v=1752754506",
         }, 1)}
 
         {showMoreBlogs && additionalBlogs.map((blog, index) => renderBlog(blog, index + 2))}
