@@ -42,8 +42,6 @@ export default function AnimatedSlider() {
     };
   }, []);
 
-  
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
   const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false);
@@ -142,7 +140,7 @@ export default function AnimatedSlider() {
 
               <div className="navbar-dropdown relative group">
                 <button
-                  className="hover:text-primary/80 flex items-center"
+                  className="hover:text-primary/80 flex items-center mt-1"
                   style={{ fontFamily: '"Inter", sans-serif' }}
                 >
                   Our Story
@@ -225,10 +223,10 @@ export default function AnimatedSlider() {
                   </svg>
                 </button> */}
 
-                {/* Dropdown Menu */}
-                {/* <div className="absolute left-0 top-full w-[1110px] h-[290px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6"> */}
-                  {/* Left Side: Title & Description */}
-                  {/* <div className="w-[60%] mt-10">
+              {/* Dropdown Menu */}
+              {/* <div className="absolute left-0 top-full w-[1110px] h-[290px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6"> */}
+              {/* Left Side: Title & Description */}
+              {/* <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-[#004037]">
                       Wellness & You
                     </h3>
@@ -238,8 +236,8 @@ export default function AnimatedSlider() {
                     </p>
                   </div> */}
 
-                  {/* Right Side: Links */}
-                  {/* <div className="w-[35%] flex flex-col gap-3 mt-8">
+              {/* Right Side: Links */}
+              {/* <div className="w-[35%] flex flex-col gap-3 mt-8">
                     <Link
                       to="/wellness/modern-science"
                       className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
@@ -300,10 +298,10 @@ export default function AnimatedSlider() {
                   </svg>
                 </button> */}
 
-                {/* Dropdown Menu - Centered Below Newsroom */}
-                {/* <div className="absolute left-1/2 top-full w-[1110px] h-[290px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform -translate-x-1/2 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6"> */}
-                  {/* Left Side: Title & Description */}
-                  {/* <div className="w-[60%] mt-10">
+              {/* Dropdown Menu - Centered Below Newsroom */}
+              {/* <div className="absolute left-1/2 top-full w-[1110px] h-[290px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform -translate-x-1/2 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6"> */}
+              {/* Left Side: Title & Description */}
+              {/* <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-[#004037]">
                       Newsroom
                     </h3>
@@ -313,8 +311,8 @@ export default function AnimatedSlider() {
                     </p>
                   </div> */}
 
-                  {/* Right Side: Links */}
-                  {/* <div className="w-[35%] flex flex-col gap-3 mt-10">
+              {/* Right Side: Links */}
+              {/* <div className="w-[35%] flex flex-col gap-3 mt-10">
                     <Link
                       to="/newsroom/in-the-news"
                       className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
@@ -354,76 +352,119 @@ export default function AnimatedSlider() {
                 </div>
               </div> */}
 
-             {/* Our Product Tab with Dropdown */}
-             <div className="navbar-dropdown relative group ">
-               <button
-                 className="hover:text-primary/80 flex items-center"
-                 style={{ fontFamily: '"Inter", sans-serif' }}
-               >
-                 Our Product
-                 <svg
-                   className="w-4 h-4 ml-1"
-                   fill="none"
-                   stroke="currentColor"
-                   viewBox="0 0 24 24"
-                 >
-                   <path
-                     strokeLinecap="round"
-                     strokeLinejoin="round"
-                     strokeWidth="2"
-                     d="M19 9l-7 7-7-7"
-                   ></path>
-                 </svg>
-               </button>
-             
-               {/* Our Product Dropdown */}
-               <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[1110px]  bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 ">
-                 <div className="w-[60%] mt-10">
-                   <h3 className="text-3xl font-bold text-gray-900">Our Product</h3>
-                   <p className="text-lg text-gray-600 mt-2">
-                     Discover our range of premium products designed for your well-being and lifestyle.
-                   </p>
-                 </div>
-             
-                 <div className="w-[35%] flex flex-col gap-3 mt-4">
-                   <Link
-                     to="/gummies-sleep"
-                     className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                   >
-                     <span className="block font-bold w-full px-4 text-inherit">Dreamy Sleep Gummies</span>
-                     <span className="block text-sm px-4 text-grey-900 text-inherit">Supports better sleep and relaxation</span>
-                   </Link>
-             
-                   <Link
-                     to="/gummies"
-                     className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                   >
-                     <span className="block font-bold w-full px-4 text-inherit">Beauty Vitamin Gummies</span>
-                     <span className="block text-sm px-4 text-grey-900 text-inherit">Enhances skin, hair, and nail health</span>
-                   </Link>
-             
-                   <Link
-                     to="/pan-masala"
-                     className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                   >
-                     <span className="block font-bold w-full px-4 text-inherit">Herbal Pan Masala</span>
-                     <span className="block text-sm px-4 text-grey-900 text-inherit">Refreshing and herbal mouth freshener</span>
-                   </Link>
-                       <Link
-                     to="/ourproduct"
-                     className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                   >
-                     <span className="block font-bold w-full px-4 text-inherit">View Our Products</span>
-                     <span className="block text-sm px-4 text-grey-900 text-inherit">  Explore our full range of high-quality products</span>
-                   </Link>
-                 </div>
-               </div>
-             </div>
-             
+              {/* Our Offerings Tab with Dropdown */}
+              <div className="navbar-dropdown relative group ">
+                <button
+                  className="hover:text-primary/80 flex items-center mt-1"
+                  style={{ fontFamily: '"Inter", sans-serif' }}
+                >
+                  Our Offerings
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+
+                {/* Our Offerings Dropdown */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[1110px]  bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 ">
+                  <div className="w-[60%] mt-10">
+                    <h3 className="text-3xl font-bold text-gray-900">
+                      Our Offerings
+                    </h3>
+                    <p className="text-lg text-gray-600 mt-2">
+                      Discover our range of premium products designed for your
+                      well-being and lifestyle.
+                    </p>
+                  </div>
+
+                  <div className="w-[35%] flex flex-col gap-3 mt-4">
+                    <Link
+                      to="/gummies-sleep"
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        Dreamy Sleep Gummies
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Supports better sleep and relaxation
+                      </span>
+                    </Link>
+
+                    <Link
+                      to="/gummies"
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        Beauty Vitamin Gummies
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Enhances skin, hair, and nail health
+                      </span>
+                    </Link>
+
+                    <Link
+                      to="/pan-masala"
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        Herbal Pan Masala
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Refreshing and herbal mouth freshener
+                      </span>
+                    </Link>
+                    <Link
+                      to="/ourproduct"
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        View Our Offeringss
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        {" "}
+                        Explore our full range of high-quality products
+                      </span>
+                    </Link>
+
+                    <Link
+                      to=""
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        Book Doctor Consultation
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Connect with qualified healthcare professionals online
+                      </span>
+                    </Link>
+                    <Link
+                      to=""
+                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">
+                        Health checkups at Home
+                      </span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Convenient diagnostic tests and screenings at your
+                        doorstep
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
               <div className="navbar-dropdown relative group">
                 <button
-                  className="hover:text-primary/80 flex items-center"
+                  className="hover:text-primary/80 flex items-center mt-1"
                   style={{ fontFamily: '"Inter", sans-serif' }}
                 >
                   Corporate
@@ -557,7 +598,7 @@ export default function AnimatedSlider() {
                         Partner with us for sustainable growth
                       </span>
                     </Link>
-                         <Link
+                    <Link
                       to="#s"
                       className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
@@ -565,7 +606,8 @@ export default function AnimatedSlider() {
                         Press Releases
                       </span>
                       <span className="block text-sm px-4 text-gray-900 text-inherit">
-                         Stay updated with our latest announcements and milestones
+                        Stay updated with our latest announcements and
+                        milestones
                       </span>
                     </Link>
                   </div>
@@ -652,31 +694,31 @@ export default function AnimatedSlider() {
           </div>
         </div>
         <div
-  id="mobile-menu"
-  className={`fixed top-0 left-0 h-[100dvh] w-full bg-white shadow-md z-50 transition-all duration-300 overflow-y-auto ${
-    isMenuOpen ? "block !translate-x-0" : "hidden !-translate-x-full"
-  }`}
->
+          id="mobile-menu"
+          className={`fixed top-0 left-0 h-[100dvh] w-full bg-white shadow-md z-50 transition-all duration-300 overflow-y-auto ${
+            isMenuOpen ? "block !translate-x-0" : "hidden !-translate-x-full"
+          }`}
+        >
           <div className="flex justify-between items-center px-6 ">
-    {/* Logo on the left */}
-    <img
-      className="h-15 w-36 "
-      src="https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951" 
-      alt="Logo"
-    />
+            {/* Logo on the left */}
+            <img
+              className="h-15 w-36 "
+              src="https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"
+              alt="Logo"
+            />
 
-    {/* Close Button on the right */}
-    <button
-      className="hover:text-primary/80 focus:outline-none"
-      onClick={toggleMenu}
-    >
-      <img
-        className="h-8"
-        src={closepng || "/placeholder.svg"}
-        alt="Close Menu"
-      />
-    </button>
-  </div>
+            {/* Close Button on the right */}
+            <button
+              className="hover:text-primary/80 focus:outline-none"
+              onClick={toggleMenu}
+            >
+              <img
+                className="h-8"
+                src={closepng || "/placeholder.svg"}
+                alt="Close Menu"
+              />
+            </button>
+          </div>
 
           <div className="flex flex-col mt-10 px-6 overflow-y-auto h-full pb-20">
             {/* Home Link */}
@@ -690,57 +732,69 @@ export default function AnimatedSlider() {
             <div className="h-px w-full bg-gray-200 my-1"></div>
 
             <div className="relative">
-  <button
-    onClick={() => setIsAboutUsDropdownOpen(!isAboutUsDropdownOpen)}
-    className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-  >
-    <span>Our Story</span>
-    <svg
-      className={`w-5 h-5 transition-transform duration-200 ${
-        isAboutUsDropdownOpen ? "rotate-180" : ""
-      }`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
+              <button
+                onClick={() => setIsAboutUsDropdownOpen(!isAboutUsDropdownOpen)}
+                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
+              >
+                <span>Our Story</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isAboutUsDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
 
-  {isAboutUsDropdownOpen && (
-    <div className="rounded-md mt-2 mb-3 py-2 ">
-      {/* Title & Description */}
-      <div className="px-4 py-2">
-        <h3 className="text-xl font-bold text-[#004037]">Our Story</h3>
-        <p className="text-lg text-gray-600 mt-2">
-          We started with a vision to create something meaningful.
-          Our journey has been shaped by passion, innovation, and dedication.
-        </p>
-      </div>
+              {isAboutUsDropdownOpen && (
+                <div className="rounded-md mt-2 mb-3 py-2 ">
+                  {/* Title & Description */}
+                  <div className="px-4 py-2">
+                    <h3 className="text-xl font-bold text-[#004037]">
+                      Our Story
+                    </h3>
+                    <p className="text-lg text-gray-600 mt-2">
+                      We started with a vision to create something meaningful.
+                      Our journey has been shaped by passion, innovation, and
+                      dedication.
+                    </p>
+                  </div>
 
-      {/* Dropdown Links */}
-      <div className="flex flex-col">
-        <Link
-          to="/about-us"
-          className="block px-4 py-3 text-[#004037] font-bold transition"
-          onClick={() => setIsAboutUsDropdownOpen(false)}
-        >
-          About Us
-          <p className="text-sm text-gray-600">We started with a vision to create something</p>
-        </Link>
+                  {/* Dropdown Links */}
+                  <div className="flex flex-col">
+                    <Link
+                      to="/about-us"
+                      className="block px-4 py-3 text-[#004037] font-bold transition"
+                      onClick={() => setIsAboutUsDropdownOpen(false)}
+                    >
+                      About Us
+                      <p className="text-sm text-gray-600">
+                        We started with a vision to create something
+                      </p>
+                    </Link>
 
-        <Link
-          to="/about/mission-vision"
-          className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-          onClick={() => setIsAboutUsDropdownOpen(false)}
-        >
-          Mission & Vision
-          <p className="text-sm text-gray-600">Our mission is to do something Great</p>
-        </Link>
-      </div>
-    </div>
-  )}
-</div>
+                    <Link
+                      to="/about/mission-vision"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsAboutUsDropdownOpen(false)}
+                    >
+                      Mission & Vision
+                      <p className="text-sm text-gray-600">
+                        Our mission is to do something Great
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             <div className="h-px w-full bg-gray-200 my-1"></div>
 
@@ -765,8 +819,8 @@ export default function AnimatedSlider() {
 
   {isWellnessDropdownOpen && (
     <div className="rounded-md mt-2 mb-3 py-2 "> */}
-      {/* Title & Description */}
-      {/* <div className="px-4 py-2">
+            {/* Title & Description */}
+            {/* <div className="px-4 py-2">
         <h3 className="text-xl font-bold text-[#004037]">Wellness & You</h3>
         <p className="text-lg text-gray-600 mt-2">
           Discover the perfect balance of modern science and ancient
@@ -774,8 +828,8 @@ export default function AnimatedSlider() {
         </p>
       </div> */}
 
-      {/* Dropdown Links */}
-      {/* <div className="flex flex-col">
+            {/* Dropdown Links */}
+            {/* <div className="flex flex-col">
         <Link
           to="/wellness/modern-science"
           className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
@@ -826,18 +880,18 @@ export default function AnimatedSlider() {
     </svg>
   </button> */}
 
-  {/* {isNewsroomDropdownOpen && (
+            {/* {isNewsroomDropdownOpen && (
     <div className="rounded-md mt-2 mb-3 py-2 "> */}
-      {/* Title & Description */}
-      {/* <div className="px-4 py-2">
+            {/* Title & Description */}
+            {/* <div className="px-4 py-2">
         <h3 className="text-xl font-bold text-[#004037]">Newsroom</h3>
         <p className="text-lg text-gray-600 mt-2">
           Stay updated with the latest news, press releases, and important announcements.
         </p>
       </div> */}
 
-      {/* Dropdown Links */}
-      {/* <div className="flex flex-col">
+            {/* Dropdown Links */}
+            {/* <div className="flex flex-col">
         <Link
           to="/newsroom/in-the-news"
           className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
@@ -872,202 +926,264 @@ export default function AnimatedSlider() {
             {/* <div className="h-px w-full bg-gray-200 my-1"></div> */}
 
             <div className="relative">
-      {/* Our Product Tab */}
-      <button
-        onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-        className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-      >
-        <span>Our Product</span>
-        <svg
-          className={`w-5 h-5 transition-transform duration-200 ${
-            isProductDropdownOpen ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
-        </svg>
-      </button>
+              {/* Our Offerings Tab */}
+              <button
+                onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
+                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
+              >
+                <span>Our Offerings</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isProductDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
 
-      {/* Dropdown Menu */}
-      {isProductDropdownOpen && (
-        <div className="rounded-md mt-2 mb-3 py-2 ">
-          {/* Title & Description */}
-          <div className="px-4 py-2">
-            <h3 className="text-xl font-bold text-[#004037]">Our Product</h3>
-            <p className="text-lg text-gray-600 mt-2">
-              Discover our range of premium products designed for your well-being and lifestyle.
-            </p>
-          </div>
+              {/* Dropdown Menu */}
+              {isProductDropdownOpen && (
+                <div className="rounded-md mt-2 mb-3 py-2 ">
+                  {/* Title & Description */}
+                  <div className="px-4 py-2">
+                    <h3 className="text-xl font-bold text-[#004037]">
+                      Our Offerings
+                    </h3>
+                    <p className="text-lg text-gray-600 mt-2">
+                      Discover our range of premium products designed for your
+                      well-being and lifestyle.
+                    </p>
+                  </div>
 
-          {/* Dropdown Links */}
-          <div className="flex flex-col">
-            <Link
-              to="/gummies-sleep"
-              className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-              onClick={() => setIsProductDropdownOpen(false)}
-            >
-              Dreamy Sleep Gummies
-              <p className="text-sm text-gray-600">Supports better sleep and relaxation</p>
-            </Link>
+                  {/* Dropdown Links */}
+                  <div className="flex flex-col">
+                    <Link
+                      to="/gummies-sleep"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      Dreamy Sleep Gummies
+                      <p className="text-sm text-gray-600">
+                        Supports better sleep and relaxation
+                      </p>
+                    </Link>
 
-            <Link
-              to="/gummies"
-              className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-              onClick={() => setIsProductDropdownOpen(false)}
-            >
-              Beauty Vitamin Gummies
-              <p className="text-sm text-gray-600">Enhances skin, hair, and nail health</p>
-            </Link>
+                    <Link
+                      to="/gummies"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      Beauty Vitamin Gummies
+                      <p className="text-sm text-gray-600">
+                        Enhances skin, hair, and nail health
+                      </p>
+                    </Link>
 
-            <Link
-              to="/pan-masala"
-              className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-              onClick={() => setIsProductDropdownOpen(false)}
-            >
-              Herbal Pan Masala
-              <p className="text-sm text-gray-600">Refreshing and herbal mouth freshener</p>
-            </Link>
-                 <Link
-              to="/ourproduct"
-              className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-              onClick={() => setIsProductDropdownOpen(false)}
-            >
-             View our Product
-              <p className="text-sm text-gray-600">Explore our full range of high-quality products</p>
-            </Link>
-          </div>
-        </div>
-      )}
-    </div>
+                    <Link
+                      to="/pan-masala"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      Herbal Pan Masala
+                      <p className="text-sm text-gray-600">
+                        Refreshing and herbal mouth freshener
+                      </p>
+                    </Link>
+                    <Link
+                      to="/ourproduct"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      View Our Offerings
+                      <p className="text-sm text-gray-600">
+                        Explore our full range of high-quality products
+                      </p>
+                    </Link>
+                    <Link
+                      to=""
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      Book Doctor Consultation
+                      <p className="text-sm text-gray-600">
+                        Connect with qualified healthcare professionals online
+                      </p>
+                    </Link>
 
+                    <Link
+                      to=""
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsProductDropdownOpen(false)}
+                    >
+                      Health checkups at Home
+                      <p className="text-sm text-gray-600">
+                        Convenient diagnostic tests and screenings at your
+                        doorstep
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             <div className="h-px w-full bg-gray-200 my-1"></div>
             <div className="relative">
-  <button
-    onClick={() => setIsCorporateDropdownOpen(!isCorporateDropdownOpen)}
-    className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-  >
-    <span>Corporate</span>
-    <svg
-      className={`w-5 h-5 transition-transform duration-200 ${
-        isCorporateDropdownOpen ? "rotate-180" : ""
-      }`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-
-  {isCorporateDropdownOpen && (
-    <div className="rounded-md mt-2 mb-3 py-2 ">
-      {/* Title & Description */}
-      <div className="px-4 py-2">
-        <h3 className="text-xl font-bold text-[#004037]">Corporate Initiatives</h3>
-        <p className="text-lg text-gray-600 mt-2">
-          Our dedication to ethical business practices, community engagement, and sustainability.
-        </p>
-      </div>
-
-      {/* Dropdown Links */}
-      <div className="flex flex-col">
-        {/* CSR Section with Dropdown */}
-        <div className="relative">
-          <button
-            onClick={() => setIsCsrSubcategoryOpen(!isCsrSubcategoryOpen)}
-            className="block w-full px-4 py-3 text-[#004037] font-extrabold  flex justify-between items-center"
-          >
-            <span>CSR</span>
-            <svg
-              className={`w-4 h-4 transition-transform duration-200 ${
-                isCsrSubcategoryOpen ? "rotate-180" : ""
-              }`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-
-          {isCsrSubcategoryOpen && (
-            <div className="ml-4  mt-2 py-2">
-              <Link
-                to="/csr-at-aayush/malnutrition"
-                className="block px-4 py-3 text-[#004037] "
-                onClick={() => {
-                  setIsCsrSubcategoryOpen(false);
-                  setIsCorporateDropdownOpen(false);
-                }}
+              <button
+                onClick={() =>
+                  setIsCorporateDropdownOpen(!isCorporateDropdownOpen)
+                }
+                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
               >
-                Malnutrition
-                <p className="text-sm text-gray-600">Fighting malnutrition with dedicated programs</p>
-              </Link>
-              <Link
-                to="/csr-at-aayush/health-check"
-                className="block px-4 py-3 text-[#004037] "
-                onClick={() => {
-                  setIsCsrSubcategoryOpen(false);
-                  setIsCorporateDropdownOpen(false);
-                }}
-              >
-                Healthcare Check
-                <p className="text-sm text-gray-600">Providing essential healthcare services</p>
-              </Link>
-              <Link
-                to="/sustainability"
-                className="block px-4 py-3 text-[#004037] "
-                onClick={() => {
-                  setIsCsrSubcategoryOpen(false);
-                  setIsCorporateDropdownOpen(false);
-                }}
-              >
-                Sustainability
-                <p className="text-sm text-gray-600">Driving positive change for a greener future</p>
-              </Link>
+                <span>Corporate</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isCorporateDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+
+              {isCorporateDropdownOpen && (
+                <div className="rounded-md mt-2 mb-3 py-2 ">
+                  {/* Title & Description */}
+                  <div className="px-4 py-2">
+                    <h3 className="text-xl font-bold text-[#004037]">
+                      Corporate Initiatives
+                    </h3>
+                    <p className="text-lg text-gray-600 mt-2">
+                      Our dedication to ethical business practices, community
+                      engagement, and sustainability.
+                    </p>
+                  </div>
+
+                  {/* Dropdown Links */}
+                  <div className="flex flex-col">
+                    {/* CSR Section with Dropdown */}
+                    <div className="relative">
+                      <button
+                        onClick={() =>
+                          setIsCsrSubcategoryOpen(!isCsrSubcategoryOpen)
+                        }
+                        className="block w-full px-4 py-3 text-[#004037] font-extrabold  flex justify-between items-center"
+                      >
+                        <span>CSR</span>
+                        <svg
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            isCsrSubcategoryOpen ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          ></path>
+                        </svg>
+                      </button>
+
+                      {isCsrSubcategoryOpen && (
+                        <div className="ml-4  mt-2 py-2">
+                          <Link
+                            to="/csr-at-aayush/malnutrition"
+                            className="block px-4 py-3 text-[#004037] "
+                            onClick={() => {
+                              setIsCsrSubcategoryOpen(false);
+                              setIsCorporateDropdownOpen(false);
+                            }}
+                          >
+                            Malnutrition
+                            <p className="text-sm text-gray-600">
+                              Fighting malnutrition with dedicated programs
+                            </p>
+                          </Link>
+                          <Link
+                            to="/csr-at-aayush/health-check"
+                            className="block px-4 py-3 text-[#004037] "
+                            onClick={() => {
+                              setIsCsrSubcategoryOpen(false);
+                              setIsCorporateDropdownOpen(false);
+                            }}
+                          >
+                            Healthcare Check
+                            <p className="text-sm text-gray-600">
+                              Providing essential healthcare services
+                            </p>
+                          </Link>
+                          <Link
+                            to="/sustainability"
+                            className="block px-4 py-3 text-[#004037] "
+                            onClick={() => {
+                              setIsCsrSubcategoryOpen(false);
+                              setIsCorporateDropdownOpen(false);
+                            }}
+                          >
+                            Sustainability
+                            <p className="text-sm text-gray-600">
+                              Driving positive change for a greener future
+                            </p>
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Other Links */}
+                    <Link
+                      to="/career"
+                      className="block px-4 py-3 text-[#004037] font-bold "
+                      onClick={() => setIsCorporateDropdownOpen(false)}
+                    >
+                      Careers
+                      <p className="text-sm text-gray-600">
+                        Join our team and shape the future
+                      </p>
+                    </Link>
+
+                    <Link
+                      to="/investors"
+                      className="block px-4 py-3 text-[#004037] font-bold "
+                      onClick={() => setIsCorporateDropdownOpen(false)}
+                    >
+                      Investors
+                      <p className="text-sm text-gray-600">
+                        Partner with us for sustainable growth
+                      </p>
+                    </Link>
+                    <Link
+                      to="/press-relases"
+                      className="block px-4 py-3 text-[#004037] font-bold "
+                      onClick={() => setIsCorporateDropdownOpen(false)}
+                    >
+                      Press Releases
+                      <p className="text-sm text-gray-600">
+                        {" "}
+                        Stay updated with our latest announcements and
+                        milestones
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-
-        {/* Other Links */}
-        <Link
-          to="/career"
-          className="block px-4 py-3 text-[#004037] font-bold "
-          onClick={() => setIsCorporateDropdownOpen(false)}
-        >
-          Careers
-          <p className="text-sm text-gray-600">Join our team and shape the future</p>
-        </Link>
-
-        <Link
-          to="/investors"
-          className="block px-4 py-3 text-[#004037] font-bold "
-          onClick={() => setIsCorporateDropdownOpen(false)}
-        >
-          Investors
-          <p className="text-sm text-gray-600">Partner with us for sustainable growth</p>
-        </Link>
-            <Link
-          to="#"
-          className="block px-4 py-3 text-[#004037] font-bold "
-          onClick={() => setIsCorporateDropdownOpen(false)}
-        >
-          Press Releases
-          <p className="text-sm text-gray-600"> Stay updated with our latest announcements and milestones</p>
-        </Link>
-      </div>
-    </div>
-  )}
-</div>
-
 
             <div className="h-px w-full bg-gray-200 my-1"></div>
             <Link
@@ -1097,12 +1213,6 @@ export default function AnimatedSlider() {
           </div>
         </div>
       </nav>
-
-
-
-
-
-     
     </>
   );
 }
