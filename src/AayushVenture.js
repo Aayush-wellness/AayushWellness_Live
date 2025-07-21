@@ -53,6 +53,7 @@ export default function AayushVenture() {
   const [isVisible, setIsVisible] = useState(false);
   const sliderRef = useRef(null);
   const [csrOpen, setCsrOpen] = useState(false);
+    const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -228,7 +229,7 @@ export default function AayushVenture() {
 
               <div className="navbar-dropdown relative group">
                 <button
-                  className="hover:text-primary/80 flex items-center"
+                  className="hover:text-primary/80 flex items-center mt-1"
                   style={{ fontFamily: '"Inter", sans-serif' }}
                 >
                   Our Story
@@ -440,13 +441,115 @@ export default function AayushVenture() {
                 </div>
               </div> */}
 
-              <Link
-                to="/ourproduct"
-                className=" hover:text-primary/80"
-                style={{ fontFamily: '"Inter", sans-serif' }}
-              >
-                Our Product
-              </Link>
+              {/* Our Offerings Tab with Dropdown */}
+                            <div className="navbar-dropdown relative group ">
+                              <button
+                                className="hover:text-primary/80 flex items-center mt-1"
+                                style={{ fontFamily: '"Inter", sans-serif' }}
+                              >
+                                Our Offerings
+                                <svg
+                                  className="w-4 h-4 ml-1"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M19 9l-7 7-7-7"
+                                  ></path>
+                                </svg>
+                              </button>
+              
+                              {/* Our Offerings Dropdown */}
+                              <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[1110px]  bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 ">
+                                <div className="w-[60%] mt-10">
+                                  <h3 className="text-3xl font-bold text-gray-900">
+                                    Our Offerings
+                                  </h3>
+                                  <p className="text-lg text-gray-600 mt-2">
+                                    Discover our range of premium products designed for your
+                                    well-being and lifestyle.
+                                  </p>
+                                </div>
+              
+                                <div className="w-[35%] flex flex-col gap-3 mt-4">
+                                  <Link
+                                    to="/gummies-sleep"
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      Dreamy Sleep Gummies
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      Supports better sleep and relaxation
+                                    </span>
+                                  </Link>
+              
+                                  <Link
+                                    to="/gummies"
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      Beauty Vitamin Gummies
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      Enhances skin, hair, and nail health
+                                    </span>
+                                  </Link>
+              
+                                  <Link
+                                    to="/pan-masala"
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      Herbal Pan Masala
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      Refreshing and herbal mouth freshener
+                                    </span>
+                                  </Link>
+                                  <Link
+                                    to="/ourproduct"
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      View Our Offeringss
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      {" "}
+                                      Explore our full range of high-quality products
+                                    </span>
+                                  </Link>
+              
+                                  <Link
+                                    to=""
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      Book Doctor Consultation
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      Connect with qualified healthcare professionals online
+                                    </span>
+                                  </Link>
+                                  <Link
+                                    to=""
+                                    className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                  >
+                                    <span className="block font-bold w-full px-4 text-inherit">
+                                      Health checkups at Home
+                                    </span>
+                                    <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                      Convenient diagnostic tests and screenings at your
+                                      doorstep
+                                    </span>
+                                  </Link>
+                                </div>
+                              </div>
+                            </div>
 
               <div className="navbar-dropdown relative group">
                 <button
@@ -887,13 +990,114 @@ export default function AayushVenture() {
 
             {/* <div className="h-px w-full bg-gray-200 my-1"></div> */}
 
-            <Link
-              to="/ourproduct"
-              className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
-            >
-              Our Product
-            </Link>
+            <div className="relative">
+                          {/* Our Offerings Tab */}
+                          <button
+                            onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
+                            className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
+                          >
+                            <span>Our Offerings</span>
+                            <svg
+                              className={`w-5 h-5 transition-transform duration-200 ${
+                                isProductDropdownOpen ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M19 9l-7 7-7-7"
+                              ></path>
+                            </svg>
+                          </button>
+            
+                          {/* Dropdown Menu */}
+                          {isProductDropdownOpen && (
+                            <div className="rounded-md mt-2 mb-3 py-2 ">
+                              {/* Title & Description */}
+                              <div className="px-4 py-2">
+                                <h3 className="text-xl font-bold text-[#004037]">
+                                  Our Offerings
+                                </h3>
+                                <p className="text-lg text-gray-600 mt-2">
+                                  Discover our range of premium products designed for your
+                                  well-being and lifestyle.
+                                </p>
+                              </div>
+            
+                              {/* Dropdown Links */}
+                              <div className="flex flex-col">
+                                <Link
+                                  to="/gummies-sleep"
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  Dreamy Sleep Gummies
+                                  <p className="text-sm text-gray-600">
+                                    Supports better sleep and relaxation
+                                  </p>
+                                </Link>
+            
+                                <Link
+                                  to="/gummies"
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  Beauty Vitamin Gummies
+                                  <p className="text-sm text-gray-600">
+                                    Enhances skin, hair, and nail health
+                                  </p>
+                                </Link>
+            
+                                <Link
+                                  to="/pan-masala"
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  Herbal Pan Masala
+                                  <p className="text-sm text-gray-600">
+                                    Refreshing and herbal mouth freshener
+                                  </p>
+                                </Link>
+                                <Link
+                                  to="/ourproduct"
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  View Our Offerings
+                                  <p className="text-sm text-gray-600">
+                                    Explore our full range of high-quality products
+                                  </p>
+                                </Link>
+                                <Link
+                                  to=""
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  Book Doctor Consultation
+                                  <p className="text-sm text-gray-600">
+                                    Connect with qualified healthcare professionals online
+                                  </p>
+                                </Link>
+            
+                                <Link
+                                  to=""
+                                  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                                  onClick={() => setIsProductDropdownOpen(false)}
+                                >
+                                  Health checkups at Home
+                                  <p className="text-sm text-gray-600">
+                                    Convenient diagnostic tests and screenings at your
+                                    doorstep
+                                  </p>
+                                </Link>
+                              </div>
+                            </div>
+                          )}
+                        </div>
             <div className="h-px w-full bg-gray-200 my-1"></div>
             <div className="relative">
   <button
