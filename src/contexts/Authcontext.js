@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { blogService } from '../src/services/blogService';
+import { blogService } from '../services/blogService';
 import BlogContentRenderer from '../BlogContentRenderer';
 
 function HomeBlog() {
