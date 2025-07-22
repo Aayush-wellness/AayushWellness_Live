@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { blogService } from '../src/services/blogService';
-import BlogContentRenderer from './BlogContentRenderer';
+import BlogContentRenderer from '../BlogContentRenderer';
 
 function HomeBlog() {
   const [showMoreBlogs, setShowMoreBlogs] = useState(false);
