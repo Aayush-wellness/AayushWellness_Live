@@ -15,7 +15,7 @@ const AdminLogin = () => {
     e.preventDefault();
     
     // Validate admin email
-    if (email !== 'chandan.awellness@gmail.com') {
+    if (email !== 'marketing@aayushwellness.com') {
       toast.error('Access denied. Only admin email is allowed.');
       return;
     }
@@ -28,7 +28,7 @@ const AdminLogin = () => {
       console.log('Login successful:', user);
       
       // Check if user is admin
-      if (user.email === 'chandan.awellness@gmail.com') {
+      if (user.email === 'marketing@aayushwellness.com') {
         toast.success('Login successful! Redirecting to admin panel...');
         // Small delay to ensure auth state is updated
         setTimeout(() => {
