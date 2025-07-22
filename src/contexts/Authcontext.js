@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     login,
     logout,
-    isAdmin: currentUser?.email === 'chandan.awellness@gmail.com' // Define admin email
+    isAdmin: currentUser?.email === 'marketing@aayushwellness.com' // Define admin email
   };
 
   console.log('AuthContext: Current state', {
