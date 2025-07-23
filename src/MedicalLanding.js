@@ -549,11 +549,11 @@ const MedicalLanding = () => {
             {/* Left Side - Doctor Image */}
             <div className="relative">
               <div className="relative">
-                <div className="w-96 h-96 bg-pink-100 rounded-full absolute -z-10"></div>
+                <div className="w-[500px] h-[500px] bg-pink-100 rounded-full absolute -z-10"></div>
                 <img 
                   src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/portrait-successful-mid-adult-doctor-with-crossed-arms.png?v=1753255904" 
                   alt="Doctor with question card" 
-                  className="relative z-10 max-w-lg mx-auto !pt-0 w-full h-auto"
+                  className="relative z-10 max-w-2xl mx-auto !pt-0 w-full h-auto"
                 />
               </div>
             </div>
