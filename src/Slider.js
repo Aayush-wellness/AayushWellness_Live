@@ -308,7 +308,7 @@ export default function AnimatedSlider() {
                     </Link>
 
                     <Link
-                      to=""
+                      to="/medical"
                       className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
                       <span className="block font-bold w-full px-4 text-inherit">Book Doctor Consultation</span>
@@ -666,12 +666,12 @@ export default function AnimatedSlider() {
                       className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
                       onClick={() => setIsProductDropdownOpen(false)}
                     >
-                      View Our Offeringss
+                      View Our Offerings
                       <p className="text-sm text-gray-600"> Explore our full range of high-quality products</p>
                     </Link>
 
                     <Link
-                      to=""
+                      to="/medical"
                       className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
                       onClick={() => setIsProductDropdownOpen(false)}
                     >
