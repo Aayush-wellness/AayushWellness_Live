@@ -98,7 +98,7 @@ const AnimatedRoutes = () => {
         <Route path="/admin/blog-cms" element={<PageTransition><BlogCMS /></PageTransition>} />
         <Route path="/blogs" element={<PageTransition><BlogList /></PageTransition>} />
         <Route path="/blog/:slug" element={<PageTransition><DynamicBlog /></PageTransition>} />
-  <Route path="medical" element={<PageTransition><MedicalLanding /></PageTransition>} />
+  <Route path="consultation" element={<PageTransition><MedicalLanding /></PageTransition>} />
         
         <Route path="growth-accelerator" element={<PageTransition><AayushVenture /></PageTransition>} />
         {/* this is for about us only name health*/}
