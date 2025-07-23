@@ -275,7 +275,7 @@ const NewFooter = () => {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 md:gap-0 pb-4">
           <div className="text-center md:text-left max-w-md">
             <p className="text-sm text-white mb-2">© 2025 Aayush Wellness Limited. All rights reserved.</p>
-            <p className="text-sm text-gray-300">Enhancing well-being through innovative nutraceutical solutions and authentic herbal masala blends</p>
+            <p className="text-sm text-gray-300">Transforming Lives with Preventive Health Care & Science-Backed Wellness</p>
           </div>
 
           {/* Social Media Icons - Desktop: Center, Mobile: Above Terms */}
