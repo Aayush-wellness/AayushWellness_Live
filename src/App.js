@@ -17,6 +17,7 @@ import AdminLogin from "./AdminLogin";
 const BlogCMS = lazy(() => import("./BlogCMS"));
 const DynamicBlog = lazy(() => import("./DynamicBlog"));
 const BlogList = lazy(() => import("./BlogList"));
+const MedicalLanding = lazy(() => import("./MedicalLanding"));
 
 // Lazy imports for inner pages
 const Pdf = lazy(() => import("./Pdf"));
@@ -97,6 +98,7 @@ const AnimatedRoutes = () => {
         <Route path="/admin/blog-cms" element={<PageTransition><BlogCMS /></PageTransition>} />
         <Route path="/blogs" element={<PageTransition><BlogList /></PageTransition>} />
         <Route path="/blog/:slug" element={<PageTransition><DynamicBlog /></PageTransition>} />
+  <Route path="medical" element={<PageTransition><MedicalLanding /></PageTransition>} />
         
         <Route path="growth-accelerator" element={<PageTransition><AayushVenture /></PageTransition>} />
         {/* this is for about us only name health*/}
