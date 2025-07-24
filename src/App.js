@@ -5,6 +5,7 @@ import PageTransition from "./PageTransition";
 import './index.css';
 import PageSkeleton from "./PageSkeleton";
 import { AuthProvider } from "./contexts/Authcontext";
+import FeatureModal from "./FeatureModal";
 
 // Regular import for homepage
 import Layout from "./Layout";
@@ -78,6 +79,12 @@ const BlogH22 = lazy(() => import("./BlogH22"));
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+
+  // Track internal navigation for modal logic
+  React.useEffect(() => {
+    // Set flag indicating this is internal navigation (not a refresh or direct URL entry)
+    sessionStorage.setItem('internalNavigation', 'true');
+  }, [location.pathname]);
 
   return (
     <AnimatePresence mode="wait">
@@ -169,6 +176,7 @@ function App() {
     <Router>
       <AuthProvider>
         <InitializeCMS />
+        <FeatureModal />
         <AnimatedRoutes />
       </AuthProvider>
     </Router>
