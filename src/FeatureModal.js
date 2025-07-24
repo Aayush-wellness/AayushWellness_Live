@@ -133,7 +133,7 @@ const FeatureModal = () => {
             {/* Button Container - Fixed at bottom */}
             <div className="relative mt-auto pt-4">
               <Link
-                to="/medical"
+                to="/consultation"
                 onClick={() => handleFeatureClick('consultation')}
                 className="w-full inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base group"
                 style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '2px'}}
