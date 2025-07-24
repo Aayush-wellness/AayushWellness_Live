@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import React from "react";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
 import './index.css';
