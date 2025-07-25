@@ -63,8 +63,9 @@ const FeatureModal = () => {
       onClick={handleBackdropClick}
     >
       <div 
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl mx-auto relative overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
+       className="bg-white rounded-xl sm:rounded-2xl shadow-2xl w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto relative overflow-hidden max-h-[95vh] h-auto my-4 flex flex-col"
+  style={{ minHeight: '0', marginTop: 'env(safe-area-inset-top, 16px)' }}
+  onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
