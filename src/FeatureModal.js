@@ -115,7 +115,7 @@ const FeatureModal = () => {
                 Book Consultation
               </h3>
               
-              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed px-2" style={{fontFamily: 'MinionPro, serif'}}>
+              <p className=" hidden sm:block text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed px-2" style={{fontFamily: 'MinionPro, serif'}}>
                 Connect with experienced doctors for personalized medical advice and treatment plans.
               </p>
 
@@ -176,7 +176,7 @@ const FeatureModal = () => {
                 Health Checkup
               </h3>
               
-              <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed px-2" style={{fontFamily: 'MinionPro, serif'}}>
+              <p className=" hidden sm:block text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed px-2" style={{fontFamily: 'MinionPro, serif'}}>
                 Comprehensive health assessments with 91+ parameters and home sample collection.
               </p>
 
