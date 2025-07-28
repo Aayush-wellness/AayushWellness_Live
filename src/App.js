@@ -76,6 +76,15 @@ const BlogH20 = lazy(() => import("./BlogH20"));
 const BlogH21 = lazy(() => import("./BlogH21")); 
 const BlogH22 = lazy(() => import("./BlogH22")); 
 
+const BlogH23 = lazy(() => import("./BlogH23")); 
+const BlogH24 = lazy(() => import("./BlogH24")); 
+const BlogH25 = lazy(() => import("./BlogH25")); 
+const BlogH26 = lazy(() => import("./BlogH26")); 
+const BlogH27 = lazy(() => import("./BlogH27")); 
+const BlogH28 = lazy(() => import("./BlogH28")); 
+const BlogH29 = lazy(() => import("./BlogH29")); 
+const BlogH30 = lazy(() => import("./BlogH30")); 
+
 
 
 const AnimatedRoutes = () => {
@@ -144,6 +153,15 @@ const AnimatedRoutes = () => {
      <Route path="/BlogH20" element={<BlogH20 />} />
    <Route path="/BlogH21" element={<BlogH21 />} />
      <Route path="/BlogH22" element={<BlogH22 />} />
+
+   <Route path="/BlogH23" element={<BlogH23 />} />
+     <Route path="/BlogH24" element={<BlogH24 />} />
+      <Route path="/BlogH25" element={<BlogH25 />} />
+     <Route path="/BlogH26" element={<BlogH26 />} />
+   <Route path="/BlogH27" element={<BlogH27 />} />
+     <Route path="/BlogH28" element={<BlogH28 />} />
+   <Route path="/BlogH29" element={<BlogH29 />} />
+     <Route path="/BlogH30" element={<BlogH30 />} />
 
 
         <Route path="ourproduct" element={<PageTransition><OurProduct /></PageTransition>} />
