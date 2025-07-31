@@ -489,7 +489,7 @@ const DoctorOnboardForm = () => {
               <input
                 type="text"
                 name="yearOfCompletion"
-                placeholder="Year of Completion"
+                placeholder="Year of Completion (only Numbers)"
                 value={doctorData.yearOfCompletion}
                 onChange={handleChange}
                 required
@@ -521,7 +521,7 @@ const DoctorOnboardForm = () => {
               <input
                 type="text"
                 name="yearsOfExperience"
-                placeholder="Years of Experience"
+                placeholder="Years of experience (only numbers)"
                 value={doctorData.yearsOfExperience}
                 onChange={handleChange}
                 required
