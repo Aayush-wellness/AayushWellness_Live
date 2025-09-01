@@ -327,7 +327,7 @@ const HealthCheckup = () => {
               <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl">❤️</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Couple Wellness Package – ₹399</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Couple Wellness Package – ₹699</h3>
               <p className="text-gray-600 text-sm mb-3 text-center" style={{fontFamily: 'MinionPro, serif'}}>
                 Designed for partners who care for each other's health. Covers vital health markers for both men and women.
               </p>
