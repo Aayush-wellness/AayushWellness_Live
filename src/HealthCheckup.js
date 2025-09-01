@@ -278,7 +278,7 @@ const HealthCheckup = () => {
                   </div>
                   <label htmlFor="suraksha" className="flex items-center justify-between w-full cursor-pointer">
                     <span className="text-gray-700">Aayush Suraksha Basic</span>
-                    <span className="font-bold text-red-600">₹799</span>
+                    <span className="font-bold text-red-600">₹749</span>
                   </label>
                 </div>
               </div>
@@ -372,7 +372,7 @@ const HealthCheckup = () => {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <span className="text-2xl">👨‍⚕️</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Silver Shield – Men/Women – ₹1,199–1,249</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Silver Shield – Men/Women – ₹1,199</h3>
               <p className="text-gray-600 text-sm mb-3 text-center" style={{fontFamily: 'MinionPro, serif'}}>
                 Gender-specific packages focusing on hormonal, reproductive, and metabolic health, alongside full-body testing.
               </p>
