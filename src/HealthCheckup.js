@@ -263,7 +263,7 @@ const HealthCheckup = () => {
                   </div>
                   <label htmlFor="couple" className="flex items-center justify-between w-full cursor-pointer">
                     <span className="text-gray-700">Aayush Couple Wellness</span>
-                    <span className="font-bold text-red-600">₹399</span>
+                    <span className="font-bold text-red-600">₹699</span>
                   </label>
                 </div>
                 
