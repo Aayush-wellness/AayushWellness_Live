@@ -1,10 +1,9 @@
+
 import React, { useEffect, useState, useRef } from "react";
 import NewFooter from "./NewFooter";
 import SkeletonLoader from "./SkeletonLoader";
 import MissionHeader from "./MissionHeader";
 import Hls from "hls.js";
-import { db } from "./firebase";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
 // Your full press release content as HTML
 const pressReleaseBody = `
@@ -14,7 +13,7 @@ const pressReleaseBody = `
   <p style="margin-bottom: 20px; color: black;">
    The new initiative reinforces Aayush Wellness Limited’s commitment to reshaping access to quality healthcare services, particularly across Tier 2 and Tier 3 cities in India—areas where the availability of healthcare professionals, diagnostic infrastructure, and specialized care remains limited.
   </p>
-  <p style="margin-bottom: 20px; color: black;">
+  <p style="margin-bottom: 20px;">
     <b style="color: black; margin-bottom: 20px;">Bridging Healthcare Gaps with Technology</b>
   </p>
   <p style="margin-bottom: 20px; color: black;">
@@ -287,23 +286,9 @@ function useIsMobile(breakpoint = 768) {
 }
 
 function PressReleaseSection() {
-  const [pressReleases, setPressReleases] = useState([]);
   const [selected, setSelected] = useState(null);
   const [filters, setFilters] = useState({ year: "", type: "", name: "" });
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    const fetchPressReleases = async () => {
-      const q = query(collection(db, "pressReleases"), orderBy("date", "desc"));
-      const querySnapshot = await getDocs(q);
-      const releasesData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setPressReleases(releasesData);
-    };
-    fetchPressReleases();
-  }, []);
 
   // Filter logic
   const filtered = pressReleases.filter((pr) => {
@@ -315,10 +300,11 @@ function PressReleaseSection() {
     return matchesYear && matchesType && matchesName;
   });
 
-  // Auto-select first item if none selected (desktop only)
+  // Auto-select first item if none selected and list is not empty (desktop only)
   useEffect(() => {
     if (!isMobile && !selected && filtered.length > 0) setSelected(filtered[0]);
     if (!isMobile && selected && !filtered.find((pr) => pr.id === selected.id)) setSelected(filtered[0] || null);
+    // eslint-disable-next-line
   }, [filters, filtered.length, isMobile]);
 
   // On mobile, if filters change, deselect
@@ -327,223 +313,118 @@ function PressReleaseSection() {
   }, [filters.year, filters.type, filters.name, isMobile]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-        <div className="md:flex min-h-[70vh]">
-          {/* Left Sidebar - Filters and List */}
-          <div className={`md:w-1/3 border-r border-gray-100 bg-gradient-to-b from-white to-gray-50 p-6 ${isMobile && selected ? 'hidden' : 'block'}`}>
-            <div className="sticky top-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6 font-rogbold">Press Releases</h2>
-              
-              {/* Search Box */}
-              <div className="mb-6 relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search press releases..."
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
-                  value={filters.name}
-                  onChange={(e) => setFilters({ ...filters, name: e.target.value })}
-                />
-              </div>
-
-              {/* Filters */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Year</label>
-                  <div className="relative">
-                    <select
-                      className="appearance-none w-full pl-4 pr-10 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white"
-                      value={filters.year}
-                      onChange={(e) => setFilters({ ...filters, year: e.target.value })}
-                    >
-                      <option value="">All Years</option>
-                      {getAllYears(pressReleases).map((year) => (
-                        <option key={year} value={year}>{year}</option>
-                      ))}
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Category</label>
-                  <div className="relative">
-                    <select
-                      className="appearance-none w-full pl-4 pr-10 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 bg-white"
-                      value={filters.type}
-                      onChange={(e) => setFilters({ ...filters, type: e.target.value })}
-                    >
-                      <option value="">All Categories</option>
-                      {getAllTypes(pressReleases).map((type) => (
-                        <option key={type} value={type}>{type}</option>
-                      ))}
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Press Release List */}
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Latest Updates</h3>
-                {filtered.length === 0 ? (
-                  <div className="text-gray-500 text-center py-6 bg-white rounded-xl border border-gray-100">
-                    <svg className="mx-auto h-10 w-10 text-gray-300 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    No press releases found
-                  </div>
-                ) : (
-                  <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2 -mr-2">
-                    {filtered.map((pr) => (
-                      <button
-                        key={pr.id}
-                        onClick={() => setSelected(pr)}
-                        className={`w-full text-left p-5 rounded-xl transition-all duration-200 ${
-                          selected?.id === pr.id 
-                            ? 'bg-gradient-to-r from-gray-50 to-white border-l-4 border-[#33cccc] shadow-sm' 
-                            : 'bg-white hover:bg-gray-50 border-l-4 border-transparent hover:border-gray-200 shadow-sm hover:shadow-md'
-                        }`}
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium px-3 py-1 rounded-full bg-[#33cccc] bg-opacity-10 text-[#33cccc]">
-                            {pr.type}
-                          </span>
-                          <span className="text-sm text-gray-700">{formatDate(pr.date)}</span>
-                        </div>
-                        <h4 className={`mt-3 text-base md:text-lg font-medium ${
-                          selected?.id === pr.id ? 'text-[#13233b]' : 'text-[#13233b]'
-                        }`}>
-                          {pr.name}
-                        </h4>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+    <div className="container mx-auto px-0 md:px-4 py-8 flex flex-col md:flex-row gap-0 md:gap-8 max-w-7xl min-h-[80vh] md:h-[80vh]">
+      {/* Left: Filters + List (sticky, never scrollable, hidden on mobile if content is open) */}
+      <div
+        className={`
+          md:w-1/3 w-full md:pr-4 mb-0 md:mb-0
+          ${isMobile && selected ? "hidden" : ""}
+        `}
+      >
+        <div className="md:sticky md:top-8 px-4 md:px-0">
+          <div className="flex gap-4 mb-4 flex-col sm:flex-row">
+            {/* Year Dropdown */}
+            <select
+              className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/2"
+              value={filters.year}
+              onChange={(e) => setFilters({ ...filters, year: e.target.value })}
+            >
+              <option value="">All Years</option>
+              {getAllYears(pressReleases).map((year) => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+            {/* Release Type Dropdown */}
+            <select
+              className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/2"
+              value={filters.type}
+              onChange={(e) => setFilters({ ...filters, type: e.target.value })}
+            >
+              <option value="">All Releases</option>
+              {getAllTypes(pressReleases).map((type) => (
+                <option key={type} value={type}>{type}</option>
+              ))}
+            </select>
           </div>
-
-          {/* Right Side - Content */}
-          <div className={`${isMobile ? 'w-full' : 'md:w-2/3'} bg-white`}>
-            {selected ? (
-              <div className="h-full flex flex-col">
-                {/* Back button for mobile */}
-                {isMobile && (
-                  <button
-                    onClick={() => setSelected(null)}
-                    className="flex items-center text-gray-600 hover:text-gray-700 font-medium p-4 border-b border-gray-100 transition-colors"
-                  >
-                    <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                    </svg>
-                    Back to List
-                  </button>
-                )}
-
-                <div className="flex-1 overflow-y-auto p-6 md:p-8">
-                  <div className="max-w-3xl mx-auto">
-                    <div className="flex items-center space-x-3 mb-5">
-                      <span className="text-sm md:text-base font-medium px-3 py-1 rounded-full bg-[#33cccc] bg-opacity-10 text-[#33cccc]">
-                        {selected.type}
-                      </span>
-                      <span className="text-sm md:text-base text-gray-700">{formatDate(selected.date)}</span>
-                    </div>
-                    
-                    <h1 className="md:text-3xl font-bold text-[#13233b] mb-8 leading-snug">
-                      {selected.name}
-                    </h1>
-
-                    <div 
-                      className="prose prose-lg max-w-none text-black leading-relaxed"
-                      style={{
-                        fontSize: '1.125rem',
-                        lineHeight: '1.75',
-                        color: '#111827', // Slightly softer than pure black
-                        '--tw-prose-headings': '#13233b',
-                        '--tw-prose-headings-font-family': 'ROGBold, sans-serif',
-                        '--tw-prose-headings-font-weight': 'bold',
-                        '--tw-prose-h1-font-size': '2.25em', 
-                        '--tw-prose-h2-font-size': '1.65em',
-                        '--tw-prose-h3-font-size': '1.4em',
-                        '--tw-prose-h4-font-size': '1.2em',
-                        '--tw-prose-body': '#374151',
-                        '--tw-prose-lead': '#4b5563',
-                        '--tw-prose-links': '#33cccc',
-                        '--tw-prose-bold': '#13233b',
-                        '--tw-prose-counters': '#6b7280',
-                        '--tw-prose-bullets': '#33cccc',
-                        '--tw-prose-hr': '#e5e7eb',
-                        '--tw-prose-quotes': '#111827',
-                        '--tw-prose-quote-borders': '#33cccc',
-                        '--tw-prose-captions': '#6b7280',
-                        '--tw-prose-code': '#111827',
-                        '--tw-prose-pre-code': '#e5e7eb',
-                        '--tw-prose-pre-bg': '#27272a',
-                        '--tw-prose-th-borders': '#e5e7eb',
-                        '--tw-prose-td-borders': '#e5e7eb',
-                      }}
-                      dangerouslySetInnerHTML={{ __html: selected.body }}
-                    />
-
-                    <div className="mt-10 pt-6 border-t border-gray-100">
-                      <a
-                        href={selected.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-sm text-white bg-[#33cccc] hover:bg-[#2bb8b8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#33cccc] transition-colors"
-                        download
-                      >
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download Press Release (PDF)
-                      </a>
-                    </div>
-                  </div>
-                </div>
+          {/* List */}
+          <div>
+            {filtered.length === 0 && <div>No press releases found.</div>}
+            {filtered.map((pr) => (
+              <div key={pr.id} className="mb-6">
+                <div className="text-gray-600 text-sm mb-[1.24rem]">{formatDate(pr.date)}</div>
+                <button
+                  className={`
+                    text-black font-medium text-lg text-left
+                    hover:underline hover:decoration-black
+                    ${selected?.id === pr.id ? "font-bold underline decoration-black" : ""}
+                  `}
+                  onClick={() => setSelected(pr)}
+                  style={{ lineHeight: "1.2" }}
+                >
+                  {pr.name}
+                </button>
+                <hr className="my-4 border-gray-200" />
               </div>
-            ) : (
-              <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-gray-50">
-                <div className="max-w-md">
-                  <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-4">
-                    <svg
-                      className="h-8 w-8 text-gray-800"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="mt-2 text-lg font-medium text-[#13233b]">Select a Press Release</h3>
-                  <p className="mt-1 text-sm text-gray-700">
-                    Choose a press release from the list to view its full contents and download options.
-                  </p>
-                </div>
-              </div>
-            )}
+            ))}
           </div>
         </div>
+      </div>
+      {/* Right: Content (scrollable on desktop, centered on mobile) */}
+      <div
+        className={`
+          flex-1
+          ${isMobile && selected ? "w-full" : "md:w-2/3 md:pl-4"}
+          ${isMobile ? "" : "h-[80vh] overflow-y-auto"}
+        `}
+      >
+        {selected ? (
+          <div
+            className={`
+              bg-white
+              ${isMobile ? "mx-auto max-w-md px-8 py-8" : "px-0 py-0"}
+              pb-8
+              rounded-lg
+              shadow-none
+              flex flex-col justify-center
+            `}
+            style={{
+              ...(isMobile
+                ? { minHeight: "60vh", display: "flex", justifyContent: "center" }
+                : {}),
+            }}
+          >
+            {/* Back button for mobile */}
+            {isMobile && (
+              <button
+                className="mb-4 text-black underline font-medium"
+                onClick={() => setSelected(null)}
+              >
+                ← Back to Press Release
+              </button>
+            )}
+            <h1 className=" md:text-4xl font-bold text-black mb-2 sm:text-sm" style={{ lineHeight: "1.1" }}>
+              {selected.name}
+            </h1>
+            <div className="text-gray-600 mb-4">{formatDate(selected.date)}</div>
+            <a
+              href={selected.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:underline flex items-center mb-6"
+              download
+            >
+              <span className="material-icons mr-1"></span>
+              Download as PDF
+            </a>
+            <div
+              className="text-black text-lg"
+              style={{ lineHeight: "1.7" }}
+              dangerouslySetInnerHTML={{ __html: selected.body }}
+            />
+          </div>
+        ) : (
+          <div className="text-gray-500 text-xl mt-20 px-4 md:px-0">Select a press release to view its content.</div>
+        )}
       </div>
     </div>
   );
@@ -555,9 +436,9 @@ function PressReleases() {
   const mobileVideoRef = useRef(null);
 
   const DESKTOP_VIDEO_URL =
-    "https://res.cloudinary.com/dcs4uo7ub/video/upload/v1754118981/ur6urwkotb4kl7r4twfq_ypalyr.m3u8";
+    "https://res.cloudinary.com/da2qlhv5l/video/upload/v1751522019/ur6urwkotb4kl7r4twfq_isfb2b.m3u8";
   const MOBILE_VIDEO_URL =
-    "https://res.cloudinary.com/dcs4uo7ub/video/upload/v1754118984/eb4kqbvu48fawrrfixap_th2naf.m3u8";
+    "https://res.cloudinary.com/da2qlhv5l/video/upload/v1751522011/eb4kqbvu48fawrrfixap_utkyxp.m3u8";
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 200);
