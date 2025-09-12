@@ -2,33 +2,208 @@ import React, { useState } from 'react';
 import Header from './Header';
 import NewFooter from './NewFooter';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-// Import your assets or use placeholder images for now
-// Replace these with your actual image imports
-const doctorImage = 'https://cdn.shopify.com/s/files/1/0674/9614/9171/files/smiling-young-female-doctor-wearing-medical-robe-doing-ok-sign-looking-isolated_1.png?v=1753255903'; // Doctor image
-const heartIcon = 'https://i.imgur.com/JWEuKlf.png'; // Placeholder for heart icon
-const stethoscopeIcon = 'https://i.imgur.com/O5Ud0Ji.png'; // Placeholder for stethoscope icon
-const ambulanceIcon = 'https://i.imgur.com/w86CUtJ.png'; // Placeholder for ambulance icon
-const medicineIcon = 'https://i.imgur.com/AgCgqxz.png'; // Placeholder for medicine icon
-const doctorIcon = 'https://i.imgur.com/8Roq42M.png'; // Placeholder for doctor icon
-const labIcon = 'https://i.imgur.com/YFnpTlL.png'; // Placeholder for lab icon
-const serviceImage1 = 'https://i.imgur.com/OzXrpB6.jpg'; // Placeholder for service image
-const serviceImage2 = 'https://i.imgur.com/XVZVkbI.jpg'; // Placeholder for service image
-const clientImage1 = 'https://i.imgur.com/8NXizbM.jpg'; // Placeholder for client image
-const clientImage2 = 'https://i.imgur.com/EgPyUd0.jpg'; // Placeholder for client image
-const partnersImage = 'https://i.imgur.com/FZg1WuD.png'; // Placeholder for partners image
+// Schema.org structured data for Medical Organization with enhanced details
+const medicalSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "@id": "https://www.aayush.health/#organization",
+  "name": "Aayush Healthcare",
+  "url": "https://www.aayush.health/",
+  "logo": "https://aayush.health/logo.png",
+  "description": "Aayush Healthcare provides comprehensive medical services with expert doctors, advanced diagnostics, and personalized healthcare solutions for better wellbeing.",
+  "medicalSpecialty": ["General Practice", "Healthcare Services", "Preventive Medicine", "Wellness Programs"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Healthcare Ave",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400001",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-XXXXXXXXXX",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Healthcare Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Medical Consultations",
+        "description": "Expert medical consultations with experienced doctors across various specialties.",
+        "itemListElement": [
+          {"@type": "Service", "name": "General Physician Consultation"},
+          {"@type": "Service", "name": "Specialist Consultation"},
+          {"@type": "Service", "name": "Telemedicine Services"}
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Health Checkups",
+        "description": "Comprehensive health checkup packages for preventive healthcare.",
+        "itemListElement": [
+          {"@type": "Service", "name": "Basic Health Checkup"},
+          {"@type": "Service", "name": "Comprehensive Health Package"},
+          {"@type": "Service", "name": "Executive Health Checkup"}
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Diagnostic Services",
+        "description": "Advanced diagnostic tests and imaging services.",
+        "itemListElement": [
+          {"@type": "Service", "name": "Laboratory Tests"},
+          {"@type": "Service", "name": "Radiology & Imaging"},
+          {"@type": "Service", "name": "Cardiac Diagnostics"}
+        ]
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/aayush.healthcare",
+    "https://www.instagram.com/aayush.healthcare",
+    "https://www.linkedin.com/company/aayush-healthcare",
+    "https://twitter.com/aayushhealthcare"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ]
+};
+
+// WebPage schema with enhanced details
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.aayush.health/healthcare-services",
+  "name": "Healthcare Services - Aayush Healthcare | Expert Medical Care",
+  "description": "Aayush Healthcare offers comprehensive medical services with expert doctors, advanced diagnostics, and personalized healthcare solutions. Book your appointment today for quality healthcare services.",
+  "url": "https://www.aayush.health/healthcare-services",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.aayush.health/healthcare-services"
+  },
+  "publisher": {
+    "@id": "https://www.aayush.health/#organization"
+  },
+  "inLanguage": "en-IN",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://aayush.health/images/healthcare-services-hero.jpg",
+    "width": "1200",
+    "height": "630"
+  },
+  "datePublished": "2023-01-01",
+  "dateModified": new Date().toISOString().split('T')[0],
+  "keywords": [
+    "healthcare services",
+    "medical care",
+    "doctor consultation",
+    "health checkup",
+    "preventive healthcare",
+    "Aayush Healthcare",
+    "medical specialists",
+    "diagnostic services"
+  ]
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://www.aayush.health/"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Healthcare Services",
+    "item": "https://www.aayush.health/healthcare-services"
+  }]
+};
+
+// FAQ schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What healthcare services does Aayush Healthcare offer?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Aayush Healthcare offers a wide range of medical services including general physician consultations, specialist care, diagnostic tests, health checkup packages, preventive healthcare programs, and emergency medical services."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How can I book an appointment with Aayush Healthcare?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can book an appointment through our website, mobile app, or by calling our 24/7 helpline. Online booking is available for both new and existing patients."
+    }
+  }]
+};
 
 const MedicalLanding = () => {
   // State to track which FAQ items are open
-  const [openFAQ, setOpenFAQ] = useState(1); // Default to first item being open
+  const [openFAQ, setOpenFAQ] = useState(1);
   
-  // Function to toggle FAQ items
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
   
   return (
     <>
+      <Helmet>
+        <title>Healthcare Services - Aayush Healthcare | Expert Medical Care</title>
+        <meta 
+          name="description" 
+          content="Aayush Healthcare offers comprehensive medical services with expert doctors, advanced diagnostics, and personalized healthcare solutions. Book your appointment today for quality healthcare services." 
+        />
+        <meta name="keywords" content="healthcare services, medical care, doctor consultation, health checkup, preventive healthcare, Aayush Healthcare, medical specialists, diagnostic services" />
+        <meta property="og:title" content="Healthcare Services - Aayush Healthcare | Expert Medical Care" />
+        <meta property="og:description" content="Aayush Healthcare offers comprehensive medical services with expert doctors, advanced diagnostics, and personalized healthcare solutions." />
+        <meta property="og:url" content="https://www.aayush.health/healthcare-services" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Healthcare Services - Aayush Healthcare | Expert Medical Care" />
+        <meta name="twitter:description" content="Comprehensive medical services with expert doctors and advanced diagnostics at Aayush Healthcare." />
+        
+        {/* Schema.org JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(medicalSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(webpageSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+      
+      {/* Hidden SEO Headers with consistent keywords */}
+      <h1 style={{ display: 'none' }}>Healthcare Services - Aayush Healthcare | Expert Medical Care</h1>
+      <h2 style={{ display: 'none' }}>Comprehensive Healthcare Solutions with Experienced Medical Professionals</h2>
+      
       <Header />
       
       {/* Hero Section */}
@@ -91,7 +266,7 @@ const MedicalLanding = () => {
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-100 rounded-full filter blur-3xl opacity-70"></div>
                 
                 <img 
-                  src={doctorImage} 
+                  src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/smiling-young-female-doctor-wearing-medical-robe-doing-ok-sign-looking-isolated_1.png?v=1753255903" 
                   alt="Doctor" 
                   className="w-full h-auto relative z-10 rounded-2xl"
                 />
@@ -136,7 +311,9 @@ const MedicalLanding = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold !text-black mb-4" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1.5px'}}>Why Choose Aayush Wellness?</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto" style={{fontFamily: 'MinionPro, serif'}}>Experience a new standard in preventive and personalized healthcare. At Aayush Wellness, we merge advanced diagnostics with compassionate care to give you complete control over your health journey.</p>
+            <p className="text-gray-700 max-w-2xl mx-auto" style={{fontFamily: 'MinionPro, serif'}}>
+              Experience a new standard in preventive and personalized healthcare. At Aayush Wellness, we merge advanced diagnostics with compassionate care to give you complete control over your health journey.
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -149,17 +326,21 @@ const MedicalLanding = () => {
               </div>
               <h3 className="text-xl font-semibold text-red-700 mb-3" style={{fontFamily: 'ROGBold, sans-serif', marginLeft: '55px', letterSpacing: '1px'}}>Expert Specialists</h3>
               <h4 className="text-lg font-medium text-blue-600 mb-2" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Care You Can Trust</h4>
-              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>Our team of qualified doctors and specialists brings years of experience to offer the highest quality care tailored to your health needs.</p>
+              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>
+                Our team of qualified doctors and specialists brings years of experience to offer the highest quality care tailored to your health needs.
+              </p>
             </div>
             
             {/* Feature 2 - Advanced Technology */}
             <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                <span className="text-2xl">🧠</span>
+                <span className="text-2xl" >🧠</span>
               </div>
               <h3 className="text-xl font-semibold text-red-700 mb-3" style={{fontFamily: 'ROGBold, sans-serif', marginLeft: '55px', letterSpacing: '1px'}}>Advanced Technology</h3>
               <h4 className="text-lg font-medium text-blue-600 mb-2" style={{fontFamily: 'ROGBold, sans-serif',letterSpacing: '1px'}}>Precision Meets Innovation</h4>
-              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>We deploy cutting-edge diagnostic tools and digital health platforms to deliver fast, reliable, and accurate results.</p>
+              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>
+                We deploy cutting-edge diagnostic tools and digital health platforms to deliver fast, reliable, and accurate results.
+              </p>
             </div>
             
             {/* Feature 3 - Emergency Care */}
@@ -169,7 +350,9 @@ const MedicalLanding = () => {
               </div>
               <h3 className="text-xl font-semibold text-red-700 mb-3" style={{fontFamily: 'ROGBold, sans-serif', marginLeft: '55px', letterSpacing: '1px'}}>Emergency Care</h3>
               <h4 className="text-lg font-medium text-blue-600 mb-2" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Always By Your Side</h4>
-              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>Round-the-clock emergency services ensure you're never alone during critical times—our rapid response saves lives when every second counts.</p>
+              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>
+                Round-the-clock emergency services ensure you're never alone during critical times—our rapid response saves lives when every second counts.
+              </p>
             </div>
             
             {/* Feature 4 - Personalized Care */}
@@ -179,7 +362,9 @@ const MedicalLanding = () => {
               </div>
               <h3 className="text-xl font-semibold text-red-700 mb-3" style={{fontFamily: 'ROGBold, sans-serif', marginLeft: '55px', letterSpacing: '1px'}}>Personalized Care</h3>
               <h4 className="text-lg font-medium text-blue-600 mb-2" style={{fontFamily: 'ROGBold, sans-serif', letterSpacing: '1px'}}>Healthcare Made for You</h4>
-              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>From lifestyle to treatment plans, everything is tailored to your body's unique needs. No one-size-fits-all approach—just care that fits you.</p>
+              <p className="text-gray-700" style={{fontFamily: 'MinionPro, serif'}}>
+                From lifestyle to treatment plans, everything is tailored to your body's unique needs. No one-size-fits-all approach—just care that fits you.
+              </p>
             </div>
           </div>
         </div>
@@ -484,7 +669,9 @@ const MedicalLanding = () => {
               <span className="text-xl font-medium" style={{fontFamily: 'ROGBold, sans-serif'}}>Testimonials</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold !text-black mb-4" style={{fontFamily: 'ROGBold, sans-serif'}}>What Our Patients Say</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto" style={{fontFamily: 'MinionPro, serif'}}>Hear from those who have experienced our care firsthand.</p>
+            <p className="text-gray-700 max-w-2xl mx-auto" style={{fontFamily: 'MinionPro, serif'}}>
+              Hear from those who have experienced our care firsthand.
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

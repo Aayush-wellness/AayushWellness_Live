@@ -2,11 +2,78 @@ import React from 'react'
 import './AwCard.css'
 import DecryptedText from './DecryptedText'
 import BlurText from './BlurText'
+import { Helmet } from 'react-helmet';
 
 const AwCard = () => {
+  // Schema.org structured data
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aayush Wellness - Premium Natural Health & Wellness Solutions",
+    "description": "Discover Aayush Wellness' range of scientifically crafted wellness products with natural ingredients for better health and well-being.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aayush Wellness",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aayushlife.com/logo.png"
+      },
+      "description": "Aayush Wellness combines traditional Ayurvedic knowledge with modern science to create effective health and wellness solutions.",
+      "sameAs": [
+        "https://www.facebook.com/aayushwellness",
+        "https://www.instagram.com/aayushwellness",
+        "https://twitter.com/aayushwellness"
+      ]
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "Natural Wellness Products",
+            "description": "Premium health supplements made with pure herbal extracts and natural ingredients for holistic well-being.",
+            "category": "Health & Wellness"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Scientifically Formulated Supplements",
+            "description": "Research-backed wellness solutions developed using modern scientific methods and traditional knowledge.",
+            "category": "Dietary Supplements"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Daily Wellness Solutions",
+            "description": "Convenient and effective daily health supplements designed for modern lifestyles.",
+            "category": "Health Products"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
-    <div style={{background:"white"}} className="Block_container__Nv4cD Block_isCream__VRtaM Up_container__1NlPf Up_hasThreeColumns__AzNPd snipcss-Qmnp5 blocks">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
+      {/* Hidden SEO Headers */}
+      <h1 style={{ display: 'none' }}>Aayush Wellness - Premium Natural Health & Wellness Solutions</h1>
+      <h2 style={{ display: 'none' }}>Discover our range of scientifically crafted wellness products with natural ingredients</h2>
+      
+      <div style={{background:"white"}} className="Block_container__Nv4cD Block_isCream__VRtaM Up_container__1NlPf Up_hasThreeColumns__AzNPd snipcss-Qmnp5 blocks">
   <div className="Title_container__J38Ea">
     <div className="Container_container__NvvWg">
       <div className="Title_head__rrr2_ style-BO1LT" id="style-BO1LT">

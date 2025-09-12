@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import { Plus, ChevronLeft, ChevronRight, Minus } from "lucide-react"
 import Header from "./Header"
 import Footer from "./Footer"
+import { Helmet } from 'react-helmet';
 import { Library, Leaf, ShieldCheck, PackageCheck, Vegan, WheatOff, SearchCheck, Microscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +11,47 @@ import 'swiper/css';
 import NewFooter from './NewFooter';
 
 const ProductGummies = () => {
+  // Schema.org structured data for Product
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Beauty Vitamin Gummies - Radiant Skin, Hair & Nails",
+    "image": "https://aayushlife.com/beauty-gummies.jpg",
+    "description": "Beauty BioSeries™ Gummies clinically shown to support healthy skin, hair, and nails while promoting hydration and collagen synthesis for a radiant glow.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Aayush Wellness"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "34.99",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "98"
+    },
+    "keywords": "beauty gummies, skin care, hair health, nail care, collagen support, Aayush Wellness, beauty supplements"
+  };
+
+  // Schema.org structured data for WebPage
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Beauty Vitamin Gummies - Radiant Skin, Hair & Nails | Aayush Wellness",
+    "description": "Discover Beauty Vitamin Gummies by Aayush Wellness - clinically proven to support healthy skin, hair, and nails with natural ingredients for a radiant glow.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aayush Wellness",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aayushlife.com/logo.png"
+      }
+    }
+  };
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [activeSidebar, setActiveSidebar] = useState(null)
   const [openIndex, setOpenIndex] = useState(null)
@@ -237,8 +279,28 @@ const ProductGummies = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Beauty Vitamin Gummies - Radiant Skin, Hair & Nails | Aayush Wellness</title>
+        <meta 
+          name="description" 
+          content="Discover Beauty Vitamin Gummies by Aayush Wellness - clinically proven to support healthy skin, hair, and nails with natural ingredients for a radiant glow." 
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(webpageSchema)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen flex flex-col">
       <Header />
-      <section className="relative bg-white md:pt-[90px]">
+      
+      {/* Hidden SEO Headers */}
+      <h1 style={{ display: 'none' }}>Beauty Vitamin Gummies by Aayush Wellness - Radiant Skin, Hair & Nails</h1>
+      <h2 style={{ display: 'none' }}>Clinically Proven Beauty Gummies for Healthy Skin, Hair, and Nails with Natural Ingredients</h2>
+
+      <main className="flex-grow bg-white pt-20 md:pt-24">
+        <section className="relative bg-white md:pt-[90px]">
       <div ref={containerRef} className="container mx-auto px-4" style={{ maxWidth: "1903px", width: "100%" }}>
         {/* Mobile View - Swiper Carousel */}
         <div className="block md:hidden mb-8 pt-6">
@@ -712,7 +774,9 @@ const ProductGummies = () => {
 </section>
 
       <NewFooter />
-    </>
+    </main>
+    </div>
+  </>
   )
 }
 

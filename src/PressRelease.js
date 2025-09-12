@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import NewFooter from './NewFooter';
+import './PressRelease.css';
 
 function PressRelease() {
   const articles = [
@@ -240,28 +241,61 @@ function PressRelease() {
     }
   ];
 
+  // Group articles by headline
+  const groupedArticles = articles.reduce((acc, article) => {
+    if (!acc[article.headline]) {
+      acc[article.headline] = [];
+    }
+    acc[article.headline].push(article);
+    return acc;
+  }, {});
+
   return (
-    <>
-    <Header/>
-    <div className="bg-white text-gray-900 pt-[85px]">
-      <div className="max-w-3xl mx-auto mt-10 pl-[25px] pr-[25px]">
-        {articles.map((article, index) => (
-          <div className="mb-8 " key={index}>
-            <h2 style={{color:'rgb(112, 112, 112)'}} className=" font-normal">
-              {article.headline}
-            </h2>
-            <div className="flex items-center text-sm text-gray-500 mt-2">
-              <a href={article.link} target="_blank" rel="noopener noreferrer" className="bg-indigo-100  text-indigo-600 font-semibold px-2 py-1 rounded-full">
-                {article.publication}
-              </a>
-              <span className="ml-4">{article.date}</span>
-            </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">Press Releases</h1>
+            <p className="text-lg text-gray-600">Latest news and updates about Aayush Wellness</p>
           </div>
-        ))}
-      </div>
+          
+          <div className="space-y-8">
+            {Object.entries(groupedArticles).map(([headline, articles], index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                <div className="p-6 md:p-8">
+                  <h2 className="text-2xl font-semibold text-gray-800 mb-4">{headline}</h2>
+                  <div className="space-y-4">
+                    {articles.map((article, idx) => (
+                      <div key={idx} className="border-t border-gray-100 pt-4">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-green-700">{article.publication}</p>
+                            <p className="text-sm text-gray-500">{article.date}</p>
+                          </div>
+                          <a 
+                            href={article.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors"
+                          >
+                            Read Article
+                            <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+      <NewFooter />
     </div>
-    <NewFooter/>
-    </>
   );
 }
 

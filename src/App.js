@@ -12,8 +12,11 @@ import FeatureModal from "./FeatureModal";
 import Layout from "./Layout";
 import LabTieUpForm from "./Labtieup";
 import PressReleases from "./Releases";
+import ReleaseCMS from "./ReleaseCMS";
+
 import InitializeCMS from "./InitializeCMS";
 import AdminLogin from "./AdminLogin";
+
 
 // CMS Components
 const BlogCMS = lazy(() => import("./BlogCMS"));
@@ -43,12 +46,14 @@ const Sustnability = lazy(() => import("./Sustnability"));
 const PressRelease = lazy(() => import("./PressRelease"));
 const Career = lazy(() => import("./Career"));
 const Support = lazy(() => import("./Support"));
+const ContactPage = lazy(() => import("./ContactPage"));
 const InTheNews = lazy(() => import("./InTheNews"));
 const Library = lazy(() => import("./Library"));
 const PrivacyPolicy = lazy(() => import("./PrivacyPolicy"));
 const ProductCarousel = lazy(() => import("./ProductPage"));
 const ProductGummies = lazy(() => import("./ProductPageGummies"));
 const ProductPageSleep = lazy(() => import("./ProductPageSleep"));
+const ProductPageBrain = lazy(() => import("./ProductPageBrain"));
 const AayushVenture = lazy(() => import("./AayushVenture"));
 const Health = lazy(() => import("./Health"));
 const Healthh = lazy(() => import("./Healthh"));
@@ -106,10 +111,12 @@ const AnimatedRoutes = () => {
         <Route path="newsroom/in-the-news" element={<PageTransition><PressRelease/></PageTransition>} />
         <Route path="/career" element={<PageTransition><Career /></PageTransition>} />
         <Route path="support" element={<PageTransition><Support /></PageTransition>} />
+         <Route path="ContactPage" element={<PageTransition><ContactPage /></PageTransition>} />
         <Route path="newsroom/press-release" element={<PageTransition><InTheNews /></PageTransition>} />
         <Route path="newsroom/library" element={<PageTransition><Library /></PageTransition>} />
         <Route path="privacy-policy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
         <Route path="press-releases" element={<PageTransition><PressReleases /></PageTransition>} />
+        <Route path="/press-cms" element={<PageTransition><ReleaseCMS /></PageTransition>} />
         
         {/* CMS Routes */}
         <Route path="/admin/login" element={<PageTransition><AdminLogin /></PageTransition>} />
@@ -125,11 +132,12 @@ const AnimatedRoutes = () => {
          <Route path="pan-masala" element={<PageTransition><ProductCarousel /></PageTransition>} />
     <Route path="gummies" element={<PageTransition><ProductGummies /></PageTransition>} />
     <Route path="gummies-sleep" element={<PageTransition><ProductPageSleep /></PageTransition>} />
-        <Route path="healthcare" element={<PageTransition><Healthh /></PageTransition>} />
+        <Route path="healthcare" element={<PageTransition><Healthh/></PageTransition>} />
         <Route path="healthcare/Lab-registration" element={<PageTransition><LabTieUpForm /></PageTransition>} />
         <Route path="pan-masala" element={<PageTransition><ProductCarousel /></PageTransition>} />
         <Route path="gummies" element={<PageTransition><ProductGummies /></PageTransition>} />
         <Route path="gummies-sleep" element={<PageTransition><ProductPageSleep /></PageTransition>} />
+        <Route path="brain-fuel" element={<PageTransition><ProductPageBrain/></PageTransition>} />
         <Route path="/Blog1" element={<Blog1 />} />
         <Route path="/Blog2" element={<Blog2 />} />
         <Route path="/Blog3" element={<Blog3 />} />

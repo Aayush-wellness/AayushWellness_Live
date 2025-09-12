@@ -55,7 +55,7 @@ const AwCard2 = () => {
             </svg></div>
         </div>
         <div className="IconCard_content__4IB9P">
-          <div className="IconCard_title__S5GeF"><a href="/health">Holistic Health</a></div>
+          <div className="IconCard_title__S5GeF"><a href="/healthcare">Holistic Health</a></div>
           <p className="IconCard_text__hTwP4">A science-backed range of gummies, supplements, and Ayurvedic solutions for complete well-being.</p>
         </div>
       </div>

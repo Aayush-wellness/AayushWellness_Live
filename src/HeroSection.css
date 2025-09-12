@@ -151,9 +151,10 @@
 } 
 
 h2 { 
-    font-weight: unset; 
-    font-size: unset; 
+    font-weight: 300 !important; 
+   font-size:1.5rem;
     margin: 0;
+    letter-spacing: 1px;
 } 
 
 .TitleAnimation_container__smkeR { 

@@ -2,6 +2,91 @@ import { useState } from "react"
 import { Eye, X } from "lucide-react"
 import NewFooter from "./NewFooter"
 import Header from "./Header"
+import { Helmet } from 'react-helmet';
+
+// Schema.org structured data for Product Collection
+const productCollectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "Product",
+      "name": "Herbal Masala - Natural Fresh",
+      "url": "https://aayushlife.com/pan-masala",
+      "description": "Refreshing, herbal blend made with 100% natural ingredients – betel leaves, cardamom, clove & more for digestive wellness.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Herbal Masala - Herbal Zest",
+      "url": "https://aayushlife.com/pan-masala",
+      "description": "A bold fusion of mint, tulsi, and aromatic herbs for an instant burst of freshness and long-lasting aroma.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Herbal Masala - Royal Spice",
+      "url": "https://aayushlife.com/pan-masala",
+      "description": "Premium herbal masala with a royal blend of spices for an exquisite taste experience.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Beauty Vitamin Gummie",
+      "url": "https://aayushlife.com/gummies",
+      "description": "Glow from within with this skin-loving gummy enriched with Biotin, Vitamin C, and Zinc for hair strength, radiant skin, and nail health.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Dreamy Sleep Gummie",
+      "url": "https://aayushlife.com/gummies-sleep",
+      "description": "Wind down naturally with a calming blend of Melatonin, Chamomile, and L-Theanine for deeper sleep, reduced stress, and a reset sleep cycle.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "BRAIN FUEL",
+      "url": "https://aayushlife.com/brain-fuel",
+      "description": "Coming soon! A powerful mix of Marine Collagen, Hyaluronic Acid, and Vitamin E for skin elasticity, hydration, and youthful radiance from the inside out.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Aayush Wellness"
+      }
+    }
+  ]
+};
+
+// WebPage schema
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Our Products - Aayush Wellness Herbal & Natural Health Solutions",
+  "description": "Explore Aayush Wellness' premium range of natural and herbal products for complete wellness and vitality. Discover our herbal masalas and health supplements.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Aayush Wellness",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://aayushlife.com/logo.png"
+    }
+  }
+};
 
 const products = [
   {
@@ -139,29 +224,50 @@ const ProductCard = ({ product }) => {
 
 const OurProduct = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Our Products - Aayush Wellness Herbal & Natural Health Solutions</title>
+        <meta 
+          name="description" 
+          content="Explore Aayush Wellness' premium range of natural and herbal products for complete wellness and vitality. Discover our herbal masalas and health supplements." 
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(productCollectionSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(webpageSchema)}
+        </script>
+      </Helmet>
+      
       <Header />
-      <div className="w-full px-[15px] sm:px-[30px] pt-[80px] sm:pt-[120px]">
-        <div className="max-w-full mx-auto py-8 lg:py-12 md:py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="product-card-container w-full"
-                style={{
-                  maxWidth: "598px",
-                  height: "auto",
-                  aspectRatio: "1/1",
-                }}
-              >
-                <ProductCard product={product} />
-              </div>
-            ))}
+      
+      {/* Hidden SEO Headers with consistent keywords */}
+      <h1 style={{ display: 'none' }}>Our Products - Aayush Wellness Herbal & Natural Health Solutions</h1>
+      <h2 style={{ display: 'none' }}>Premium Range of Natural & Herbal Products for Complete Wellness</h2>
+      
+      <main className="flex-grow">
+        <div className="w-full px-[15px] sm:px-[30px] pt-[80px] sm:pt-[120px]">
+          <div className="max-w-full mx-auto py-8 lg:py-12 md:py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className="product-card-container w-full"
+                  style={{
+                    maxWidth: "598px",
+                    height: "auto",
+                    aspectRatio: "1/1",
+                  }}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </main>
       <NewFooter />
-    </>
+    </div>
   )
 }
 

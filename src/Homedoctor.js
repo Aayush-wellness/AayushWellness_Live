@@ -6,7 +6,7 @@ const Homedoctor = () => {
 
      const testimonials = [
         {
-          id: "style-B65FD",
+          id: "style-B65FD11",
           quote: "Booking an online consultation was quick and easy. The doctor was very understanding and provided me with a personalized treatment plan. I feel much healthier and more confident now!",
           name: "Rohit, 35",
           product: "Online Consultation"

@@ -98,7 +98,7 @@ const HNewFooter = () => {
                                        <h3 className="font-bold text-lg" style={{color:'#ffffff'}}>NEWSROOM</h3>
                                        <ul className="mt-2 space-y-2">
                                            <li><Link to="/newsroom/in-the-news" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>In the News</Link></li>
-                                           <li><Link to="/newsroom/press-release" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Press Release</Link></li>
+                                           <li><Link to="/press-releases" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Press Release</Link></li>
                                            <li><Link to="/newsroom/library" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Library</Link></li>
                                        </ul>
                                    </div>

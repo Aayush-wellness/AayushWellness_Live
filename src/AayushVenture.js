@@ -2,25 +2,74 @@ import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import menu from './images/menu.png';
 import closepng from './images/close.png';
-import searchIcon from './images/search-gray.svg'
+import searchIcon from './images/search-gray.svg';
 import Footer from './Footer';
 import VentureSection1 from './VentureSection1';
 import TextAnimation from './TextAnimation';
 import ANewFooter from './ANewfooter';
 
+// Schema.org structured data for Business
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Aayush Ventures",
+  "alternateName": "Aayush Wellness Ventures",
+  "url": "https://www.aayush.health/ventures",
+  "logo": "https://www.aayush.health/logo.png",
+  "description": "Aayush Ventures is the business arm of Aayush Wellness, dedicated to innovative health and wellness solutions across India.",
+  "foundingDate": "2020",
+  "founders": [{
+    "@type": "Person",
+    "name": "Aayush Wellness Team"
+  }],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Wellness Street",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400001",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-XXXXXXXXXX",
+    "contactType": "customer service",
+    "email": "ventures@aayush.health",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/aayushwellness",
+    "https://www.instagram.com/aayushwellness",
+    "https://twitter.com/aayushwellness",
+    "https://www.linkedin.com/company/aayushwellness"
+  ]
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.aayush.health/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ventures",
+      "item": "https://www.aayush.health/ventures"
+    }
+  ]
+};
 
 function AnimatedText({ heading, subtext, url, buttonText, isVisible }) {
-
-
-
-
-
   return (
 
     <div className="absolute  md:justify-start md:items-center  pt-[120px] inset-0 flex items-start justify-center px-6 md:px-12 ">

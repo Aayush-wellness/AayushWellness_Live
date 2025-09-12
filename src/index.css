@@ -30,7 +30,7 @@ html, body {
 
 
 @font-face { 
-  font-family:'iconsmind-Desktop-apps';
+  font-family: Minionpro;
   src:url('https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/iconsmind/fonts/Desktop-apps.ttf') format('truetype'),
        url('https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/iconsmind/fonts/Desktop-apps.woff') format('woff');
   font-weight:normal;
@@ -38,7 +38,7 @@ html, body {
   font-display:block;
 } 
 @font-face { 
-  font-family:"Font Awesome 5 Free";
+  font-family: Minionpro;
   font-style:normal;
   font-weight:400;
   font-display:auto;
@@ -46,7 +46,7 @@ html, body {
   src:url(https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/fonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/fonts/fa-regular-400.woff2) format("woff2"),url(https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/fonts/fa-regular-400.woff) format("woff"),url(https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/fonts/fa-regular-400.ttf) format("truetype"),url(https://ipventures.in/wp-content/plugins/keydesign-addon/assets/css/fonts/fa-regular-400.svg#fontawesome) format("svg");
 } 
 @font-face { 
-  font-family:"Font Awesome 5 Free";
+  font-family: Minionpro;
   font-style:normal;
   font-weight:900;
   font-display:auto;
@@ -72,7 +72,7 @@ html, body {
 }
 @media all{     
   body {  
-    font-family: 'Inter', sans-serif;
+    font-family: Minionpro;
     font-size:100%;
     line-height:24px;
     color:#6d6d6d;
@@ -87,7 +87,7 @@ html, body {
   body {  
     color:#838383;
     font-weight:700;
-    font-family:Gentium Basic;
+    font-family: Minionpro;
     font-size:18px;
     line-height:28px;
   }  
@@ -159,7 +159,7 @@ html, body {
   } 
 
   body { 
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-family: Minionpro;
     font-size: 14px; 
     line-height: 1.42857143; 
     color: #666; 
@@ -187,7 +187,7 @@ body {
 
 @media all{ 
   html { 
-    font-family: sans-serif; 
+    font-family: Minionpro;
     -webkit-text-size-adjust: 100%; 
     -ms-text-size-adjust: 100%;
   } 
@@ -262,7 +262,7 @@ body {
   } 
 
   h2 { 
-    font-family: inherit; 
+    font-family: ROGBold; 
     font-weight: 500; 
     line-height: 1.1; 
     color: inherit;
@@ -299,9 +299,9 @@ h2 {
 .container h2 { 
     color: #313131; 
     font-weight: 700; 
-    font-family: Arial,Helvetica,sans-serif; 
-    font-size: 43px; 
-    line-height: 56px;
+    font-family: Minionpro;
+    /* font-size: 43px; 
+    line-height: 56px; */
 } 
 
 @media all{ 
@@ -487,7 +487,7 @@ h2 {
   } 
 
   h6 { 
-    font-family: inherit; 
+    font-family: ROGBold; 
     font-weight: 500; 
     line-height: 1.1; 
     color: inherit;
@@ -542,7 +542,7 @@ h2 {
 .container h6,.key-icon-box h6.service-heading  { 
     color: #313131; 
     font-weight: 400; 
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Minionpro;
 } 
 
 @media all{ 
@@ -559,7 +559,7 @@ h2 {
 p  { 
     color: #838383; 
     font-weight: 700; 
-    font-family: Gentium Basic; 
+    font-family: Minionpro;
     font-size: 18px; 
     line-height: 28px;
 } 
@@ -674,9 +674,6 @@ p  {
 
 
 
-.relative img{
-  padding-top: 80px;
-}
 .footer-img{
   padding-top: 0px !important;
 }
@@ -704,7 +701,7 @@ p  {
 
 @media screen and (max-width:768px) {
   .headd{
-    font-family: "Inter", sans-serif;
+    font-family: Minionpro;
     line-height: 40px;
       font-size: 20px;
     color: white;
@@ -714,7 +711,7 @@ p  {
 
 @media screen and (min-width:768px) {
   .headd{
-    font-family: "Inter", sans-serif;
+    font-family: Minionpro;
     line-height: 60px;
       font-size: 50px;
       color: white;
@@ -728,7 +725,7 @@ p  {
 
 @media screen and (max-width:768px) {
   .headdb{
-    font-family: "Inter", sans-serif;
+    font-family: Minionpro;
     line-height: 40px;
       font-size: 30px;
     color: black;
@@ -738,7 +735,7 @@ p  {
 
 @media screen and (min-width:768px) {
   .headdb{
-    font-family: "Inter", sans-serif;
+    font-family: Minionpro;
     line-height: 60px;
       font-size: 50px;
       color: black;
@@ -775,7 +772,7 @@ p  {
  }
 
 body{
-  font-family: "Inter", sans-serif;
+  font-family: Minionpro;
   font-optical-sizing: auto;
   font-weight:300;
   font-style: normal;
@@ -788,7 +785,7 @@ body{
   p{
   
  
-  font-family: "Inter", sans-serif;
+    font-family: Minionpro;
   font-optical-sizing: auto;
   font-weight:300;
   font-style: normal;
@@ -802,7 +799,7 @@ body{
   p{
   
 
-  font-family: "Inter", sans-serif;
+    font-family: Minionpro;
   font-optical-sizing: auto;
   font-weight:300;
   font-style: normal;
@@ -816,7 +813,7 @@ body{
 
 
 nav  {
-  font-family: "Source Serif 4", sans-serif !important;
+  font-family: ROGBold;
   font-size: 20px !important;
     
     font-size: 20px;
@@ -835,7 +832,7 @@ nav  {
 
 
 nav  .f{
-  font-family: "Source Serif 4", sans-serif !important;
+  font-family: ROGBold;
   font-size: 20px !important;
     
     font-size: 20px;

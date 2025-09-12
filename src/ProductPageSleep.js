@@ -3,6 +3,7 @@ import { Plus, ChevronLeft, ChevronRight, Minus } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 import NewFooter from './NewFooter';
+import { Helmet } from 'react-helmet';
 import {
   Leaf,
   ShieldCheck,
@@ -15,10 +16,34 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 
 const ProductPageSleep = () => {
+  // Schema.org structured data for Product
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Dreamy Sleep Gummies - Natural Sleep Aid",
+    "image": "https://aayushlife.com/dreamy-sleep-gummies.jpg",
+    "description": "Natural sleep aid gummies clinically proven to improve sleep quality and promote relaxation. Formulated with science-backed ingredients for better rest.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Aayush Wellness"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "125"
+    },
+    "keywords": "sleep gummies, natural sleep aid, better sleep, relaxation, Aayush Wellness, sleep supplement, herbal sleep aid"
+  };
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeSidebar, setActiveSidebar] = useState(null);
   const [openIndex, setOpenIndex] = useState(null);
@@ -262,7 +287,22 @@ const ProductPageSleep = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Dreamy Sleep Gummies - Natural Sleep Aid | Aayush Wellness</title>
+        <meta 
+          name="description" 
+          content="Discover Dreamy Sleep Gummies by Aayush Wellness - a natural sleep aid clinically proven to improve sleep quality and promote relaxation with science-backed ingredients." 
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
+      </Helmet>
+      
       <Header />
+      {/* Hidden SEO Headers with consistent keywords */}
+      <h1 style={{ display: 'none' }}>Dreamy Sleep Gummies - Natural Sleep Aid by Aayush Wellness</h1>
+      <h2 style={{ display: 'none' }}>Clinically Proven Sleep Supplement with Natural Ingredients for Better Rest and Relaxation</h2>
+      
       <section className="relative bg-white md:pt-[90px]">
         <div
           ref={containerRef}

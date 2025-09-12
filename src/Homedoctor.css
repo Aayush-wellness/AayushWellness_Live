@@ -241,7 +241,7 @@
   } 
   
   button { 
-      font-family: inherit; 
+      font-family: MinionPro; 
       font-size: 100%; 
       line-height: 1.15; 
       margin: 0px;
@@ -920,7 +920,7 @@
 } 
 
 button { 
-    font-family: inherit; 
+    font-family: MinionPro; 
     font-size: 100%; 
     line-height: 1.15; 
     margin: 0px;
@@ -1385,7 +1385,7 @@ img {
   .bshcsw { 
     font-size: 1.5625rem; 
     line-height: 1.55313rem; 
-    letter-spacing: -0.090625rem;
+   
   } 
 }     
 
@@ -1395,6 +1395,8 @@ img {
 
 .jGXlEb h3  { 
     font-size: 1.01rem; 
+    margin-top: 10px;
+    letter-spacing: 1px;
     /* letter-spacing: -0.035625rem; 
     margin: 0px; */
 } 
