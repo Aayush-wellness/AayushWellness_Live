@@ -84,7 +84,7 @@ const NewFooter = () => {
               <div className="flex flex-col md:flex-row md:items-center md:gap-2 mt-2">
                 <span>
                   <span className="font-bold">Contact no.:</span> +91 84486
-                  93031 
+                  93031
                 </span>
                 <span>
                   <span className="font-bold">Email:</span>{" "}
@@ -120,9 +120,16 @@ const NewFooter = () => {
             </form>
           </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-10 md:pl-[3rem] ">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-10 md:pl-[3rem] ">
             <div className="min-w-[120px]">
-              <h3 className="mb-4 text-xxxl font-medium">Company</h3>
+              <p
+             className="text-[#13233b] font-bold text-[25px]"
+             style={{ fontFamily: 'ROGBold' }}
+                // style={{ color: '#FF0000' }}
+              >
+                Company
+              </p>
+
               <ul className="list-none p-0">
                 <li className="mb-2">
                   <Link
@@ -133,7 +140,7 @@ const NewFooter = () => {
                   </Link>
                 </li>
                 <li className="mb-2">
-                 
+
                 </li>
                 <li className="mb-2">
                   <Link
@@ -154,7 +161,13 @@ const NewFooter = () => {
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <h3 className="mb-4 text-xxxl font-medium">Wellness</h3>
+              <p
+               className="text-[#13233b] font-bold text-[25px]"
+               style={{ fontFamily: 'ROGBold' }}
+                // style={{ color: '#FF0000' }}
+              >
+                Wellness
+              </p>
               <ul className="list-none p-0">
                 <li>
                   <Link
@@ -183,7 +196,13 @@ const NewFooter = () => {
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <h3 className="mb-4 text-xxxl font-medium ">Newsroom</h3>
+            <p
+  className="text-[#13233b] font-bold text-[25px]"
+  style={{ fontFamily: 'ROGBold' }}
+>
+  Newsroom
+</p>
+
               <ul>
                 <li>
                   <Link
@@ -212,16 +231,22 @@ const NewFooter = () => {
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <h3 className="mb-4 text-xxxl  font-medium">Corporate</h3>
+              <p
+               className="text-[#13233b] font-bold text-[25px]"
+               style={{ fontFamily: 'ROGBold' }}
+                // style={{ color: '#FF0000' }}
+              >
+                Corporate
+              </p>
               <ul className="list-none p-0">
-              <li> 
-                    <Link
+                <li>
+                  <Link
                     to="/investors"
                     className="text-white no-underline hover:underline  text-[20px]"
                   >
                     Investor
                   </Link>
-                  </li>
+                </li>
                 <li>
                   <Link
                     to="/healthcare"
@@ -261,15 +286,15 @@ const NewFooter = () => {
                   >
                     Sustainability
                   </Link>
-                                 
+
                 </li>
-               
+
               </ul>
             </div>
           </div>
         </div>
 
-       
+
         <div className="w-full h-px bg-white/30 my-4"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 md:gap-0 pb-4">
@@ -290,10 +315,10 @@ const NewFooter = () => {
               <div className="absolute left-0 bottom-full mb-2 w-48 rounded-md shadow-lg bg-white/30 backdrop-blur-md ring-1 ring-black ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <Link to="https://www.instagram.com/aayush.wellness/" className="block px-4 py-2 text-sm text-white font-semibold hover:underline hover:bg-green-800" role="menuitem">
-                    Aayush Wellness 
+                    Aayush Wellness
                   </Link>
                   <Link to="https://www.instagram.com/aayushveda_/" className="block px-4 py-2 text-sm text-white font-semibold hover:bg-green-800 hover:underline" role="menuitem">
-                    Aayush Veda 
+                    Aayush Veda
                   </Link>
                 </div>
               </div>
@@ -309,10 +334,10 @@ const NewFooter = () => {
               <div className="absolute left-0 bottom-full mb-2 w-48 rounded-md shadow-lg bg-white/30 backdrop-blur-md ring-1 ring-black ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="py-1" role="menu" aria-orientation="vertical">
                   <Link to="https://www.facebook.com/profile.php?id=61561583410258" className="block px-4 py-2 text-sm text-white font-semibold hover:underline hover:bg-green-800" role="menuitem">
-                  Aayush Wellness 
+                    Aayush Wellness
                   </Link>
                   <Link to="https://www.facebook.com/profile.php?id=61555665373176" className="block px-4 py-2 text-sm text-white font-semibold hover:underline hover:bg-green-800" role="menuitem">
-                  Aayush Veda 
+                    Aayush Veda
                   </Link>
                 </div>
               </div>
