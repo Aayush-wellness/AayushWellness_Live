@@ -72,7 +72,8 @@ const ANewFooter = () => {
                     <div className="hidden text-[#e7e6e6] justify-center text-center  w-full text-[15px] md:flex">A Public Listed Company on <br/>Bombay Stock Exchange [BSE Code: 539528]</div>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg" style={{color:'#a8ff00'}}>COMPANY</h3>
+                        <h3 className="font-bold text-lg" style={{color:'#a8ff00' ,fontFamily:'ROGBold',letterSpacing:'2px'}}>COMPANY</h3>
+                        {/* <div className=''>COMPANY</div> */}
                         <ul className="mt-2 space-y-2">
                             <li><Link to="/about-us" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>
                     About Us
@@ -95,7 +96,7 @@ const ANewFooter = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg" style={{color:'#a8ff00'}}>WELLNESS</h3>
+                        <h3 className="font-bold text-lg" style={{color:'#a8ff00',fontFamily:'ROGBold',letterSpacing:'2px'}}>WELLNESS</h3>
                         <ul className="mt-2 space-y-2">
                             <li><Link to="/wellness/modern-science" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Modern Science</Link></li>
                             <li><Link to="/ayurveda" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Ayurveda</Link></li>
@@ -103,7 +104,7 @@ const ANewFooter = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg" style={{color:'#a8ff00'}}>NEWSROOM</h3>
+                        <h3 className="font-bold text-lg" style={{color:'#a8ff00' ,fontFamily:'ROGBold',letterSpacing:'2px'}}>NEWSROOM</h3>
                         <ul className="mt-2 space-y-2">
                             <li><Link to="/newsroom/in-the-news" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>In the News</Link></li>
                             <li><Link to="/press-releases" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Press Release</Link></li>
@@ -111,7 +112,7 @@ const ANewFooter = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg" style={{color:'#a8ff00'}}>CORPORATE</h3>
+                        <h3 className="font-bold text-lg" style={{color:'#a8ff00' ,fontFamily:'ROGBold' ,letterSpacing:'2px'}}>CORPORATE</h3>
                         <ul className="mt-2 space-y-2">
                             <li><Link to="/csr-at-aayush/malnutrition" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Malnutrition</Link></li>
                             <li><Link to="/csr-at-aayush/health-check" onClick={() => window.scrollTo(0, 0)} className="text-muted-foreground hover:text-primary"  style={{color:'#ffffff'}}>Healthcare Check</Link></li>
