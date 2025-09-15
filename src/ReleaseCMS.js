@@ -293,7 +293,7 @@ const ReleaseCMS = () => {
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="body">Body (HTML)</label>
             <div className="flex flex-wrap gap-2 mb-2">
-              <button type="button" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" onClick={() => insertTag('h1')}>H1</button>
+              <button type="button" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" onClick={() => insertTag('h3')}>H3</button>
               <button type="button" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" onClick={() => insertTag('h2')}>H2</button>
               <button type="button" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" onClick={() => insertTag('p')}>P</button>
               <button type="button" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300" onClick={() => insertTag('strong')}>B</button>
