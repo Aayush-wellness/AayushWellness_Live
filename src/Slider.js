@@ -1,28 +1,158 @@
-
-import { useState, useEffect, useRef } from "react"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import { Link } from "react-router-dom"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import closepng from "./images/close.png"
-import searchIcon from "./images/search-gray.svg"
-import ImageSlider from "./ImageSlider"
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Play, ChevronRight } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import closepng from "./images/close.png";
+import searchIcon from "./images/search-gray.svg";
 import Hls from "hls.js";
+
+const bannerData = [
+  {
+    id: 1,
+    type: "banner",
+    image: {
+      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
+      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile.jpg?v=1758104854"
+    },
+    title: "Smarter, Faster & Accessible Diagnostics Across India",
+    description: "Mumbai, Hyderabad, Bangalore, Pune",
+    buttonText: "Book Your Test Now",
+    path: "/aayush-labs-announcement"
+    
+  },
+  // {
+  //   id: 2,
+  //   type: "banner",
+  //   image: {
+  //     desktop: "https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg",
+  //     mobile: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg"
+  //   },
+  //   title: "Expert Medical Consultation",
+  //   description: "Connect with our team of experienced healthcare professionals",
+  //   buttonText: "Book Now",
+  //   path: "/consultation"
+  // },
+ {
+  id: 3,
+  type: "video",
+  thumbnail: {
+    desktop: "",
+    mobile: ""
+  },
+  videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
+  videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", // <-- add this line
+  title: "A New Era of Healthcare",
+  description: "We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness empowering individuals towards lifelong well-being.",
+},
+  // {
+  //   id: 4,
+  //   type: "banner",
+  //   image: {
+  //     desktop: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg",
+  //     mobile: "https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg"
+  //   },
+  //   title: "Wellness Programs",
+  //   description: "Comprehensive wellness solutions for a healthier you",
+  //   buttonText: "Explore",
+  //   path: "/wellness"
+  // }
+];
 
 export default function AnimatedSlider() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false)
+  const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false)
+  const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false)
+  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false)
+  const [isCsrSubcategoryOpen, setIsCsrSubcategoryOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false)
+  const [isCorporateDropdownOpen, setIsCorporateDropdownOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [showText, setShowText] = useState(false)
+  const videoRef = useRef(null)
+  const intervalRef = useRef(null)
   const sliderRef = useRef(null)
   const [csrOpen, setCsrOpen] = useState(false)
-  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false)
-  const videoRef = useRef(null)
+
+  console.log("bannerData :", bannerData)
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev === bannerData.length - 1 ? 0 : prev + 1))
+    if (isVideoPlaying) {
+      videoRef.current?.pause()
+      setIsVideoPlaying(false)
+    }
+  }
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev === 0 ? bannerData.length - 1 : prev - 1))
+    if (isVideoPlaying) {
+      videoRef.current?.pause()
+      setIsVideoPlaying(false)
+    }
+  }
+
+  const goToSlide = (index) => {
+    setActiveIndex(index)
+    if (isVideoPlaying) {
+      videoRef.current?.pause()
+      setIsVideoPlaying(false)
+    }
+  }
+
+  const toggleVideoPlay = () => {
+    const currentSlide = bannerData[activeIndex]
+    if (currentSlide.type === 'video') {
+      if (isVideoPlaying) {
+        videoRef.current?.pause()
+      } else {
+        videoRef.current?.play()
+      }
+      setIsVideoPlaying(!isVideoPlaying)
+    }
+  }
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      nextSlide()
+    }, 5000)
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [activeIndex])
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768)
     window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
+  const currentSlide = bannerData[activeIndex]
+  const videos = {
+    desktop: {
+      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
+      text: "Transforming Wellness , Transforming Lives",
+    },
+    mobile: {
+      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.m3u8",
+      text: "Transforming wellness, transforming lives",
+    },
+  }
+
+  console.log("currentSlide :", currentSlide)
+  
+  // Use the selected video source based on device
+  const videoSource = isMobile ? videos.mobile.src : videos.desktop.src
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting)
@@ -37,24 +167,7 @@ export default function AnimatedSlider() {
       observer.observe(sliderRef.current)
     }
 
-    // Preload video for better mobile performance
-    if (videoRef.current) {
-      videoRef.current.load()
-
-      // Force play on iOS/Android
-      document.addEventListener(
-        "touchstart",
-        () => {
-          if (videoRef.current && videoRef.current.paused) {
-            videoRef.current.play().catch((e) => console.log("Video play error:", e))
-          }
-        },
-        { once: true },
-      )
-    }
-
     return () => {
-      window.removeEventListener("resize", handleResize)
       if (sliderRef.current) {
         observer.unobserve(sliderRef.current)
       }
@@ -70,57 +183,67 @@ export default function AnimatedSlider() {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
- const videos = {
-    desktop: {
-      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
-      text: "Transforming Wellness , Transforming Lives",
-    },
-    mobile: {
-      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.m3u8",
-      text: "Transforming wellness, transforming lives",
-    },
-  }
   useEffect(() => {
     const video = videoRef.current;
-    const videoSrc = isMobile ? videos.mobile.src : videos.desktop.src
- 
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play();
-      });
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Fallback for Safari
-      video.src = videoSrc;
-      video.addEventListener("loadedmetadata", () => {
-        video.play();
-      });
+    
+    // Pause any currently playing video when slide changes
+    if (video) {
+      video.pause();
     }
-  }, []);
 
-  const selectedVideo = isMobile ? videos.mobile : videos.desktop
+    // If the current slide is a video, play it
+    if (currentSlide.type === 'video') {
+      const playVideo = () => {
+        if (video) {
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('Autoplay prevented:', error);
+            });
+          }
+        }
+      };
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false)
-  const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false)
-  const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false)
-  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false) // Added state for "About Us"
-  const [isCsrSubcategoryOpen, setIsCsrSubcategoryOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false) // Added state for CSR subcategories
-  const [isCorporateDropdownOpen, setIsCorporateDropdownOpen] = useState(false)
+      // Small delay to ensure the video is in the DOM
+      const timer = setTimeout(playVideo, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [activeIndex, currentSlide.type]);
 
-  const AyurvedaDropdownRef = useRef(null)
-  const WellnessDropdownRef = useRef(null)
-  const NewsroomDropdownRef = useRef(null)
-  const AboutUsDropdownRef = useRef(null) // Added ref for "About Us"
-  const CsrDropdownRef = useRef(null) // Added ref for CSR
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen)
-  }
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Only initialize if it's a video slide
+    if (currentSlide.type === 'video') {
+      const videoSrc = currentSlide.videoUrl;
+
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          video.play().catch(error => {
+            console.log('Autoplay prevented:', error);
+          });
+        });
+
+        return () => {
+          hls.destroy();
+        };
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // For Safari
+        video.src = videoSrc;
+        video.addEventListener('loadedmetadata', () => {
+          video.play().catch(error => {
+            console.log('Autoplay prevented:', error);
+          });
+        });
+      }
+    }
+  }, [currentSlide]);
+
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
     console.log("Menu toggled:", isMenuOpen)
@@ -147,7 +270,6 @@ export default function AnimatedSlider() {
   }
 
   const toggleCsrSubcategory = () => {
-    // Added toggle function for CSR subcategories
     setIsCsrSubcategoryOpen(!isCsrSubcategoryOpen)
     toggleIcon("svg7", "svg8")
   }
@@ -156,10 +278,10 @@ export default function AnimatedSlider() {
     setIsAyurvedaDropdownOpen(false)
     setIsWellnessDropdownOpen(false)
     setIsNewsroomDropdownOpen(false)
-    setIsAboutUsDropdownOpen(false) // Close "About Us" dropdown when a link is clicked
+    setIsAboutUsDropdownOpen(false)
     setIsCsrSubcategoryOpen(false)
-    setIsSearchOpen(false) // Close CSR subcategories when a link is clicked
-    setIsProductDropdownOpen(false) // Close Product dropdown when a link is clicked
+    setIsSearchOpen(false)
+    setIsProductDropdownOpen(false)
   }
 
   const toggleIcon = (iconIdToToggle, iconIdToToggleOther) => {
@@ -171,10 +293,14 @@ export default function AnimatedSlider() {
     }
   }
 
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen)
+  }
+
   return (
     <>
       <nav
-        className="md:text-white text-[rgb(112, 112, 112)]  font-sans"
+        className="fixed top-0 left-0 right-0 z-50   text-black"
         style={{
           fontFamily: '"Inter", sans-serif',
           fontWeight: "bold",
@@ -192,7 +318,7 @@ export default function AnimatedSlider() {
                 />
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]">
+            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]" style={{color: 'white'}}>
               <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
                 Home
               </Link>
@@ -425,7 +551,7 @@ export default function AnimatedSlider() {
                     {/* Other Links */}
                     <Link
                       to="/career"
-                      className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                      className="grid grid-cols-1 text-left py-2 text- rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
                       <span className="block font-bold w-full px-4 text-inherit">Careers</span>
                       <span className="block text-sm px-4 text-gray-900 text-inherit">
@@ -715,7 +841,7 @@ export default function AnimatedSlider() {
                   <div className="px-4 py-2">
                     <h3 className="text-xl font-bold text-[#004037]">Corporate Initiatives</h3>
                     <p className="text-lg text-gray-600 mt-2">
-                      Our dedication to ethical business practices, community engagement, and sustainability.
+                      Our dedication to ethical business practices, community engagement, and sustainable growth.
                     </p>
                   </div>
 
@@ -736,7 +862,12 @@ export default function AnimatedSlider() {
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          ></path>
                         </svg>
                       </button>
 
@@ -839,228 +970,99 @@ export default function AnimatedSlider() {
         </div>
       </nav>
 
-      <div className="video-wrapper relative" ref={sliderRef}>
-        <div className="video-overlay">
-          {/* Divider Line Below the Text */}
-          <div className="absolute left-0 w-full border-t border-[#ff] z-10 mt-[5rem] md:mt-24 h-[1px]"></div>
-
-          {/* Text Below Divider on the Left Side */}
-          <div
-            className="absolute top-[5.6rem] left-4 text-[#fff] leading-none font-normal 
-      text-[70px] sm:text-[50px] md:text-[30px] lg:text-[40px] xl:text-[150px]"
-            style={{ marginTop: isMobile ? "0px" : "1.5rem", fontFamily: "ROGBold" }} // No !important needed
-          >
-            {isMobile ? (
-              <>A New Era of Healthcare</>
-            ) : (
-              <>
-                A New Era of <br /> Healthcare
-              </>
-            )}
-          </div>
-        </div>
-
-        {/* Services/Products Title - Visible on all screen sizes */}
-        <div
-          className="absolute md:bottom-[370px] bottom-[440px] left-4  md:left-4 text-left text-[#fff] font-sm z-20 "
-          style={{
-            fontSize: window.innerWidth < 768 ? "18px" : "20px", fontFamily: "Minionpro",
-            left: "0.5rem", // 20px for small screens, 24px for larger screens
-          }}
-        >
-          Services/Products
-        </div>
-
-        {/* Left Horizontal Divider (Desktop) */}
-        <div className="absolute bottom-[360px] left-0 w-1/2 h-[1px] bg-[#fff] z-10 hidden md:block"></div>
-
-        {/* Right Horizontal Divider (Desktop) */}
-        <div className="absolute bottom-[360px] right-0 w-1/2 h-[1px] bg-[#fff] z-10 hidden md:block"></div>
-
-        {/* Left Horizontal Divider (Mobile) - Above slider cards */}
-        <div className="absolute bottom-[430px] left-0 w-full h-[1px] bg-[#f9f3e8] z-10 md:hidden"></div>
-
-        {/* Right Horizontal Divider (Mobile) - Below slider cards */}
-        <div className="absolute bottom-[110px] left-0 w-full h-[1px] bg-[#f9f3e8] z-10 md:hidden"></div>
-
-        {/* Vertical Divider (Hidden on Mobile) */}
-        <div className="absolute bottom-0 left-1/2 w-[1px] h-[360px] bg-[#fff] z-10 transform -translate-x-1/2 hidden md:block"></div>
-
-        {/* Right-Side Text (Desktop) */}
-        <div
-          className="absolute bottom-[395px] left-[52%] text-[#fff]  md:text-[20px] leading-tight font-sm w-[40%] z-20 md:block hidden "
-          style={{
-            fontSize: window.innerWidth < 768 ? "10px" : "20px", fontFamily: "Minionpro", // 20px for small screens, 24px for larger screens
-          }}
-        >
-          Introduction
-        </div>
-
-        <div
-          className="absolute bottom-[240px] left-[52%] text-[#fff] md:text-[20px] leading-tight font-sm w-[40%] z-20 md:block hidden"
-          style={{
-            fontSize: window.innerWidth < 768 ? "10px" : "20px",  fontFamily: "Minionpro"// 20px for small screens, 24px for larger screens
-          }}
-        >
-          We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness
-          empowering individuals towards lifelong well-being.
-        </div>
-
-        {/* Introduction & Other Text Just Below Divider on Mobile */}
-        <div
-          className="absolute bottom-[130px] left-4 md:left-4 text-left text-[#f9f3e8] leading-tight font-sm z-20 md:hidden "
-          style={{
-            fontSize: window.innerWidth < 768 ? "18px" : "16px",
-            left: "0.5rem", fontFamily: "Minionpro", // 10px for mobile, 20px for desktop
-          }}
-        >
-          Introduction
-        </div>
-
-        <div
-          className="absolute bottom-[25px] left-4 right-4 text-left text-[#fff]  leading-tight font-bold z-20 md:hidden"
-          style={{
-            fontSize: window.innerWidth < 768 ? "14px" : "20px", fontFamily: "Minionpro", letterSpacing: "1.1px" 
-          }}
-        >
-          We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness
-          empowering individuals towards lifelong well-being.
-        </div>
-
-        {/* Centered ImageSlider on Mobile, Original Position on Desktop */}
-        <div className="absolute z-10 md:bottom-16 md:left-4 md:right-auto bottom-[220px] inset-x-0 flex items-center justify-center md:inset-auto">
-          <ImageSlider />
-        </div>
-
-        <video
+      {/* Banner Section */}
+  <div className="relative w-full h-screen md:h-screen sm:h-[60vh] overflow-hidden bg-gray-100 mb-10">
+    {/* Banner Image/Video */}
+    <div className="relative w-full h-full">
+     {currentSlide.type === 'video' ? (
+  <div className="relative w-full h-full">
+    <video
       ref={videoRef}
-      className={`video ${isVisible ? "fade-in" : ""}`}
-      autoPlay
-      muted
+      className="w-full h-full object-cover"
+      poster={isMobile ? currentSlide.thumbnail.mobile : currentSlide.thumbnail.desktop}
       loop
+      muted
+      autoPlay
       playsInline
-      preload="auto"
-      poster="https://res.cloudinary.com/dudn5tfkq/image/upload/v1741259430/o3zcqyhewzusfycdygyc.png"
-     
-    ></video>
-       
-     
-  {/* <iframe
-    className="w-full h-full object-cover"
-    src="https://player.vimeo.com/video/1071668900?h=62d523bb47&background=1&controls=0&loop=1"
-    frameBorder="0"
-    allow="autoplay; fullscreen"
-   
-  ></iframe> */}
+    >
+      <source
+        src={isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl}
+        type={
+          (isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl).endsWith('.m3u8')
+            ? 'application/x-mpegURL'
+            : 'video/mp4'
+        }
+      />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+) : (
+        <img
+          src={isMobile ? currentSlide.image.mobile : currentSlide.image.desktop}
+          alt={currentSlide.title}
+          className="w-full h-full object-cover"
+        />
+      )}
 
 
-        
-        <style jsx>{`
-          .video-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-          }
-          .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-          }
-          .video-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-          }
-          .video-text.show {
-            opacity: 1;
-          }
-          .video-text p {
-            font-size: 6rem;
-            font-weight: bold;
-            color: white;
-            margin: 0;
-            line-height: 1.2;
-            white-space: nowrap;
-          }
-          .word {
-            opacity: 0;
-            display: inline-block;
-          }
-          .fade-word {
-            animation: fadeIn 1s forwards;
-          }
-          .delay-1 {
-            animation-delay: 4s;
-          }
-          .delay-2 {
-            animation-delay: 8s;
-          }
-          .delay-3 {
-            animation-delay: 10s;
-          }
-          .delay-4 {
-            animation-delay: 12s;
-          }
+           {/* Overlay Content */}
+      <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
+        style={{
+          backgroundImage: 'url("https://cdn.shopify.com/s/files/1/0636/5226/6115/files/tile4020.png?v=1758020387")',
+          height: '100vh'
+        }}>
+            <div className="max-w-4xl mx-auto text-center w-full px-4 text-white ">
+          <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white-700 mb-4 sm:mb-6 leading-tight" style={{ color: 'white' }}>
+            {currentSlide.title}
+          </h2>
+          <p className="text-lg sm:text-xl md:text-2xl text-[#33cccc] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
+            {currentSlide.description}
+          </p>
+          {currentSlide.path ? (
+            <Link
+              to={currentSlide.path}
+              className="inline-flex items-center bg-[#33cccc] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-[#2bb8b8] transition-colors text-lg sm:text-xl"
+            >
+                  {currentSlide.buttonText}
+              <ChevronRight className="ml-2 w-6 h-6" />
+            </Link>
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </div>
+        </div>
 
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
+        {/* Navigation Dots */}
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3">
+          {bannerData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === activeIndex ? 'bg-white w-8' : 'bg-white/50 w-3'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
-          .video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-          @media (max-width: 768px) {
-            .video-text p {
-              font-size: 2rem;
-            }
-          }
-
-          @media (min-width: 769px) {
-            .video-text p {
-              font-size: 7rem;
-            }
-          }
-        `}</style>
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="hidden md:flex absolute left-8 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-xl transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronRight className="w-8 h-8 text-gray-800 transform rotate-180" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="hidden md:flex absolute right-8 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-xl transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-8 h-8 text-gray-800" />
+        </button>
       </div>
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
