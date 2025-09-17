@@ -6,22 +6,22 @@ import { motion } from "framer-motion";
 const sections = [
   {
     title: "Market Opportunity & Growth",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/3_1.png?v=1758097379",
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/4_2.jpg?v=1758111118",
     content: `India’s diagnostics market—valued at ₹1.54 trillion in FY2024 and projected to nearly double to ₹2.98 trillion by FY2030 at a CAGR of 11.7%—is one of the fastest-growing healthcare segments. Growth is fueled by preventive health awareness, chronic diseases, and rapid digital adoption, with home sample collection driving nearly one-fourth of this expansion.`
   },
   {
     title: "Aayush Labs: Patient-First Diagnostics",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/2_1.png?v=1758097379",
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_8.jpg?v=1758111117",
     content: `Aayush Labs offers a wide range of diagnostic tests for preventive and chronic care, backed by hassle-free home sample collection. Secure teleconsultations ensure timely medical advice, while digital access to reports and prescriptions brings speed, transparency, and convenience.`
   },
   {
     title: "Unified Healthcare Ecosystem",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_1.png?v=1758097379",
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/3_4.jpg?v=1758111118",
     content: `Aayush Wellness’s core offerings including nutraceuticals, wellness supplements, and lifestyle products form the base of preventive healthcare. The addition of diagnostics strengthens this vertical by enabling evidence-based wellness and personalized care pathways.`
   },
   {
     title: "About Aayush Wellness Limited",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/4_1.png?v=1758097379",
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/2_7.jpg?v=1758111118",
     content: `(ISO 9000 and 22000 certified) Aayush Wellness Limited [BSE scrip code: 539528], established in 1984, is a pioneering name in health and wellness solutions, dedicated to offering products that merge wellbeing with innovation. For more information, visit www.aayushwellness.com or call 8655611700 for business inquiries.`
   }
 ];
@@ -46,7 +46,7 @@ export default function AayushLabsAnnouncement() {
     </p>
     <br></br>
      <a
-        href="https://www.bseindia.com/xml-data/corpfiling/AttachHis/65446c61-60db-4c3e-a9c5-ccb73858dace.pdf"
+        href=""
         download
         className="inline-flex items-center bg-[#33cccc] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-[#006060] transition-colors text-lg sm:text-xl"
       >
@@ -108,5 +108,4 @@ export default function AayushLabsAnnouncement() {
       <NewFooter />
     </>
   );
-
 }
