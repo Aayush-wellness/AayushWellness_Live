@@ -17,7 +17,7 @@ const bannerData = [
     },
     title: "Smarter, Faster & Accessible Diagnostics Across India",
     description: "Mumbai, Hyderabad, Bangalore, Pune",
-    buttonText: "Book Your Test Now",
+    buttonText: "Read More",
     path: "/aayush-labs-announcement"
     
   },
