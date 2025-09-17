@@ -16,7 +16,7 @@ import ReleaseCMS from "./ReleaseCMS";
 
 import InitializeCMS from "./InitializeCMS";
 import AdminLogin from "./AdminLogin";
-
+import AayushLabsAnnouncement from "./AayushLabsAnnouncement";
 
 // CMS Components
 const BlogCMS = lazy(() => import("./BlogCMS"));
@@ -187,6 +187,7 @@ const AnimatedRoutes = () => {
         <Route path="pdf" element={<PageTransition><Pdf/></PageTransition>} />
         <Route path="sustainability/lifecycle" element={<PageTransition><LifeCycle/></PageTransition>} />
         <Route path="adminpage" element={<PageTransition><AdminPage/></PageTransition>} />
+   <Route path="/aayush-labs-announcement" element={<AayushLabsAnnouncement />} />
         <Route path="*" element={<PageTransition><ErrorPage /></PageTransition>} />
         
 
