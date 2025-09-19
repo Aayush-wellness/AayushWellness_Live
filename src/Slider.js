@@ -1006,6 +1006,7 @@ export default function AnimatedSlider() {
            {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
         style={{
+          background-image=url("https://cdn.shopify.com/s/files/1/0636/5226/6115/files/tile4020.png?v=1758020387"),
           
           height: '100vh'
         }}>
