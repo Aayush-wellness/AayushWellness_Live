@@ -51,7 +51,7 @@ const StackImage = () => {
                 className="StackedContent_media__haQuf style-mKRVT image-transition"
                 src={
                   activeSectionIndex === 0
-                    ? "https://cdn.shopify.com/videos/c/o/v/fed476cd8dd24d17b7ebf64e63335c99.mp4"
+                    ? "https://cdn.shopify.com/videos/c/o/v/adf5809e8ccd460cbbf92b9c9de4103c.mp4"
                     : "https://cdn.shopify.com/videos/c/o/v/9ae83fdffa0e4715b186839c452deadd.mp4"
                 }
                 id="style-mKRVT"
