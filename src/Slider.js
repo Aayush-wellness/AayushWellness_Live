@@ -17,7 +17,7 @@ const bannerData = [
     },
     title: "Smarter, Faster & Accessible Diagnostics Across India",
     description: "Mumbai, Hyderabad, Bangalore, Pune",
-    buttonText: "Read More",
+    buttonText: "Book Your Test Now",
     path: "/aayush-labs-announcement"
     
   },
@@ -78,6 +78,8 @@ export default function AnimatedSlider() {
   const intervalRef = useRef(null)
   const sliderRef = useRef(null)
   const [csrOpen, setCsrOpen] = useState(false)
+  const [isScrolledPastBanner, setIsScrolledPastBanner] = useState(false); // New state for navbar background
+  
 
   console.log("bannerData :", bannerData)
 
@@ -156,6 +158,7 @@ export default function AnimatedSlider() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting)
+        setIsScrolledPastBanner(!entry.isIntersecting); // Update state based on banner visibility
         if (entry.isIntersecting) {
           setTimeout(() => setShowText(true), 5000) // Start text animation after 5 seconds
         }
@@ -300,7 +303,7 @@ export default function AnimatedSlider() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50   text-black"
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolledPastBanner ? "bg-black text-white shadow-md" : "bg-transparent text-white"} font-sans`}
         style={{
           fontFamily: '"Inter", sans-serif',
           fontWeight: "bold",
@@ -312,13 +315,13 @@ export default function AnimatedSlider() {
             <div className="flex items-center">
               <Link to="/">
                 <img
-                  className="md:h-[5.7rem] h-[4rem] md:pt-3 md:pb-3"
-                  src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=1734763399"
+                  className="md:h-[4rem] h-[3rem] md:pt-2 md:pb-2"
+                  src={isScrolledPastBanner ? "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=1734763399" : "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=1734763399"}
                   alt="logo"
                 />
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]" style={{color: 'white'}}>
+            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]" style={{color: isScrolledPastBanner ? "white" : "white"}}>
               <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
                 Home
               </Link>
@@ -326,10 +329,10 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif' }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
                 >
                   Our Story
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "currentColor"} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
@@ -374,10 +377,10 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif' }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
                 >
                   Our Offerings
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "currentColor"} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
@@ -459,10 +462,10 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif' }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
                 >
                   Corporate
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "currentColor"} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
@@ -496,7 +499,7 @@ export default function AnimatedSlider() {
                                 csrOpen ? "rotate-180" : ""
                               }`}
                               fill="none"
-                              stroke="currentColor"
+                              stroke={isScrolledPastBanner ? "white" : "currentColor"}
                               viewBox="0 0 24 24"
                             >
                               <path
@@ -581,16 +584,16 @@ export default function AnimatedSlider() {
                 </div>
               </div>
 
-              <Link to="/support" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
+              <Link to="/support" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
                 Support
               </Link>
-              <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
+              <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
                 HealthCare
               </Link>
               <Link
                 to="/growth-accelerator"
                 className="  hover:text-primary/80"
-                style={{ fontFamily: '"Inter", sans-serif' }}
+                style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
               >
                 Accelerator
               </Link>
@@ -841,7 +844,7 @@ export default function AnimatedSlider() {
                   <div className="px-4 py-2">
                     <h3 className="text-xl font-bold text-[#004037]">Corporate Initiatives</h3>
                     <p className="text-lg text-gray-600 mt-2">
-                      Our dedication to ethical business practices, community engagement, and sustainable growth.
+                      Our dedication to ethical business practices, community engagement, and sustainability.
                     </p>
                   </div>
 
@@ -862,12 +865,7 @@ export default function AnimatedSlider() {
                           stroke="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          ></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                       </button>
 
@@ -971,7 +969,7 @@ export default function AnimatedSlider() {
       </nav>
 
       {/* Banner Section */}
-  <div className="relative w-full h-screen md:h-screen sm:h-[60vh] overflow-hidden bg-gray-100 mb-10">
+  <div className="relative w-full h-screen md:h-screen sm:h-[60vh] overflow-hidden bg-gray-100 mb-10" ref={sliderRef}>
     {/* Banner Image/Video */}
     <div className="relative w-full h-full">
      {currentSlide.type === 'video' ? (
