@@ -46,7 +46,7 @@ export default function AayushLabsAnnouncement() {
     </p>
     <br></br>
      <a
-        href=""
+        href="https://www.bseindia.com/xml-data/corpfiling/AttachHis/65446c61-60db-4c3e-a9c5-ccb73858dace.pdf"
         download
         className="inline-flex items-center bg-[#33cccc] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-[#006060] transition-colors text-lg sm:text-xl"
       >
@@ -109,3 +109,4 @@ export default function AayushLabsAnnouncement() {
     </>
   );
 }
+
