@@ -13,129 +13,130 @@ const cardData = [
   // Healthcare
   { 
     id: 1, 
-    title: 'Healthcare',
-    description: 'Comprehensive healthcare solutions for your well-being',
+    title: 'Preventive Care & Wellness',
    
-    image: 'https://images.unsplash.com/photo-1505751172876-fa1a2b3f8d1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/download_21.jpg?v=1758280778',
     category: 'Healthcare'
   },
   { 
     id: 2, 
-    title: 'Medical Checkup',
-    description: 'Regular health checkups for early detection',
+    title: 'Medical Conditions & Treatments',
+  
    
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Doctor_measuring_blood_pressure_from_the_patient___Premium_Photo.jpg?v=1758280767',
     category: 'Healthcare'
   },
   { 
     id: 3, 
-    title: 'Emergency Care',
-    description: '24/7 emergency medical services',
-    image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Nutrition & Healthy Living',
+  
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/foodstagram_foodie_foodporn.jpg?v=1758280767',
     category: 'Healthcare'
   },
   { 
     id: 4, 
-    title: 'Pediatric Care',
-    description: 'Specialized healthcare for children',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8b25a84?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Mental Health & Mindfulness',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Why_Prioritizing_Mental_Wellness_Matters_in_Today_s_World_d96e73e7-067a-49a2-a3da-98dcf3552621.jpg?v=1758280766',
     category: 'Healthcare'
   },
   
   // Herbal
   { 
     id: 5, 
-    title: 'Herbal Remedies',
-    description: 'Natural herbal solutions for holistic health',
-    image: 'https://images.unsplash.com/photo-1597318181407-1a67726db345?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Herbal Remedies & Home Care',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/21_Best_Vitamins_for_Mental_Health_Guaranteed.jpg?v=1758281263',
     category: 'Herbal'
   },
   { 
     id: 6, 
-    title: 'Ayurvedic Medicine',
-    description: 'Ancient healing with modern approach',
-    image: 'https://images.unsplash.com/photo-1591343395082-e120087245dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Ayurveda & Traditional Healing',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Dark_Circles_home_remedy.jpg?v=1758281182',
     category: 'Herbal'
   },
   { 
     id: 7, 
-    title: 'Herbal Tea Blends',
-    description: 'Healing teas for wellness',
-    image: 'https://images.unsplash.com/photo-1515827368157-7b3cc3a9105f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Herbal Nutrition & Lifestyle',
+    
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_23.jpg?v=1751981381',
     category: 'Herbal'
   },
   { 
     id: 8, 
-    title: 'Essential Oils',
-    description: 'Pure essential oils for aromatherapy',
-    image: 'https://images.unsplash.com/photo-1582719471384-894eaa114d3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Skin, Hair & Beauty with Herbs',
+  
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_22.jpg?v=1751981382',
     category: 'Herbal'
   },
   
   // Nutraceuticals
   { 
     id: 9, 
-    title: 'Vitamins & Minerals',
-    description: 'Essential nutrients for daily wellness',
-    image: 'https://images.unsplash.com/photo-1607619056574-7ce0e0e5f9f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Nutraceutical Science & Innovation',
+    
+    image: 'https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BLOG_-1.jpg?v=1740834248',
     category: 'Nutraceuticals'
   },
   { 
     id: 10, 
-    title: 'Protein Supplements',
-    description: 'High-quality protein for muscle health',
-    image: 'https://images.unsplash.com/photo-1594824477048-3b3f7d4b3b0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Preventive Health & Immunity',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/TOP_10_BENEFITS_OF_ORGANIC_FOOD_FOR_BETTER_HEALTH.jpg?v=1758281532',
     category: 'Nutraceuticals'
   },
   { 
     id: 11, 
-    title: 'Omega-3 Supplements',
-    description: 'Essential fatty acids for heart health',
-    image: 'https://images.unsplash.com/photo-1625772459865-55d3f4c1c5f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Nutrition, Fitness & Performance',
+    
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/What_role_does_the_Immune_System_play_in_Hypertension.jpg?v=1758281532',
     category: 'Nutraceuticals'
   },
   { 
     id: 12, 
-    title: 'Probiotics',
-    description: 'Support your gut health naturally',
-    image: 'https://images.unsplash.com/photo-1594824477048-3b3f7d4b3b0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Beauty & Wellness from Within',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/01_Cosmetic_Jar_Box_Mock-up_18-04-2025_-_Beauty_Jar_New_mockup_4.png?v=1758281518',
     category: 'Nutraceuticals'
   },
   
   // Doctor Consultation
   { 
     id: 13, 
-    title: 'General Physician',
-    description: 'Expert medical advice at your fingertips',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8b25a84?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'General & Family Health',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Los_cuidados_paliativos_en_la_medicina_familiar.jpg?v=1758281785',
     category: 'Doctor Consultation'
   },
   { 
     id: 14, 
     title: 'Specialist Consultation',
-    description: 'Consult with medical specialists',
-    image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_8.jpg?v=1758111117',
     category: 'Doctor Consultation'
   },
   { 
     id: 15, 
-    title: 'Video Consultation',
-    description: 'Consult doctors online from home',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Online Consultation & Telemedicine',
+  
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Telemedicine_App_Development_Everything_to_get_started_in_2021.jpg?v=1758281785',
     category: 'Doctor Consultation'
   },
   { 
     id: 16, 
-    title: 'Second Opinion',
-    description: 'Get expert second opinions',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Preventive & Regular Checkups',
+   
+    image: ' https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Desktop_banner.jpg?v=1758030425',
+   
     category: 'Doctor Consultation'
   },
   
   // Health Supplements
   { 
     id: 17, 
-    title: 'Multivitamins',
+    title: 'Startup Growth & Innovation',
     description: 'Complete daily nutrition in one tablet',
     image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Health Supplement'
@@ -149,14 +150,14 @@ const cardData = [
   },
   { 
     id: 19, 
-    title: 'Weight Management',
+    title: 'Investment & Growth in Wellness Ecosystem',
     description: 'Support for healthy weight goals',
     image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Health Supplement'
   },
   { 
     id: 20, 
-    title: 'Immunity Boosters',
+    title: 'Focus on Innovation, Technology & Wellness Products',
     description: 'Strengthen your immune system',
     image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
     category: 'Health Supplement'
@@ -165,36 +166,36 @@ const cardData = [
   // Accelerator
   { 
     id: 21, 
-    title: 'Wellness Program',
-    description: '30-day wellness transformation',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Startup Growth & Innovation',
+    
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Room_ideaaaaa.jpg?v=1758282091',
     category: 'Accelerator'
   },
   { 
     id: 22, 
-    title: 'Fitness Challenge',
-    description: '90-day fitness transformation',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Focus on Innovation, Technology & Wellness Products',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Mental_Health_Wearables__Revolutionizing_Self-Care_Discover_the_power_of_mental_health_wearables_These_innovative_devices_are_changing_the_game_in_mental_health_care_and_self-manageme.jpg?v=1758282092',
     category: 'Accelerator'
   },
   { 
     id: 23, 
-    title: 'Nutrition Plan',
-    description: 'Personalized meal plans',
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Investment & Growth in Wellness Ecosystem',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Top_Blue_chip_Mutual_Funds_in_India.jpg?v=1758282091',
     category: 'Accelerator'
   },
   { 
     id: 24, 
-    title: 'Mindfulness Program',
-    description: 'Reduce stress, improve focus',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    title: 'Startup Growth & Innovation',
+   
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Accelerated_Wealth_Building_with_Crypto_Trading.jpg?v=1758282231',
     category: 'Accelerator'
   }
 ];
 
 const AwCard = () => {
-  const categories = ['Healthcare', 'Herbal', 'Nutraceuticals', 'Doctor Consultation', 'Health Supplement', 'Accelerator'];
+  const categories = ['Healthcare', 'Herbal', 'Nutraceuticals', 'Doctor Consultation',  'Accelerator'];
   const [activeFilter, setActiveFilter] = useState(categories[0]);
   const [filteredCards, setFilteredCards] = useState(cardData.filter(card => card.category === categories[0]));
   const [flippedCard, setFlippedCard] = useState(null);
@@ -233,7 +234,7 @@ const AwCard = () => {
     return {
       hidden: { 
         opacity: 0,
-        rotateY: position === 0 ? -90 : position === 2 ? 90 : 0,
+        rotateY: position === 0 || position === 1 ? -90 : 90,
         x: position === 0 ? -100 : position === 2 ? 100 : 0,
         perspective: 1000,
       },
@@ -321,12 +322,12 @@ const AwCard = () => {
                 variants={getCardVariants(index)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: 0.2 }}
-                onClick={(e) => toggleFlip(card.id, e)}
+                viewport={{ once: false, amount: 0.2 }}
+                
                 style={{
                   transformStyle: 'preserve-3d',
                   perspective: '1000px',
-                  cursor: 'pointer',
+                  cursor: 'default',
                 }}
                 whileHover={{ 
                   y: -10,
