@@ -313,12 +313,12 @@ export default function AnimatedSlider() {
         <div className="max-w-[109rem] mx-auto px-4">
           <div className="flex justify-between md:justify-between items-center h-auto">
             <div className="flex items-center">
-              <Link to="/">
+            <Link to="/">
                 <img
                   className="md:h-[4rem] h-[3rem] md:pt-2 md:pb-2"
                   src={isScrolledPastBanner ? "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=1734763399" : "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=1734763399"}
                   alt="logo"
-                />
+                 style ={{width:"160px", height:"10vh"}}/>
               </Link>
             </div>
             <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]" style={{color: isScrolledPastBanner ? "white" : "white"}}>
