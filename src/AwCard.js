@@ -13,7 +13,8 @@ const cardData = [
   // Healthcare
   { 
     id: 1, 
-    title: 'Preventive Care & Wellness',
+    title: 'Full-Body Checkups Made Easy',
+    description: 'Get precise tests & treatments recommendations at your fingertips.',
    
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/download_21.jpg?v=1758280778',
@@ -21,7 +22,8 @@ const cardData = [
   },
   { 
     id: 2, 
-    title: 'Medical Conditions & Treatments',
+    title: ' Get Clear Health Answers',
+    description: 'ook full-body checkups with free home sample collection & online reports.',
   
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Doctor_measuring_blood_pressure_from_the_patient___Premium_Photo.jpg?v=1758280767',
@@ -29,109 +31,127 @@ const cardData = [
   },
   { 
     id: 3, 
-    title: 'Nutrition & Healthy Living',
+    title: 'Track & Improve Your Wellness',
+    description: 'Track your wellness goals with easy, reliable diagnostics.',
   
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/foodstagram_foodie_foodporn.jpg?v=1758280767',
     category: 'Healthcare'
   },
   { 
     id: 4, 
-    title: 'Mental Health & Mindfulness',
+    title: ' Complete Mind-Body Care',
+    description: ' Access holistic health solutions for total well-being.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Why_Prioritizing_Mental_Wellness_Matters_in_Today_s_World_d96e73e7-067a-49a2-a3da-98dcf3552621.jpg?v=1758280766',
     category: 'Healthcare'
   },
   
   // Herbal
+ 
   { 
     id: 5, 
-    title: 'Herbal Remedies & Home Care',
+    title: 'The Herbal Switch',
+    description: 'Enjoy tobacco-free, Ayurvedic pan masala in 3 authentic flavors.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/21_Best_Vitamins_for_Mental_Health_Guaranteed.jpg?v=1758281263',
     category: 'Herbal'
   },
   { 
     id: 6, 
-    title: 'Ayurveda & Traditional Healing',
+    title: 'Upgrade Your Habit',
+    description: 'Crafted with premium herbs like Ashwagandha, Mulethi & Kaunch Beej.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Dark_Circles_home_remedy.jpg?v=1758281182',
     category: 'Herbal'
   },
   { 
     id: 7, 
-    title: 'Herbal Nutrition & Lifestyle',
+    title: 'Powered by Ayurveda',
+    description: 'Beat sugar & spice cravings with herbal alternatives.',
     
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_23.jpg?v=1751981381',
     category: 'Herbal'
   },
   { 
     id: 8, 
-    title: 'Skin, Hair & Beauty with Herbs',
+    title: 'Cravings Under Control',
+    description: 'Satisfy your taste buds without harmful tobacco or supari.',
   
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_22.jpg?v=1751981382',
     category: 'Herbal'
   },
   
   // Nutraceuticals
+
+
   { 
     id: 9, 
-    title: 'Nutraceutical Science & Innovation',
+    title: '  Drift into Dreamy Sleep',
+    description: 'Natural blend to promote restful, non-addictive sleep.',
     
     image: 'https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BLOG_-1.jpg?v=1740834248',
     category: 'Nutraceuticals'
   },
   { 
     id: 10, 
-    title: 'Preventive Health & Immunity',
+    title: 'Wake Up Refreshed',
+    description: 'Reduce stress & improve sleep quality night after night',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/TOP_10_BENEFITS_OF_ORGANIC_FOOD_FOR_BETTER_HEALTH.jpg?v=1758281532',
     category: 'Nutraceuticals'
   },
   { 
     id: 11, 
-    title: 'Nutrition, Fitness & Performance',
-    
+    title: 'Glow From Within',
+    description: 'Supports healthy skin, hair & nails with essential vitamins.',
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/What_role_does_the_Immune_System_play_in_Hypertension.jpg?v=1758281532',
     category: 'Nutraceuticals'
   },
   { 
     id: 12, 
-    title: 'Beauty & Wellness from Within',
+    title: 'Daily Beauty Ritual',
+    description: 'One tasty gummy a day for radiant confidence.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/01_Cosmetic_Jar_Box_Mock-up_18-04-2025_-_Beauty_Jar_New_mockup_4.png?v=1758281518',
     category: 'Nutraceuticals'
   },
-  
+
+
   // Doctor Consultation
   { 
     id: 13, 
-    title: 'General & Family Health',
+    title: 'Expert Doctors, Anytime',
+    description: 'Get trusted advice from qualified doctors online.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Los_cuidados_paliativos_en_la_medicina_familiar.jpg?v=1758281785',
     category: 'Doctor Consultation'
   },
   { 
     id: 14, 
-    title: 'Specialist Consultation',
+    title: 'Personalized Care',
+    description: 'Discuss your symptoms & get the right guidance.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_8.jpg?v=1758111117',
     category: 'Doctor Consultation'
   },
   { 
     id: 15, 
-    title: 'Online Consultation & Telemedicine',
+    title: 'Convenient Consults',
+    description: 'Book video/audio consultations in just a few taps.',
   
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Telemedicine_App_Development_Everything_to_get_started_in_2021.jpg?v=1758281785',
     category: 'Doctor Consultation'
   },
   { 
     id: 16, 
-    title: 'Preventive & Regular Checkups',
+    title: 'Follow-Up Support',
+    description: 'Continuous care for better health outcomes.',
    
     image: ' https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Desktop_banner.jpg?v=1758030425',
    
     category: 'Doctor Consultation'
   },
+
   
   // Health Supplements
   { 
@@ -163,31 +183,37 @@ const cardData = [
     category: 'Health Supplement'
   },
   
+
+
   // Accelerator
   { 
     id: 21, 
-    title: 'Startup Growth & Innovation',
+    title: 'Fostering Startup Growth',
+    description: 'Supporting innovation across wellness & health tech.',
     
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Room_ideaaaaa.jpg?v=1758282091',
     category: 'Accelerator'
   },
   { 
     id: 22, 
-    title: 'Focus on Innovation, Technology & Wellness Products',
+        title: 'Tech-Driven Wellness',
+        description: 'Building future-ready solutions for preventive health.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Mental_Health_Wearables__Revolutionizing_Self-Care_Discover_the_power_of_mental_health_wearables_These_innovative_devices_are_changing_the_game_in_mental_health_care_and_self-manageme.jpg?v=1758282092',
     category: 'Accelerator'
   },
   { 
     id: 23, 
-    title: 'Investment & Growth in Wellness Ecosystem',
+      title: 'Scaling the Ecosystem',
+      description: 'Driving sustainable growth in the wellness industry.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Top_Blue_chip_Mutual_Funds_in_India.jpg?v=1758282091',
     category: 'Accelerator'
   },
   { 
     id: 24, 
-    title: 'Startup Growth & Innovation',
+    title: 'Shaping the Future of Wellness',
+    description: 'Driving breakthroughs that redefine health & wellbeing for tomorrow.',
    
     image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Accelerated_Wealth_Building_with_Crypto_Trading.jpg?v=1758282231',
     category: 'Accelerator'
