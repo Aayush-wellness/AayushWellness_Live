@@ -55,7 +55,7 @@ export default function AayushLabsAnnouncement() {
   </div>
 </div>
       {/* Announcement Text Section */}
-      <div className="max-w-4xl mx-auto px-2 sm:px-4 py-6 sm:py-8 flex flex-col items-center justify-center">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8 flex flex-col items-center justify-center">
         <div className="text-center">
           <h2 className="text-[#33cccc] text-xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
             New Delhi, September 3rd, 2025
@@ -105,8 +105,19 @@ export default function AayushLabsAnnouncement() {
           );
         })}
       </div>
+
+      {/* Book Your Test Now Button */}
+      <div className="flex justify-center my-10">
+        <a
+          href="https://www.aayushlabs.com/book-test" // Replace with actual booking link
+          className="inline-flex items-center bg-[#33cccc] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-[#006060] transition-colors text-lg sm:text-xl"
+        >
+          Book Your Test Now
+        </a>
+      </div>
       <NewFooter />
     </>
   );
 }
+
 
