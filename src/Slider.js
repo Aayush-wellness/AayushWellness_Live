@@ -8,8 +8,54 @@ import searchIcon from "./images/search-gray.svg";
 import Hls from "hls.js";
 
 const bannerData = [
-  {
-    id: 1,
+
+  // {
+  //   id: 2,
+  //   type: "banner",
+  //   image: {
+  //     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Reales_Banner_23-09-2025.jpg?v=1758627170",
+  //     mobile: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg"
+  //   },
+  //   title: "Expert Medical Consultation",
+  //   description: "Connect with our team of experienced healthcare professionals",
+  //   buttonText: "Book Now",
+  //   path: "/article-consultation"
+  // },
+
+
+  //  {
+  //   id: 1,
+  //   type: "banner",
+  //   image: {
+  //     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Realese_02_23-09-2025.jpg?v=1758627170",
+  //     mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Realese_02_23-09-2025.jpg?v=1758627170"
+  //   },
+  //   title: "Redefining India's Healthcare Landscape",
+  //   description: "Aayush Wellness Limited has partnered with Healthrashi Nextgen India Ltd to expand healthcare services, enhance accessibility, and deliver better outcomes across India.",
+  //   buttonText: "Read More",
+  //   path: "/article-health-rashi"
+
+  
+    
+  // },
+
+   {
+    id: 2,
+    type: "banner",
+    image: {
+      desktop: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
+      mobile: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_1dce2cf9-a91f-4be2-8c9a-fbb3f6a72c8d.jpg?v=1758634995"
+
+     
+    },
+    title: "Instant Online Doctor Consultation",
+    description: "Sudden health issues? Connect with certified doctors securely and affordably from home, anywhere in India.",
+    buttonText: "Read More",
+    path: "/article-consultation"
+    
+  },
+    {
+    id: 3,
     type: "banner",
     image: {
       desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
@@ -21,24 +67,12 @@ const bannerData = [
     path: "/aayush-labs-announcement"
     
   },
-  // {
-  //   id: 2,
-  //   type: "banner",
-  //   image: {
-  //     desktop: "https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg",
-  //     mobile: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg"
-  //   },
-  //   title: "Expert Medical Consultation",
-  //   description: "Connect with our team of experienced healthcare professionals",
-  //   buttonText: "Book Now",
-  //   path: "/consultation"
-  // },
  {
   id: 3,
   type: "video",
   thumbnail: {
-    desktop: "",
-    mobile: ""
+    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
+    mobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4"
   },
   videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
   videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", // <-- add this line
