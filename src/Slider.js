@@ -40,7 +40,7 @@ const bannerData = [
   // },
 
    {
-    id: 2,
+    id: 1,
     type: "banner",
     image: {
       desktop: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
@@ -55,7 +55,7 @@ const bannerData = [
     
   },
     {
-    id: 3,
+    id: 2,
     type: "banner",
     image: {
       desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
