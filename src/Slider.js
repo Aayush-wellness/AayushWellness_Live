@@ -28,10 +28,8 @@ const bannerData = [
     id: 2,
     type: "banner",
     image: {
-      desktop: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
-      mobile: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_1dce2cf9-a91f-4be2-8c9a-fbb3f6a72c8d.jpg?v=1758634995"
-
-     
+      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
+      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_1dce2cf9-a91f-4be2-8c9a-fbb3f6a72c8d.jpg?v=1758634995"
     },
     title: "Instant Online Doctor Consultation",
     description: "Sudden health issues? Connect with certified doctors securely and affordably from home, anywhere in India.",
@@ -60,7 +58,7 @@ const bannerData = [
     mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869"
   },
   videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
-  videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", // <-- add this line
+  videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", 
   title: "A New Era of Healthcare",
   description: "We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness empowering individuals towards lifelong well-being.",
 },
