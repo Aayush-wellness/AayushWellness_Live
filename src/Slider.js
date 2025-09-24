@@ -72,7 +72,7 @@ const bannerData = [
   type: "video",
   thumbnail: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
-    mobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4"
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869"
   },
   videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
   videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", // <-- add this line
