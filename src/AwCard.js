@@ -23,10 +23,10 @@ const cardData = [
   { 
     id: 2, 
     title: ' Get Clear Health Answers',
-    description: 'ook full-body checkups with free home sample collection & online reports.',
+    description: 'Book full-body checkups with free home sample collection & online reports.',
   
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Doctor_measuring_blood_pressure_from_the_patient___Premium_Photo.jpg?v=1758280767',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_w1wzlow1wzlow1wz.png?v=1758715400',
     category: 'Healthcare'
   },
   { 
@@ -34,7 +34,7 @@ const cardData = [
     title: 'Track & Improve Your Wellness',
     description: 'Track your wellness goals with easy, reliable diagnostics.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/foodstagram_foodie_foodporn.jpg?v=1758280767',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_174517.png?v=1758716191',
     category: 'Healthcare'
   },
   { 
@@ -42,7 +42,7 @@ const cardData = [
     title: ' Complete Mind-Body Care',
     description: ' Access holistic health solutions for total well-being.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Why_Prioritizing_Mental_Wellness_Matters_in_Today_s_World_d96e73e7-067a-49a2-a3da-98dcf3552621.jpg?v=1758280766',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_174532.png?v=1758716191',
     category: 'Healthcare'
   },
   
@@ -53,7 +53,7 @@ const cardData = [
     title: 'The Herbal Switch',
     description: 'Enjoy tobacco-free, Ayurvedic pan masala in 3 authentic flavors.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/21_Best_Vitamins_for_Mental_Health_Guaranteed.jpg?v=1758281263',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_cm0cu3cm0cu3cm0c.png?v=1758712968',
     category: 'Herbal'
   },
   { 
@@ -61,7 +61,7 @@ const cardData = [
     title: 'Upgrade Your Habit',
     description: 'Crafted with premium herbs like Ashwagandha, Mulethi & Kaunch Beej.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Dark_Circles_home_remedy.jpg?v=1758281182',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_165339.png?v=1758713260',
     category: 'Herbal'
   },
   { 
@@ -69,7 +69,7 @@ const cardData = [
     title: 'Powered by Ayurveda',
     description: 'Beat sugar & spice cravings with herbal alternatives.',
     
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_23.jpg?v=1751981381',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_ataxsnataxsnatax.png?v=1758713967',
     category: 'Herbal'
   },
   { 
@@ -77,7 +77,7 @@ const cardData = [
     title: 'Cravings Under Control',
     description: 'Satisfy your taste buds without harmful tobacco or supari.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Blog_22.jpg?v=1751981382',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_nyapjcnyapjcnyap_4977d34b-ffa4-4745-b599-c75d1972cb92.png?v=1758714344',
     category: 'Herbal'
   },
   
@@ -89,7 +89,7 @@ const cardData = [
     title: '  Drift into Dreamy Sleep',
     description: 'Natural blend to promote restful, non-addictive sleep.',
     
-    image: 'https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BLOG_-1.jpg?v=1740834248',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_171957.png?v=1758714615',
     category: 'Nutraceuticals'
   },
   { 
@@ -97,14 +97,14 @@ const cardData = [
     title: 'Wake Up Refreshed',
     description: 'Reduce stress & improve sleep quality night after night',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/TOP_10_BENEFITS_OF_ORGANIC_FOOD_FOR_BETTER_HEALTH.jpg?v=1758281532',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/MORNING_SNACK_8.png?v=1758714851',
     category: 'Nutraceuticals'
   },
   { 
     id: 11, 
     title: 'Glow From Within',
     description: 'Supports healthy skin, hair & nails with essential vitamins.',
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/What_role_does_the_Immune_System_play_in_Hypertension.jpg?v=1758281532',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_b0o4jrb0o4jrb0o4.png?v=1758713965',
     category: 'Nutraceuticals'
   },
   { 
@@ -112,7 +112,7 @@ const cardData = [
     title: 'Daily Beauty Ritual',
     description: 'One tasty gummy a day for radiant confidence.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/01_Cosmetic_Jar_Box_Mock-up_18-04-2025_-_Beauty_Jar_New_mockup_4.png?v=1758281518',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_165618.png?v=1758713260',
     category: 'Nutraceuticals'
   },
 
@@ -123,7 +123,7 @@ const cardData = [
     title: 'Expert Doctors, Anytime',
     description: 'Get trusted advice from qualified doctors online.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Los_cuidados_paliativos_en_la_medicina_familiar.jpg?v=1758281785',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_9ine9u9ine9u9ine.png?v=1758713966',
     category: 'Doctor Consultation'
   },
   { 
@@ -131,7 +131,7 @@ const cardData = [
     title: 'Personalized Care',
     description: 'Discuss your symptoms & get the right guidance.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_8.jpg?v=1758111117',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_174555.png?v=1758716191',
     category: 'Doctor Consultation'
   },
   { 
@@ -139,7 +139,7 @@ const cardData = [
     title: 'Convenient Consults',
     description: 'Book video/audio consultations in just a few taps.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Telemedicine_App_Development_Everything_to_get_started_in_2021.jpg?v=1758281785',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4o8rr14o8rr14o8r.png?v=1758713967',
     category: 'Doctor Consultation'
   },
   { 
@@ -147,7 +147,7 @@ const cardData = [
     title: 'Follow-Up Support',
     description: 'Continuous care for better health outcomes.',
    
-    image: ' https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Desktop_banner.jpg?v=1758030425',
+    image: ' https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_9vo32n9vo32n9vo3.png?v=1758713966',
    
     category: 'Doctor Consultation'
   },
@@ -158,7 +158,7 @@ const cardData = [
     id: 17, 
     title: 'Startup Growth & Innovation',
     description: 'Complete daily nutrition in one tablet',
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/12.png?v=1758713967',
     category: 'Health Supplement'
   },
   { 
@@ -191,7 +191,7 @@ const cardData = [
     title: 'Fostering Startup Growth',
     description: 'Supporting innovation across wellness & health tech.',
     
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Room_ideaaaaa.jpg?v=1758282091',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/12.png?v=1758713967',
     category: 'Accelerator'
   },
   { 
@@ -207,7 +207,7 @@ const cardData = [
       title: 'Scaling the Ecosystem',
       description: 'Driving sustainable growth in the wellness industry.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Top_Blue_chip_Mutual_Funds_in_India.jpg?v=1758282091',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_mmmdx8mmmdx8mmmd.png?v=1758713966',
     category: 'Accelerator'
   },
   { 
@@ -215,7 +215,7 @@ const cardData = [
     title: 'Shaping the Future of Wellness',
     description: 'Driving breakthroughs that redefine health & wellbeing for tomorrow.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Accelerated_Wealth_Building_with_Crypto_Trading.jpg?v=1758282231',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_41etrv41etrv41et.png?v=1758713966',
     category: 'Accelerator'
   }
 ];
