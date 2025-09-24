@@ -17,7 +17,7 @@ const cardData = [
     description: 'Get precise tests & treatments recommendations at your fingertips.',
    
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/download_21.jpg?v=1758280778',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_2.png?v=1758719275',
     category: 'Healthcare'
   },
   { 
@@ -53,7 +53,7 @@ const cardData = [
     title: 'The Herbal Switch',
     description: 'Enjoy tobacco-free, Ayurvedic pan masala in 3 authentic flavors.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_cm0cu3cm0cu3cm0c.png?v=1758712968',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/5..png?v=1758719275',
     category: 'Herbal'
   },
   { 
@@ -61,7 +61,7 @@ const cardData = [
     title: 'Upgrade Your Habit',
     description: 'Crafted with premium herbs like Ashwagandha, Mulethi & Kaunch Beej.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_165339.png?v=1758713260',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/6..png?v=1758719275',
     category: 'Herbal'
   },
   { 
@@ -77,7 +77,7 @@ const cardData = [
     title: 'Cravings Under Control',
     description: 'Satisfy your taste buds without harmful tobacco or supari.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_nyapjcnyapjcnyap_4977d34b-ffa4-4745-b599-c75d1972cb92.png?v=1758714344',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/8..png?v=1758719276',
     category: 'Herbal'
   },
   
@@ -89,7 +89,7 @@ const cardData = [
     title: '  Drift into Dreamy Sleep',
     description: 'Natural blend to promote restful, non-addictive sleep.',
     
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_171957.png?v=1758714615',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/9..png?v=1758719275',
     category: 'Nutraceuticals'
   },
   { 
@@ -97,14 +97,14 @@ const cardData = [
     title: 'Wake Up Refreshed',
     description: 'Reduce stress & improve sleep quality night after night',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/MORNING_SNACK_8.png?v=1758714851',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/10..png?v=1758719275',
     category: 'Nutraceuticals'
   },
   { 
     id: 11, 
     title: 'Glow From Within',
     description: 'Supports healthy skin, hair & nails with essential vitamins.',
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_b0o4jrb0o4jrb0o4.png?v=1758713965',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/11..png?v=1758719275',
     category: 'Nutraceuticals'
   },
   { 
@@ -123,7 +123,7 @@ const cardData = [
     title: 'Expert Doctors, Anytime',
     description: 'Get trusted advice from qualified doctors online.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_9ine9u9ine9u9ine.png?v=1758713966',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/13..png?v=1758719275',
     category: 'Doctor Consultation'
   },
   { 
@@ -139,7 +139,7 @@ const cardData = [
     title: 'Convenient Consults',
     description: 'Book video/audio consultations in just a few taps.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4o8rr14o8rr14o8r.png?v=1758713967',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/15..png?v=1758719275',
     category: 'Doctor Consultation'
   },
   { 
@@ -158,7 +158,7 @@ const cardData = [
     id: 17, 
     title: 'Startup Growth & Innovation',
     description: 'Complete daily nutrition in one tablet',
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/12.png?v=1758713967',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/17..png?v=1758719275',
     category: 'Health Supplement'
   },
   { 
@@ -191,7 +191,7 @@ const cardData = [
     title: 'Fostering Startup Growth',
     description: 'Supporting innovation across wellness & health tech.',
     
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/12.png?v=1758713967',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/16..png?v=1758719276',
     category: 'Accelerator'
   },
   { 
@@ -199,7 +199,7 @@ const cardData = [
         title: 'Tech-Driven Wellness',
         description: 'Building future-ready solutions for preventive health.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Mental_Health_Wearables__Revolutionizing_Self-Care_Discover_the_power_of_mental_health_wearables_These_innovative_devices_are_changing_the_game_in_mental_health_care_and_self-manageme.jpg?v=1758282092',
+    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/17..png?v=1758719275',
     category: 'Accelerator'
   },
   { 
