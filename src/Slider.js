@@ -9,38 +9,23 @@ import Hls from "hls.js";
 
 const bannerData = [
 
-  // {
-  //   id: 2,
-  //   type: "banner",
-  //   image: {
-  //     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Reales_Banner_23-09-2025.jpg?v=1758627170",
-  //     mobile: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg"
-  //   },
-  //   title: "Expert Medical Consultation",
-  //   description: "Connect with our team of experienced healthcare professionals",
-  //   buttonText: "Book Now",
-  //   path: "/article-consultation"
-  // },
 
-
-  //  {
-  //   id: 1,
-  //   type: "banner",
-  //   image: {
-  //     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Realese_02_23-09-2025.jpg?v=1758627170",
-  //     mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Realese_02_23-09-2025.jpg?v=1758627170"
-  //   },
-  //   title: "Redefining India's Healthcare Landscape",
-  //   description: "Aayush Wellness Limited has partnered with Healthrashi Nextgen India Ltd to expand healthcare services, enhance accessibility, and deliver better outcomes across India.",
-  //   buttonText: "Read More",
-  //   path: "/article-health-rashi"
-
+{
+  id: 1,
+  type: "banner",
+  image: {
+    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_10.jpg?v=1758695447",
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Mobile_view_3.jpg?v=1758695447"
+  },
+ 
+  description: "Aayush Wellness Limited has partnered with Healthrashi Nextgen India Ltd to expand healthcare services, enhance accessibility, and deliver better outcomes across India.",
+ buttonText: "Read More",
+  path: "/article-health-rashi"
+},
   
-    
-  // },
 
    {
-    id: 1,
+    id: 2,
     type: "banner",
     image: {
       desktop: " https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
@@ -55,7 +40,7 @@ const bannerData = [
     
   },
     {
-    id: 2,
+    id: 3,
     type: "banner",
     image: {
       desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
@@ -68,7 +53,7 @@ const bannerData = [
     
   },
  {
-  id: 3,
+  id: 4,
   type: "video",
   thumbnail: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
