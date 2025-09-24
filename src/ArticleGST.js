@@ -53,12 +53,13 @@ export default function ArticleGST() { // Changed component name to ArticleGST
       Ignite Momentum in India’s USD 370 Billion Healthcare Sector.
     </p>
     <br></br>
-     {/* <a
-        href="https://www.aayushlabs.com/book-test"
+     <a
+        href="https://www.bseindia.com/xml-data/corpfiling/AttachLive/e9f32b37-9d9c-45d1-bfa6-7c05ea224178.pdf"
+        download
         className="inline-flex items-center bg-[#33cccc] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-[#006060] transition-colors text-lg sm:text-xl"
       >
-        Book Your Online Consultation
-      </a> */}
+        View Press Release
+      </a>
   </div>
 </div>
       {/* Announcement Text Section */}
@@ -129,4 +130,5 @@ export default function ArticleGST() { // Changed component name to ArticleGST
     </>
   );
 }
+
 
