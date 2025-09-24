@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./HeroSection.css"
 import DecryptedText from './DecryptedText'
 import BlurText from './BlurText'
 
 function HeroSection() {
+  const images = [
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_1i3l511i3l511i3l.png?v=1758699101",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_i88zwpi88zwpi88z.png?v=1758699638",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_1i3l511i3l511i3l.png?v=1758699101",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_hstobthstobthsto.png?v=1758699514",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_6mywpr6mywpr6myw.png?v=1758699101",
+    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [images.length]);
+
+  const currentImage = images[currentImageIndex];
+
   return (
     <div class="Block_container__Nv4cD Block_isCream__VRtaM TextMedia_container__1OeME TextMedia_isCream__1R3ST snipcss-6nyWs blocksb !bg-[#f9f9f9]">
     <div>
@@ -59,8 +82,8 @@ function HeroSection() {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z" fill="currentColor"></path>
                         </svg></a></div>
             </div>
-            <div class="TextMedia_mediaWrapper__e1HP_ style-POjkF" id="style-POjkF">
-                <div><img alt="" loading="lazy" width="1528" height="1146" decoding="async" data-nimg="1" class="TextMedia_media__OGUty style-xcQ9s" src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/our_story_collage_1.jpg?v=1740462296" id="style-xcQ9s"/></div>
+            <div class="TextMedia_mediaWrapper__e1HP_ style-POjkF" id="style-POjkF" style={{backgroundImage: `url('${currentImage}')`}}>
+                <div><img alt="" loading="lazy" width="1528" height="1146" decoding="async" data-nimg="1" class="TextMedia_media__OGUty style-xcQ9s" src={currentImage} id="style-xcQ9s"/></div>
             </div>
         </div>
     </div>
