@@ -1047,7 +1047,7 @@ export default function AnimatedSlider() {
           <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white-700 mb-4 sm:mb-6 leading-tight" style={{ color: 'white' }}>
             {currentSlide.title}
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-[#33cccc] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-[white] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed">
             {currentSlide.description}
           </p>
           {currentSlide.path ? (
