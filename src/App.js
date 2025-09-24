@@ -17,6 +17,10 @@ import ReleaseCMS from "./ReleaseCMS";
 import InitializeCMS from "./InitializeCMS";
 import AdminLogin from "./AdminLogin";
 import AayushLabsAnnouncement from "./AayushLabsAnnouncement";
+import Articleconsultation from "./Articleconsultation";
+import ArticleHealthRashi from "./ArticleHealthRashi";
+import ArticleGST from "./ArticleGST";
+
 
 // CMS Components
 const BlogCMS = lazy(() => import("./BlogCMS"));
@@ -188,6 +192,9 @@ const AnimatedRoutes = () => {
         <Route path="sustainability/lifecycle" element={<PageTransition><LifeCycle/></PageTransition>} />
         <Route path="adminpage" element={<PageTransition><AdminPage/></PageTransition>} />
    <Route path="/aayush-labs-announcement" element={<AayushLabsAnnouncement />} />
+    <Route path="/article-consultation" element={<Articleconsultation />} />
+          <Route path="/article-health-rashi" element={<ArticleHealthRashi />} />
+           <Route path="/article-gst" element={<ArticleGST />} />
         <Route path="*" element={<PageTransition><ErrorPage /></PageTransition>} />
         
 
