@@ -9,9 +9,26 @@ import Hls from "hls.js";
 
 const bannerData = [
 
+  
+  {
+    id: 1,
+    type: "banner",
+    image: {
+      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease_GST_1.jpg?v=1758696048",
+      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/GST_Banner_1_Mobile_2.jpg?v=1758708926"
+    },
+    title: "Next-Gen GST: Boost for preventive healthcare.",
+    description: "Making healthcare more affordable and accessible for all Indians.",
+    buttonText: "Read More",
+    path: "/article-gst"
+
+  
+    
+  },
+
 
 {
-  id: 1,
+  id: 2,
   type: "banner",
   image: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_10.jpg?v=1758695447",
@@ -25,7 +42,7 @@ const bannerData = [
   
 
    {
-    id: 2,
+    id: 3,
     type: "banner",
     image: {
       desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
@@ -38,7 +55,7 @@ const bannerData = [
     
   },
     {
-    id: 3,
+    id: 4,
     type: "banner",
     image: {
       desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
@@ -51,7 +68,7 @@ const bannerData = [
     
   },
  {
-  id: 4,
+  id: 5,
   type: "video",
   thumbnail: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
