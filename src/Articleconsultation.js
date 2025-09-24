@@ -33,9 +33,9 @@ export default function AayushLabsAnnouncement() {
     {/* Responsive Full Screen Banner */}
 <div className="relative w-full h-[50vh] sm:h-[70vh] md:h-screen overflow-hidden mb-10" style={{ marginTop: "90px" }}>
   <picture>
-    <source media="(max-width: 640px)" srcSet="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_1dce2cf9-a91f-4be2-8c9a-fbb3f6a72c8d.jpg?v=1758634995" />
+    <source media="(max-width: 640px)" srcSet="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_u3313su3313su331.png?v=1758696467" />
     <img
-      src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170"
+      src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_u3313su3313su331.png?v=1758696467"
       alt="Aayush Labs Banner"
       className="w-full h-full object-cover brightness-75"
     />
