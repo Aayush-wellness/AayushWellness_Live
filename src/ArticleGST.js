@@ -11,7 +11,7 @@ const sections = [
   },
   {
     title: "Supporting a Healthier Nation & Affordable Care",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_yaks63yaks63yaks.png?v=1758709274", // Reusing image, replace with relevant image if available
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/No_GST_hike_for_textile_products_Council_decides_to_hold_on_12_rise.jpg?v=1758716936", // Reusing image, replace with relevant image if available
     content: `These reforms strongly support Aayush Wellness’s long-term goal of building a healthier nation. The change encourages citizens to adopt preventive practices focused on nutrition, fitness, and wellness, helping to reduce lifestyle-related diseases and promote sustainable health outcomes for the population.
 
 For Indian families, healthcare costs have long been an urgent concern. By adjusting its pricing structure according to the new policy framework, Aayush Wellness is helping to reduce household expenses while also increasing access to preventive care. This initiative ensures that consumers can choose affordable options without sacrificing quality or reliability.`
@@ -25,7 +25,7 @@ For Indian families, healthcare costs have long been an urgent concern. By adjus
   },
   {
     title: "Expanding Healthcare Access & Impact",
-    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_3pmvvd3pmvvd3pmv.png?v=1758709481", // Reusing image, replace with relevant image if available
+    image: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/How_to_Keep_Your_New_Year_s_Resolutions.jpg?v=1758716936", // Reusing image, replace with relevant image if available
     content: `Aayush Wellness is actively expanding its portfolio across preventive and proactive healthcare, covering areas such as nutraceuticals, diagnostic solutions, and other accessible healthcare services. With India’s preventive healthcare market surging and nutraceutical demand on a steep upcurve, this reform acts as a catalyst, enabling the company to make healthcare more inclusive and impactful for communities across India.
 
 About Aayush Wellness Limited:
@@ -129,3 +129,4 @@ export default function ArticleGST() { // Changed component name to ArticleGST
     </>
   );
 }
+
