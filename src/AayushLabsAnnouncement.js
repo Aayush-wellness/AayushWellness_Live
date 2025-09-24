@@ -31,7 +31,7 @@ export default function AayushLabsAnnouncement() {
     <>
       <Header />
     {/* Responsive Full Screen Banner */}
-<div className="relative w-full h-[50vh] sm:h-[70vh] md:h-screen overflow-hidden mb-10" style={{ marginTop: "90px" }}>
+<div className="relative w-full h-[50vh] sm:h-[70vh] md:h-screen overflow-hidden mb-10" style={{ marginTop: "80px" }}>
   <picture>
     <source media="(max-width: 640px)" srcSet="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_2.jpg?v=1758104854" />
     <img
@@ -119,5 +119,6 @@ export default function AayushLabsAnnouncement() {
     </>
   );
 }
+
 
 
