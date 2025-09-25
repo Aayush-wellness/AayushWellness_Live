@@ -455,7 +455,7 @@ const ProductPageSleep = () => {
               </div>
 
               {/* Certification logos */}
-              <div className="flex flex-wrap justify-between mt-8">
+              <div className="flex flex-wrap justify-between mt-8" style={{display: "none"}} >
                 <img
                   src="/placeholder.svg?height=40&width=40"
                   alt="Non-GMO Verified"
