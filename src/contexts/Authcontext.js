@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     login,
     logout,
-    isAdmin: currentUser?.email === 'marketing@aayushwellness.com' // Define admin email
+    isAdmin: !!currentUser // Any logged-in user is considered an admin for CMS access
   };
 
   console.log('AuthContext: Current state', {
