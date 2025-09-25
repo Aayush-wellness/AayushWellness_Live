@@ -14,30 +14,20 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Validate admin email
-    if (email !== 'marketing@aayushwellness.com') {
-      toast.error('Access denied. Only admin email is allowed.');
-      return;
-    }
-    
     try {
       setLoading(true);
       console.log('Attempting Firebase login...');
+      console.log('Login attempt with email:', email);
+      console.log('Login attempt with password:', password ? '[PASSWORD_ENTERED]' : '[NO_PASSWORD]'); // Log password safely
       const userCredential = await login(email, password);
       const user = userCredential.user;
       console.log('Login successful:', user);
       
-      // Check if user is admin
-      if (user.email === 'marketing@aayushwellness.com') {
-        toast.success('Login successful! Redirecting to admin panel...');
-        // Small delay to ensure auth state is updated
-        setTimeout(() => {
-          navigate('/admin/blog-cms');
-        }, 1000);
-      } else {
-        await logout();
-        toast.error('Access denied. Admin privileges required.');
-      }
+      toast.success('Login successful! Redirecting to admin panel...');
+      // Small delay to ensure auth state is updated
+      setTimeout(() => {
+        navigate('/admin/blog-cms');
+      }, 1000);
     } catch (error) {
       console.error('Login error:', error);
       console.error('Error code:', error.code);
