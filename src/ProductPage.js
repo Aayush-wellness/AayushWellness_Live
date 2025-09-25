@@ -470,7 +470,7 @@ const ProducCarousal = () => {
               </div>
 
               {/* Certification logos */}
-              <div className="flex flex-wrap justify-between mt-8">
+              <div className="flex flex-wrap justify-between mt-8" style={{display: "none"}}>
                 <img src="/placeholder.svg?height=40&width=40" alt="Non-GMO Verified" className="h-10" />
                 <img src="/placeholder.svg?height=40&width=40" alt="Certified" className="h-10" />
                 <img src="/placeholder.svg?height=40&width=40" alt="Carbon Free" className="h-10" />
