@@ -52,7 +52,7 @@ const StackImage = () => {
                 src={
                   activeSectionIndex === 0
                     ? "https://cdn.shopify.com/videos/c/o/v/adf5809e8ccd460cbbf92b9c9de4103c.mp4"
-                    : "https://cdn.shopify.com/videos/c/o/v/9ae83fdffa0e4715b186839c452deadd.mp4"
+                    : "https://cdn.shopify.com/videos/c/o/v/7041c2ff94d74cc384a6b813f3227a42.mp4"
                 }
                 id="style-mKRVT"
               />
