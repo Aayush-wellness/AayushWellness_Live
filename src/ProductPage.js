@@ -280,7 +280,7 @@ const ProducCarousal = () => {
     <>
       <Header />
       <section className="relative bg-white md:pt-[90px]">
-        <div ref={containerRef} className="container mx-auto px-4" style={{ maxWidth: "1903px", width: "100%" }}>
+        <div ref={containerRef} className="container mx-auto px-4" style={{ maxWidth: "1903px", width: "100%", marginTop: "90px" }}>
           {/* Mobile View - Swiper Carousel */}
           <div className="block md:hidden mb-8 pt-6">
             <Swiper slidesPerView={1.5} spaceBetween={10} className="w-full">
