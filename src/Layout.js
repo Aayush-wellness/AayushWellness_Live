@@ -37,9 +37,7 @@ function Layout() {
       <Sliding />     
       <CleanEnergyHero/>
       <StackImage />
-      <StackImageMobile/>
-      <StackImageMobile2/>
-      <StackImageMobile3/>
+   
 
         
       <AwCard/>
