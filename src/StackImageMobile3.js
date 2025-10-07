@@ -55,7 +55,7 @@ function StackImageMobile() {
                decoding="async"
                data-nimg="1"
                className="StackedContent_media__haQuf style-9BbQF image-transition"
-               src="https://cdn.shopify.com/videos/c/o/v/120abaf722cf4d77ae37d7626603f20a.mp4"
+               src="https://cdn.shopify.com/videos/c/o/v/813b7c6a2fb54179886893f2b4086b5f.mp4"
                id="style-9BbQF"
              />
            </div>
