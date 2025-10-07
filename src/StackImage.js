@@ -1,40 +1,44 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./Stackimage.css";
-import BlurText from "./BlurText";
-
-
-
-const StackImage = () => {
-    const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+ import React from 'react'
+ import BlurText from './BlurText'
+ 
+ function StackImageMobile() {
+   return (
+     <>
+     <div className=' bg-[white]  md:hidden p-5'>
+     <div className=' pt-[15px]'>
+     <BlurText
+  text="SLEEP PEACEFULLY, GLOW NATURALLY"
+  delay={150}
+  animateBy="words"
+  direction="top"
   
-    const sectionRefs = useRef([]);
-  
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const index = parseInt(entry.target.dataset.sectionIndex);
-              setActiveSectionIndex(index);
-            }
-          });
-        },
-        { threshold: 0.5 } // Trigger when 50% of the section is visible
-      );  
-    
-  
-      sectionRefs.current.forEach((section) => {
-        if (section) observer.observe(section);
-      });
-  
-      return () => observer.disconnect();
-    }, []);
-  return (
-    
-    <div className={`Block_container__Nv4cD Block_isCream__VRtaMm StackedContent_container__DfJEU snipcss-YBdoL blocks hidden md:block  ${activeSectionIndex === 0 ? "active-background" : ""}`}>
-      <div className="Container_container__NvvWg StackedContent_wrapper__2JCtc snipcss0-1-1-2 style-ee6GF" id="style-ee6GF">
-        <div className="StackedContent_mediaContainer__5BNSM">
-          <div className="StackedContent_mediaWrapper___gRyP StackedContent_isActive__U4mo3">
+  className="md:text-6xl mb-8 text-[25px]  font-bold text-[#000]"
+/>
+     </div>
+     <p className=" pt-[15px]  text-[20px]" style={{fontFamily: "Minionpro"}}>
+         Book health checkups anytime, anywhere with Aayush Labs your trusted online health platform. Enjoy free home sample collection, fast reports, and doctor consultations all from the comfort of your home.
+            <br/>
+            <div style={{fontFamily: "Minionpro"}}><br/><b>Melatonin & Chamomile</b> – Promotes restful sleep & relaxation</div>
+            <div><b> Glutathione & Biotin</b>  – Enhances skin glow & strengthens hair</div>
+            <div><b> Hyaluronic Acid & Collagen </b> – Boosts hydration & skin elasticity</div>
+            </p>
+           
+            <a style={{height:"60px"}}
+              className="BaseButton_baseButton__gki38 BaseButton_isLushGreen__Of4fS BaseButton_hasOutline__IILGk StackedContent_cta__9aF3N"
+              text="Learn more"
+              href="https://aayushlife.com/"
+            >
+              <span className=' text-[12px]' style={{fontFamily: "Minionpro", color: "#33cccc"}}>Explore Gummies</span>
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <div className="StackedContent_mediaWrapper___gRyP   bg-[#f9f3e8] ">
             <div>
               <video
               loop
@@ -48,105 +52,16 @@ const StackImage = () => {
                 height="1644"
                 decoding="async"
                 data-nimg="1"
-                className="StackedContent_media__haQuf style-mKRVT image-transition"
-                src={
-                  activeSectionIndex === 0
-                    ? "https://cdn.shopify.com/videos/c/o/v/adf5809e8ccd460cbbf92b9c9de4103c.mp4"
-                    : "https://cdn.shopify.com/videos/c/o/v/7041c2ff94d74cc384a6b813f3227a42.mp4"
-                }
-                id="style-mKRVT"
-              />
-            </div>
-          </div>
-          <div className="StackedContent_mediaWrapper___gRyP">
-            <div>
-              <img
-                alt=""
-                loading="lazy"
-                width="1528"
-                height="1644"
-                decoding="async"
-                data-nimg="1"
                 className="StackedContent_media__haQuf style-9BbQF image-transition"
-                src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/display_image_for_Panmasala.jpg?v=1739539866"
+                src="https://cdn.shopify.com/videos/c/o/v/120abaf722cf4d77ae37d7626603f20a.mp4"
                 id="style-9BbQF"
               />
             </div>
           </div>
-        </div>
-        <div className="StackedContent_contentWrapper__6MXgH snipcss0-2-2-10">
-          <div ref={(el) => (sectionRefs.current[0] = el)} data-section-index={0} className={`StackedContent_content__QTFkv ${activeSectionIndex === 0 ? "StackedContent_isActive__U4mo3" : ""}`}>
-          <BlurText
-  text="SLEEP PEACEFULLY, GLOW NATURALLY"
-  delay={150}
-  animateBy="words"
-  direction="top"
-  
-  className="md:text-6xl mb-8 text-[25px]  font-bold text-[#000]"  style={{ fontFamily: "ROGBold" }}
-/>
-            <p className="  text-[20px]" style={{ fontFamily: "Minionpro" }}>
-            Wake up refreshed and radiant with our expertly crafted Sleep & Beauty Gummies. Infused with powerful ingredients to support deep sleep and enhance natural beauty from within.
-            <br/>
-            <div><br/><b>Melatonin & Chamomile</b> – Promotes restful sleep & relaxation</div>
-            <div><b> Glutathione & Biotin</b>  – Enhances skin glow & strengthens hair</div>
-            <div><b> Hyaluronic Acid & Collagen </b> – Boosts hydration & skin elasticity</div>
-            </p>
-           
-            <a
-              className="BaseButton_baseButton__gki38 BaseButton_isLushGreen__Of4fS BaseButton_hasOutline__IILGk StackedContent_cta__9aF3N"
-              text="Learn more"
-              href="https://aayushlife.com/"
-            >
-              <span className=" text-[20px] " style={{ fontFamily: "Minionpro", color: "#33cccc" }}>Explore Gummies</span>
-              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-          </div>
-
-          <div ref={(el) => (sectionRefs.current[1] = el)} data-section-index={1} className={`StackedContent_content__QTFkv ${activeSectionIndex === 1 ? "StackedContent_isActive__U4mo3" : ""}`}>
-          <BlurText
-  text="PREMIUM BLEND, AUTHENTIC FLAVOR"
-  delay={150}
-  animateBy="words"
-  direction="top"
-  className={`md:text-6xl mb-8 text-[25px]  font-bold text-black ${activeSectionIndex === 1 ? "active-text" : ""} `}
+     </div>
+    
+     </>
+   )
+ }
  
-/>
-            {/* <h2 className={`StackedContent_title__2FGoE ${isInView ? "active-text" : ""} `}>Built on our leading data platform</h2> */}
-            <p className="  text-[20px]" style={{ fontFamily: "Minionpro" }}>
-            Crafted with the finest ingredients, our Pan Masala delivers an exquisite taste and rich aroma. Experience tradition with every bite, enhanced by a perfect balance of flavors.
-            <br/>
-            <div><br/><b>Authentic Spices </b> – A signature blend for a refreshing taste</div>
-            <div><b>  Premium Ingredients </b>  – Handpicked for superior quality</div>
-            
-            </p>
-            <a
-              className="BaseButton_baseButton__gki38 BaseButton_isLushGreen__Of4fS BaseButton_hasOutline__IILGk StackedContent_cta__9aF3N"
-              text="Learn more"
-              href="https://aayushveda.in/"
-            >
-              <span className=" text-[20px]" style={{ fontFamily: "Minionpro",color: "#33cccc" }}>Discover More</span>
-              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-   
-  );
-};
-
-export default StackImage;
+ export default StackImageMobile
