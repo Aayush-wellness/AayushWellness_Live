@@ -254,7 +254,7 @@ const ProductPageBrain = () => {
         <div
           ref={containerRef}
           className="container mx-auto px-4"
-          style={{ maxWidth: "1903px", width: "100%" }}
+          style={{ maxWidth: "1903px", width: "100%" , marginTop: "90px"}}
         >
           {/* Mobile View - Swiper Carousel */}
           <div className="block md:hidden mb-8 pt-6">
