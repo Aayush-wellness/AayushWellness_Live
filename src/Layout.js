@@ -22,9 +22,7 @@ import "./index.css";
 import SectionTrail from "./SectionTrail";
 import AwCard from "./AwCard";
 import AwCard2 from "./AwCard2";
-import StackImageMobile from "./StackImageMobile";
-import StackImageMobile2 from "./StackImageMobile2";
-import StackImageMobile3 from "./StackImageMobile3";
+
 
 import CircularSlider from "./CircularSlider";
 import CleanEnergyHero from "./CleanEnergyHero";
