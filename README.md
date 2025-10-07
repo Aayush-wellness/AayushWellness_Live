@@ -1,6 +1,7 @@
 #press-cms email:- ayush123@gmail.com
 #press-cms password:- ayush@456
 
+navbar desktop and mobile chnage will happen in the slider.js
 
 # Getting Started with Create React App
 
