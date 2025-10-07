@@ -16,7 +16,7 @@
 />
      </div>
      <p className=" pt-[15px]  text-[20px]" style={{fontFamily: "Minionpro"}}>
-            Wake up refreshed and radiant with our expertly crafted Sleep & Beauty Gummies. Infused with powerful ingredients to support deep sleep and enhance natural beauty from within.
+         Book health checkups anytime, anywhere with Aayush Labs your trusted online health platform. Enjoy free home sample collection, fast reports, and doctor consultations all from the comfort of your home.
             <br/>
             <div style={{fontFamily: "Minionpro"}}><br/><b>Melatonin & Chamomile</b> – Promotes restful sleep & relaxation</div>
             <div><b> Glutathione & Biotin</b>  – Enhances skin glow & strengthens hair</div>
