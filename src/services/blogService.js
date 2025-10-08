@@ -10,7 +10,7 @@ import {
   where,
   serverTimestamp 
 } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db } from '../firebase1';
 
 // Collection name
 const BLOGS_COLLECTION = 'blogs';
