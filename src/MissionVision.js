@@ -169,10 +169,10 @@ function MissionVision() {
       <div className="min-h-screen bg-white">
         <MissionHeader />
 
-        {/* Static Hero Section for Mission & Vision */}
+               {/* Static Hero Section for Mission & Vision */}
         <div 
           className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-cover bg-center flex items-center justify-center text-center"
-          style={{ backgroundImage: "url('https://cdn.shopify.com/s/files/1/0636/5226/6115/files/mission_vision_hero.jpg?v=1758765432')" }} // Replace with a relevant static image
+          style={{ backgroundImage: "url('https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483396/ur6urwkotb4kl7r4twfq_c1ysar.mp4')" }} // Replace with a relevant static image
         >
           <div className="absolute inset-0 z-10" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}></div>
           <div className="relative z-20 text-white max-w-4xl px-4">
