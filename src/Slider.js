@@ -494,7 +494,7 @@ export default function AnimatedSlider() {
                       to="/brain-fuel"
                       className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
-                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel Gummies</span>
+                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel </span>
                       <span className="block text-sm px-4 text-grey-900 text-inherit">
                         Enhances focus, memory, and cognitive function
                       </span>
@@ -866,7 +866,7 @@ export default function AnimatedSlider() {
                       to="/brain-fuel"
                       className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
-                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel Gummies</span>
+                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel </span>
                       <span className="block text-sm px-4 text-grey-900 text-inherit">
                         Enhances focus, memory, and cognitive function
                       </span>
