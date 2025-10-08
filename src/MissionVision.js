@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import NewFooter from "./NewFooter";
+import { useEffect, useState, useRef } from "react"
+import Hls from "hls.js"
+import NewFooter from "./NewFooter"
+import SkeletonLoader from "./SkeletonLoader"
+import MissionHeader from "./MissionHeader"
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Shield, Zap, Leaf } from 'lucide-react';
-import MissionHeader from "./MissionHeader";
+import { CheckCircle2 } from "lucide-react";
 
 function MissionVision() {
-  const [activeSection, setActiveSection] = useState('mission');
+  const [loading, setLoading] = useState(true)
+  const desktopVideoRef = useRef(null)
+  const mobileVideoRef = useRef(null)
+  const [activeSection, setActiveSection] = useState('mission')
+
 
   // Schema.org structured data
   const schemaData = {
@@ -45,6 +51,42 @@ function MissionVision() {
         "https://www.instagram.com/aayushwellness"
       ]
     }]
+  };
+
+
+  // Video URLs
+  const DESKTOP_VIDEO_URL = "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483396/ur6urwkotb4kl7r4twfq_c1ysar.m3u8"
+  const MOBILE_VIDEO_URL = "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483416/eb4kqbvu48fawrrfixap_n648jh.m3u8"
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 200)
+  }, [])
+
+  useEffect(() => {
+    if (!loading && Hls.isSupported()) {
+      if (desktopVideoRef.current) {
+        const hlsDesktop = new Hls()
+        hlsDesktop.loadSource(DESKTOP_VIDEO_URL)
+        hlsDesktop.attachMedia(desktopVideoRef.current)
+      }
+
+      if (mobileVideoRef.current) {
+        const hlsMobile = new Hls()
+        hlsMobile.loadSource(MOBILE_VIDEO_URL)
+        hlsMobile.attachMedia(mobileVideoRef.current)
+      }
+    }
+  }, [loading])
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
   };
 
   const navItems = [
@@ -169,22 +211,78 @@ function MissionVision() {
       <div className="min-h-screen bg-white">
         <MissionHeader />
 
-               {/* Static Hero Section for Mission & Vision */}
-        <div 
-          className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-cover bg-center flex items-center justify-center text-center"
-          style={{ backgroundImage: "url('https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483396/ur6urwkotb4kl7r4twfq_c1ysar.mp4')" }} // Replace with a relevant static image
-        >
-          <div className="absolute inset-0 z-10" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}></div>
-          <div className="relative z-20 text-white max-w-4xl px-4">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ fontFamily: "ROGBold" }}>
-              Our Mission & Vision
-            </h1>
-            <p className="text-lg md:text-xl" style={{ fontFamily: "Minionpro" }}>
-              Driving holistic health through ancient wisdom and modern science.
-            </p>
+
+        
+        {/* Hero Section with Video Background */}
+        <div className="relative h-screen w-full overflow-hidden">
+          {/* Video Background */}
+          <div className="absolute inset-0 z-0">
+            <video
+              ref={desktopVideoRef}
+              className="hidden md:block w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <video
+              ref={mobileVideoRef}
+              className="md:hidden block w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+          </div>
+          
+          {/* Hero Content */}
+          <div className="relative z-20 h-full flex flex-col justify-center px-4 md:px-12 lg:px-24 text-white">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-rogbold">
+                Purpose, Progress, Promise
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl font-medium mb-8 font-minion">
+                Bringing the power of Ayurveda and modern science to your everyday health.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
+                      setActiveSection(item.id);
+                    }}
+                    className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                      activeSection === item.id 
+                        ? 'bg-[#33cccc] text-white' 
+                        : 'bg-white/10 text-white hover:bg-white/20'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+            
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+              <div className="animate-bounce flex flex-col items-center">
+                <span className="text-sm mb-2">Scroll to Explore</span>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 
+    
         {/* Content Sections */}
         {sections.map((section, index) => (
           <motion.section
