@@ -83,7 +83,7 @@ const Homedoctor = () => {
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/homepage_card_1.png?v=1741699969"
+                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/WhatsApp_Image_2025-10-08_at_3.30.38_PM.jpg?v=1759917962"
                   alt="Picture of cards depicting losing weight"
                 />
               </picture>
@@ -114,7 +114,7 @@ Continuous Medical Support
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/homepage_card_med_1_08cf0cff-98ef-4826-8012-9ea2934aa601.png?v=1742033047"
+                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4ywqtl4ywqtl4ywq.png?v=1759918377"
                   alt="Image"                 
                 />
               </picture>
@@ -145,7 +145,7 @@ Continuous Medical Support
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/homepage_doc_image_2.png?v=1741700486"
+                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_3lid8y3lid8y3lid.png?v=1759919017"
                   alt="Image"
                 />
               </picture>
