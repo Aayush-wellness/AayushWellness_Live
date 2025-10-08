@@ -1,16 +1,37 @@
-import { 
-  collection, 
-  addDoc, 
-  getDocs, 
-  doc, 
-  updateDoc, 
-  deleteDoc, 
-  query, 
-  orderBy, 
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  updateDoc,
+  deleteDoc,
+  query,
+  orderBy,
   where,
-  serverTimestamp 
+  serverTimestamp
 } from 'firebase/firestore';
-import { db } from '../firebase';
+// REMOVED: import { db } from '../firebase1';
+
+// NEW: Inline Firebase configuration and initialization for blogService
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getStorage } from 'firebase/storage';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCeMS-TmzsLSju7lmd5UJUivCVxESoChgw",
+  authDomain: "awcorporate-63368.firebaseapp.com",
+  projectId: "awcorporate-63368",
+  storageBucket: "awcorporate-63368.firebasestorage.app",
+  messagingSenderId: "891060270766",
+  appId: "1:891060270766:web:f7fa2c3f029666d9461f3f",
+  measurementId: "G-3BVTJT0MNJ"
+};
+
+const app = initializeApp(firebaseConfig, "blogServiceApp"); // Give a unique name
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
 
 // Collection name
 const BLOGS_COLLECTION = 'blogs';
