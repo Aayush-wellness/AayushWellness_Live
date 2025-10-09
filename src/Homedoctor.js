@@ -114,7 +114,7 @@ Continuous Medical Support
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4ywqtl4ywqtl4ywq.png?v=1759918377"
+                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4ywqtl4ywqtl4ywq-removebg-preview.png?v=1759989222"
                   alt="Image"                 
                 />
               </picture>
@@ -145,7 +145,7 @@ Continuous Medical Support
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_3lid8y3lid8y3lid.png?v=1759919017"
+                  src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_3lid8y3lid8y3lid-removebg-preview.png?v=1759989221"
                   alt="Image"
                 />
               </picture>
