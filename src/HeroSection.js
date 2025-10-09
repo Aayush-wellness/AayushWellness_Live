@@ -4,28 +4,20 @@ import DecryptedText from './DecryptedText'
 import BlurText from './BlurText'
 
 function HeroSection() {
-  const images = [
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_1i3l511i3l511i3l.png?v=1758699101",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_i88zwpi88zwpi88z.png?v=1758699638",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_1i3l511i3l511i3l.png?v=1758699101",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_hstobthstobthsto.png?v=1758699514",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_6mywpr6mywpr6myw.png?v=1758699101",
-    "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_l700cxl700cxl700.png?v=1758699101",
-  ];
+  // Removed rotating hero images; we will render Instagram feed in that space
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  // Dynamically load Elfsight platform script once
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    const existing = document.getElementById('elfsight-platform-script');
+    if (existing) return;
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [images.length]);
-
-  const currentImage = images[currentImageIndex];
+    const script = document.createElement('script');
+    script.id = 'elfsight-platform-script';
+    script.src = 'https://elfsightcdn.com/platform.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div class="Block_container__Nv4cD Block_isCream__VRtaM TextMedia_container__1OeME TextMedia_isCream__1R3ST snipcss-6nyWs blocksb !bg-[#f9f9f9]">
@@ -82,8 +74,9 @@ function HeroSection() {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z" fill="currentColor"></path>
                         </svg></a></div>
             </div>
-            <div class="TextMedia_mediaWrapper__e1HP_ style-POjkF" id="style-POjkF" style={{backgroundImage: `url('${currentImage}')`}}>
-                <div><img alt="" loading="lazy" width="1528" height="1146" decoding="async" data-nimg="1" class="TextMedia_media__OGUty style-xcQ9s" src={currentImage} id="style-xcQ9s"/></div>
+            <div class="TextMedia_mediaWrapper__e1HP_ style-POjkF" id="style-POjkF">
+                {/* Instagram Feed replaces the previous hero image */}
+                <div class="elfsight-app-b9d9e951-bcf2-45ad-b2a1-8f97ee886c05" data-elfsight-app-lazy></div>
             </div>
         </div>
     </div>
