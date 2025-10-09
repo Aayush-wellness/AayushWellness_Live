@@ -123,11 +123,7 @@
   } 
 }     
 
-.TextMedia_mediaWrapper__e1HP_:before { 
-    content: ""; 
-    display: block; 
-    padding-bottom: calc(100% / 1.33);
-} 
+
 
 .TextMedia_eyebrow__y7WFh { 
     font-size: 1.2rem; 
