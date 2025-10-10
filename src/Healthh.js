@@ -9,6 +9,7 @@ import Testimonal from './Testimonal'
 import HNewFooter from './HNewfooter'
 import EarningPotentialSection from './Earningpotential'
 import FormSelector from './Form-selector'
+import Asection8 from './Asection8'
 
 
 const Healthh = () => {
@@ -20,6 +21,11 @@ const Healthh = () => {
     <FormSelector />
     <Specialities/>
     <Service/>
+    <div className = "testing1">
+      <style>background-image =url("https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-10-10_123822.png?v=1760080397")</style>
+    </div>
+    <Asection8/>
+    
      <Blog />
     <Testimonal />
     <EarningPotentialSection/>
