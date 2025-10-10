@@ -416,3 +416,171 @@ svg {
 #style-xcQ9s.style-xcQ9s {  
    color: transparent;  
 }  
+
+#eapps-instagram-feed-1 a,
+#eapps-instagram-feed-popup-1 a {
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+}
+
+#eapps-instagram-feed-1 a:hover,
+#eapps-instagram-feed-popup-1 a:hover {
+    text-decoration: underline;
+}
+
+#eapps-instagram-feed-1 .eapps-instagram-feed-header-user-picture,
+#eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-user-image,
+#eapps-instagram-feed-popup-1 .eapps-instagram-feed-posts-item-user-image {
+    border-radius: 50%;
+}
+
+
+    #eapps-instagram-feed-1 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-header {
+        background: rgb(255, 255, 255);
+    }
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-header-user-picture {
+        box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-header,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-header a {
+        color: rgb(0, 0, 0);
+    }
+
+
+
+    #eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button,
+    #eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button:hover {
+        text-decoration: none;
+        background: rgb(0, 149, 246);
+    }
+
+
+
+    #eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button,
+    #eapps-instagram-feed-1 a.eapps-instagram-feed-header-follow-button:hover {
+        color: rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-template-classic {
+        background: rgb(255, 255, 255);
+    }
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-user-image {
+        box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-content,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-text,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item a,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item a:hover {
+        color: rgb(0, 0, 0);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-content a,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-content a:hover {
+        color: rgb(0, 53, 107);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-overlay .eapps-instagram-feed-posts-item-content,
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-overlay .eapps-instagram-feed-posts-item-text {
+        color: rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-item-overlay {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider-nav-icon {
+        fill: rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-slider-nav {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+
+
+    #eapps-instagram-feed-1 .eapps-instagram-feed-posts-grid-load-more {
+        background: rgb(56, 151, 240);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 {
+        background: rgba(43, 43, 43, 0.9);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item {
+        background: rgb(255, 255, 255);
+    }
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-posts-item-user-image {
+        box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item a,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item a:hover {
+        color: rgb(0, 0, 0);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-text a:not(.eapps-instagram-feed-popup-item-text-author),
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-text a:not(.eapps-instagram-feed-popup-item-text-author):hover,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-comments-item-text a,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-comments-item-text a:hover {
+        color: rgb(0, 53, 105);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item .eapps-instagram-feed-posts-item-user-follow-link a,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item .eapps-instagram-feed-posts-item-user-follow-link a:hover {
+        color: rgb(56, 151, 240);
+    }
+
+
+
+    #eapps-instagram-feed-popup-1 a.eapps-instagram-feed-popup-item-cta-button,
+    #eapps-instagram-feed-popup-1 a.eapps-instagram-feed-popup-item-cta-button:hover {
+        color: rgb(56, 151, 240);
+    }
+
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-cta-highlighted a.eapps-instagram-feed-popup-item-cta-button,
+    #eapps-instagram-feed-popup-1 .eapps-instagram-feed-popup-item-cta-highlighted a.eapps-instagram-feed-popup-item-cta-button:hover {
+        background: rgb(56, 151, 240);
+        color: #fff;
+    }
+
