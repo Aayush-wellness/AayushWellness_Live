@@ -434,6 +434,15 @@ svg {
 #eapps-instagram-feed-popup-1 .eapps-instagram-feed-posts-item-user-image {
     border-radius: 50%;
 }
+/* Hide Elfsight free badge globally */
+.eapps-widget-toolbar,
+.eapps-link,
+a[href*="elfsight.com"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 
 
     #eapps-instagram-feed-1 {
