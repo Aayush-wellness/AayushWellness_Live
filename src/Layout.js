@@ -48,14 +48,14 @@ function Layout() {
       <HeroSection />
        {/* <SectionTrail/>  */}
 
-    <SectionSecond />
+ 
       {/* <SliderThird />  */}
      {/* <SectionSixAbove /> */}
       {/* <SectionFive /> */}
-      <SectionSix /> 
+
    {/* <CircularSlider/>  */}
    <HomeBlog/>
-      <NewsletterSignup />
+ 
       <NewFooter />
       {/* <FooterCopyright /> */}
     </>
