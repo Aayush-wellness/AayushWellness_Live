@@ -113,7 +113,7 @@ export default function AnimatedSlider() {
   return (
     <>
       <nav
-        className="md:text-white text-[rgb(170, 24, 24)]  font-sans"
+        className="md:text-white text-[rgb(170, 24, 24)]  font-sans items-base"
         style={{
           fontFamily: '"Inter", sans-serif',
           fontWeight: "bold",
@@ -131,7 +131,7 @@ export default function AnimatedSlider() {
                 />
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4 text-[#004037] text-[20px] font-[500]">
+<div className="hidden md:flex items-end gap-4 space-x-4 text-[#004037] text-[20px] font-[500]">
               <Link
                 to="/"
                 className=" hover:text-primary/80"
@@ -162,7 +162,7 @@ export default function AnimatedSlider() {
                 </button>
 
                 {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full w-[1110px] h-[250px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
+                <div className="absolute left-[-200px] top-full w-[1110px] h-[490px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
                   {/* Left Side: Title & Description */}
                   <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-gray-900">
@@ -200,6 +200,29 @@ export default function AnimatedSlider() {
                         Our mission is to do something Great
                       </span>
                     </Link>
+
+
+
+<Link
+  to="/healthcare"
+  className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+>
+  <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
+  <span className="block text-sm px-4 text-grey-900 text-inherit">
+    Explore our healthcare initiatives and wellness programs
+  </span>
+</Link>
+
+<Link
+  to="/growth-accelerator"
+  className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+>
+  <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
+  <span className="block text-sm px-4 text-grey-900 text-inherit">
+    Learn how we drive innovation and growth
+  </span>
+</Link>
+
                   </div>
                 </div>
               </div>
@@ -354,13 +377,13 @@ export default function AnimatedSlider() {
                 </div>
               </div> */}
 
-             {/* Our Offerings Tab with Dropdown */}
+             {/* Our Product Tab with Dropdown */}
              <div className="navbar-dropdown relative group ">
                <button
                  className="hover:text-primary/80 flex items-center mt-1"
                  style={{ fontFamily: '"Inter", sans-serif' }}
                >
-                 Our Offerings
+                 Our Product
                  <svg
                    className="w-4 h-4 ml-1"
                    fill="none"
@@ -376,10 +399,10 @@ export default function AnimatedSlider() {
                  </svg>
                </button>
              
-               {/* Our Offerings Dropdown */}
+               {/* Our Product Dropdown */}
                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[1110px]  bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 ">
                  <div className="w-[60%] mt-10">
-                   <h3 className="text-3xl font-bold text-gray-900">Our Offerings</h3>
+                   <h3 className="text-3xl font-bold text-gray-900">Our Product</h3>
                    <p className="text-lg text-gray-600 mt-2">
                      Discover our range of premium products designed for your well-being and lifestyle.
                    </p>
@@ -413,7 +436,7 @@ export default function AnimatedSlider() {
                      to="/ourproduct"
                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                    >
-                     <span className="block font-bold w-full px-4 text-inherit">View Our Offeringss</span>
+                     <span className="block font-bold w-full px-4 text-inherit">View Our Products</span>
                      <span className="block text-sm px-4 text-grey-900 text-inherit">  Explore our full range of high-quality products</span>
                    </Link>
 
@@ -604,11 +627,11 @@ export default function AnimatedSlider() {
               </div>
 
               <Link
-                to="/support"
+                to="https://aayushlabs.com/?srsltid=AfmBOoqGsq_TBQl3mTiQ9guIlNE-_0Za-tJWjqpEy2XsKfC2quG1AjNp"
                 className=" hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Support
+                Aayush Labs
               </Link>
               <Link
                 to="/healthcare"
@@ -622,14 +645,14 @@ export default function AnimatedSlider() {
                 className="  hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Accelerator
+                Store
               </Link>
             </div>
             <div className="js pl-[5px]  flex justify-center items-center">
               {/* Search Input */}
               <button
                 onClick={toggleSearch}
-                className="   pl-[20px] pr-3  relative hidden md:flex"
+                className="   pl-[20px] pr-3  relative hidden md:flex" style={{ display: "none" }}
               >
                 <img src={searchIcon} alt="Search" className="h-6 w-6" />
               </button>
@@ -764,6 +787,27 @@ export default function AnimatedSlider() {
           Mission & Vision
           <p className="text-sm text-gray-600">Our mission is to do something Great</p>
         </Link>
+
+   
+
+<Link
+  to="/healthcare"
+  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+  onClick={() => setIsAboutUsDropdownOpen(false)}
+>
+  Healthcare
+  <p className="text-sm text-gray-600">Explore our healthcare initiatives and wellness programs</p>
+</Link>
+
+<Link
+  to="/growth-accelerator"
+  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+  onClick={() => setIsAboutUsDropdownOpen(false)}
+>
+  Accelerator
+  <p className="text-sm text-gray-600">Learn how we drive innovation and growth</p>
+</Link>
+
       </div>
     </div>
   )}
@@ -899,12 +943,12 @@ export default function AnimatedSlider() {
             {/* <div className="h-px w-full bg-gray-200 my-1"></div> */}
 
             <div className="relative">
-      {/* Our Offerings Tab */}
+      {/* Our Product Tab */}
       <button
         onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
         className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
       >
-        <span>Our Offerings</span>
+        <span>Our Product</span>
         <svg
           className={`w-5 h-5 transition-transform duration-200 ${
             isProductDropdownOpen ? "rotate-180" : ""
@@ -927,7 +971,7 @@ export default function AnimatedSlider() {
         <div className="rounded-md mt-2 mb-3 py-2 ">
           {/* Title & Description */}
           <div className="px-4 py-2">
-            <h3 className="text-xl font-bold text-[#004037]">Our Offerings</h3>
+            <h3 className="text-xl font-bold text-[#004037]">Our Product</h3>
             <p className="text-lg text-gray-600 mt-2">
               Discover our range of premium products designed for your well-being and lifestyle.
             </p>
@@ -966,7 +1010,7 @@ export default function AnimatedSlider() {
               className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
               onClick={() => setIsProductDropdownOpen(false)}
             >
-             View Our Offerings
+             View Our Product
               <p className="text-sm text-gray-600">Explore our full range of high-quality products</p>
             </Link>
             <Link
@@ -1125,11 +1169,11 @@ export default function AnimatedSlider() {
 
             <div className="h-px w-full bg-gray-200 my-1"></div>
             <Link
-              to="/support"
+              to="https://aayushlabs.com/?srsltid=AfmBOoqGsq_TBQl3mTiQ9guIlNE-_0Za-tJWjqpEy2XsKfC2quG1AjNp"
               className="block py-4 font-extrabold text-[#004037] text-[36px] "
               onClick={handleDropdownLinkClick}
             >
-              Support
+              Aayush Labs
             </Link>
             <div className="h-px w-full bg-gray-200 my-1"></div>
             <Link
@@ -1146,7 +1190,7 @@ export default function AnimatedSlider() {
               className="block py-4 font-extrabold text-[#004037] text-[36px]"
               onClick={handleDropdownLinkClick}
             >
-              Accelerator
+              Store
             </Link>
           </div>
         </div>
