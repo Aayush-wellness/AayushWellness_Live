@@ -16,6 +16,7 @@ import NewsletterSignup from "./NewsLetter";
 import StackImage from "./StackImage";
 import HeroSection from "./HeroSection";
 import NewFooter from "./NewFooter";
+import GummyProductSlider from "./GummyProductSlider";
 
 
 import "./index.css";
@@ -37,6 +38,7 @@ function Layout() {
       <Sliding />     
       <CleanEnergyHero/>
       <StackImage />
+    <GummyProductSlider/>
    
 
         
