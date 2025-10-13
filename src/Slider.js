@@ -355,7 +355,7 @@ export default function AnimatedSlider() {
                  style ={{width:"160px", height:"10vh"}}/>
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500]" style={{color: isScrolledPastBanner ? "white" : "white"}}>
+            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{color: isScrolledPastBanner ? "white" : "white"}}>
               <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
                 Home
               </Link>
