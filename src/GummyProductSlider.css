@@ -318,7 +318,6 @@
 
 .price-label {
   font-weight: 700;
-  color: #000;
   font-size: 14px;
 }
 
@@ -339,4 +338,5 @@
   flex: 0 0 calc(33.333% - 20px); /* 3 cards with gap adjustment */
  
 }
+
 
