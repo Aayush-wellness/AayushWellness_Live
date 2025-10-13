@@ -41,8 +41,7 @@
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease;
-  border: 2px solid #000000; /* ✅ Black outline */
-  border-radius: 8px; /* Optional: smooth corners */
+
 }
 
 .gummy-card:hover {
@@ -338,5 +337,6 @@
   flex: 0 0 calc(33.333% - 20px); /* 3 cards with gap adjustment */
  
 }
+
 
 
