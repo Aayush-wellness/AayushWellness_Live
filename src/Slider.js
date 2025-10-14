@@ -15,8 +15,8 @@ const bannerData = [
   type: "banner",
   image: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25.jpg?v=1760430612",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-10-13_132332.png?v=1760342080",
-    style: { objectFit: "fill !important"},
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25_Mobile_1.jpg?v=1760446779",
+  
   },
   title: "",
   description: "",
@@ -31,7 +31,7 @@ const bannerData = [
   type: "banner",
   image: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25.jpg?v=1760430612",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-10-13_132355.png?v=1760342080"
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25_Mobile.jpg?v=1760446777"
   },
  
   description: "",
