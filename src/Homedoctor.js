@@ -113,9 +113,12 @@ Continuous Medical Support
           <div className="shortOffset-tilesstyle__MediaContainer-sc-ams4gs-4 jFQpTd">
             <span className="picturestyle__LazyLoadPictureWrapper-sc-yn6p7g-1 fBgVUB">
               <picture className="picturestyle__PictureWrapper-sc-yn6p7g-0 jIQBvI">
-                <img
+                 <img
                   src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_4ywqtl4ywqtl4ywq-removebg-preview.png?v=1759989222"
-                  alt="Image"                 
+                  alt="Image"style={{
+    paddingLeft: "90px",
+ 
+}}     
                 />
               </picture>
             </span>
