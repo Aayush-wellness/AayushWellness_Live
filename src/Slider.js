@@ -10,34 +10,33 @@ import Hls from "hls.js";
 const bannerData = [
 
   
-  {
-    id: 1,
-    type: "banner",
-    image: {
-      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease_GST_1.jpg?v=1758696048",
-      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/GST_Banner_1_Mobile_2.jpg?v=1758708926"
-    },
-    title: "Next-Gen GST: Boost for preventive healthcare.",
-    description: "Making healthcare more affordable and accessible for all Indians.",
-    buttonText: "Read More",
-    path: "/article-gst"
-
-  
-    
+{
+  id: 1,
+  type: "banner",
+  image: {
+    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25.jpg?v=1760430612",
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-10-13_132332.png?v=1760342080",
+    style: { objectFit: "fill !important"},
   },
+  title: "",
+  description: "",
+  buttonText: "Visit Now",
+  path: "https://store.aayushwellness.com/"
+},
+
 
 
 {
   id: 2,
   type: "banner",
   image: {
-    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/1_10.jpg?v=1758695447",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Mobile_view_3.jpg?v=1758695447"
+    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25.jpg?v=1760430612",
+    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-10-13_132355.png?v=1760342080"
   },
  
-  description: "Aayush Wellness Limited has partnered with Healthrashi Nextgen India Ltd to expand healthcare services, enhance accessibility, and deliver better outcomes across India.",
- buttonText: "Read More",
-  path: "/article-health-rashi"
+  description: "",
+  buttonText: "Visit Now",
+  path: "https://store.aayushwellness.com/"
 },
   
 
@@ -651,7 +650,7 @@ export default function AnimatedSlider() {
                 </div>
               </div>
 
-              <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
+              <Link to="/https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
                 Aayush Lab
               </Link>
               <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
@@ -1234,7 +1233,7 @@ export default function AnimatedSlider() {
         <img
           src={isMobile ? currentSlide.image.mobile : currentSlide.image.desktop}
           alt={currentSlide.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full "
         />
       )}
 
@@ -1243,7 +1242,8 @@ export default function AnimatedSlider() {
         <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
         style={{
           backgroundImage: 'url("https://cdn.shopify.com/s/files/1/0636/5226/6115/files/tile4020.png?v=1758020387")',
-          height: '100vh'
+          height: '100vh',
+          opacity: 0.6,
         }}>
             <div className="max-w-4xl mx-auto text-center w-full px-4 text-white ">
           <h2 className="sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white-700 mb-4 sm:mb-6 leading-tight" style={{ color: 'white' }}>
