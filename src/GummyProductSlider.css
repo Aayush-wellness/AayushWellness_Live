@@ -332,11 +332,7 @@
   font-weight: 700;
   font-size: 14px;
 }
-/* Desktop (default) - Show 3 cards instead of 4 */
-.gummy-card {
-  flex: 0 0 calc(33.333% - 20px); /* 3 cards with gap adjustment */
- 
-}
+
 
 
 
