@@ -41,4 +41,13 @@ These are carefully created to improve well-being worldwide, and they represent 
   )
 }
 
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-EYNcv3lVhUPUANMWeFL4r.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+
 export default AboutUs
