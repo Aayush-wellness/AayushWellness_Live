@@ -160,7 +160,7 @@ export default function AnimatedSlider() {
                 </button>
 
                 {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full w-[1110px] h-[250px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
+                <div className="absolute left-[-150px] top-full w-[1110px] h-[450px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
                   {/* Left Side: Title & Description */}
                   <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-gray-900">
@@ -196,6 +196,27 @@ export default function AnimatedSlider() {
                       </span>
                       <span className="block text-sm px-4 text-grey-900 text-inherit">
                         Our mission is to do something Great
+                      </span>
+                    </Link>
+
+
+                    <Link
+                      to="/healthcare"
+                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Explore our healthcare initiatives and wellness programs
+                      </span>
+                    </Link>
+                    
+                    <Link
+                      to="/growth-accelerator"
+                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Learn how we drive innovation and growth
                       </span>
                     </Link>
                   </div>
@@ -615,11 +636,11 @@ export default function AnimatedSlider() {
               </div>
 
               <Link
-                to="/support"
+                to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H"
                 className=" hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Support
+                Ayush Lab
               </Link>
               <Link
                 to="/healthcare"
@@ -629,11 +650,11 @@ export default function AnimatedSlider() {
                 HealthCare
               </Link>
               <Link
-                to="/growth-accelerator"
+                to="https://store.aayushwellness.com/?gad_source=1"
                 className="  hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Accelerator
+                Store
               </Link>
             </div>
             <div className="js pl-[5px]  flex justify-center items-center">
