@@ -298,7 +298,7 @@ export default function AayushVenture() {
                 </button>
 
                 {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full w-[1110px] h-[250px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
+                <div className="absolute left-0 top-full w-[1110px] h-[450px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
                   {/* Left Side: Title & Description */}
                   <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-gray-900">
@@ -336,6 +336,26 @@ export default function AayushVenture() {
                         Our mission is to do something Great
                       </span>
                     </Link>
+
+                       <Link
+                                          to="/healthcare"
+                                          className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                        >
+                                          <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
+                                          <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                            Explore our healthcare initiatives and wellness programs
+                                          </span>
+                                        </Link>
+                                        
+                                        <Link
+                                          to="/growth-accelerator"
+                                          className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                                        >
+                                          <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
+                                          <span className="block text-sm px-4 text-grey-900 text-inherit">
+                                            Learn how we drive innovation and growth
+                                          </span>
+                                        </Link>
                   </div>
                 </div>
               </div>
@@ -741,11 +761,11 @@ export default function AayushVenture() {
               </div>
 
               <Link
-                to="/support"
+                to="https://aayushlabs.com/?srsltid=AfmBOoqGsq_TBQl3mTiQ9guIlNE-_0Za-tJWjqpEy2XsKfC2quG1AjNp"
                 className=" hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Support
+                Aayush Labs
               </Link>
               <Link
                 to="/healthcare"
@@ -755,11 +775,11 @@ export default function AayushVenture() {
                 HealthCare
               </Link>
               <Link
-                to="/growth-accelerator"
+                to="https://store.aayushwellness.com/?gad_source=1"
                 className="  hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Accelerator
+                Store
               </Link>
             </div>
             <div className="js pl-[5px]  flex justify-center items-center">
