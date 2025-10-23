@@ -650,7 +650,7 @@ export default function AnimatedSlider() {
                 </div>
               </div>
 
-              <Link to="/https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
+              <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
                 Aayush Lab
               </Link>
               <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}>
