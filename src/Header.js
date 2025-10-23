@@ -641,7 +641,7 @@ export default function AnimatedSlider() {
                 HealthCare
               </Link>
               <Link
-                to="/growth-accelerator"
+                to="https://store.aayushwellness.com/?gad_source=1"
                 className="  hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
@@ -1186,7 +1186,7 @@ export default function AnimatedSlider() {
             <div className="h-px w-full bg-gray-200 my-1"></div>
 
             <Link
-              to="/growth-accelerator"
+              to="https://store.aayushwellness.com/?gad_source=1"
               className="block py-4 font-extrabold text-[#004037] text-[36px]"
               onClick={handleDropdownLinkClick}
             >
