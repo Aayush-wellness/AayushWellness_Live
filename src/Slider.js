@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import closepng from "./images/close.png";
 import searchIcon from "./images/search-gray.svg";
 import Hls from "hls.js";
+import menu from "./images/menu.png";
 
 const bannerData = [
 
@@ -206,7 +207,22 @@ export default function AnimatedSlider() {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+useEffect(() => {
+  const handleScroll = () => {
+    const banner = sliderRef.current;
+    if (banner) {
+      const bannerHeight = banner.offsetHeight;
+      const scrollPosition = window.scrollY;
+      // Set to true when scrolled past 50px from the top of the banner
+      setIsScrolledPastBanner(scrollPosition > 50);
+    }
+  };
 
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, []);
   useEffect(() => {
     const video = videoRef.current;
     
@@ -324,13 +340,16 @@ export default function AnimatedSlider() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolledPastBanner ? "bg-black text-white shadow-md" : "bg-transparent text-white"} font-sans`}
-        style={{
-          fontFamily: '"Inter", sans-serif',
-          fontWeight: "bold",
-          fontSize: "clamp(0.875rem, 0.9rem + 0.2667vw, 1.125rem)",
-        }}
-      >
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    isScrolledPastBanner 
+      ? "bg-white/40 backdrop-blur-sm text-black shadow-md" 
+      : "bg-transparent text-[#001433]"
+  } font-sans`}
+  style={{
+    fontWeight: "bold",
+    fontSize: "clamp(0.875rem, 0.9rem + 0.2667vw, 1.125rem)",
+  }}
+>
         <div className="max-w-[109rem] mx-auto px-4">
           <div className="flex justify-between md:justify-between items-center h-auto">
             <div className="flex items-center">
@@ -342,7 +361,7 @@ export default function AnimatedSlider() {
                  style ={{width:"160px", height:"10vh"}}/>
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{color: isScrolledPastBanner ? "white" : "#001433"}}>
+            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{color: isScrolledPastBanner ? "black" : "#001433"}}>
               <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
                 Home
               </Link>
@@ -350,11 +369,11 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ?"white" : "#001433" }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ?"black" : "#001433" }}
                 >
                   Our Story
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "#001433"} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "#001433"} viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
 
@@ -421,10 +440,10 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "#001433" }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
                 >
                   Our Product
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "#001433"} viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "#001433"} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
@@ -516,10 +535,10 @@ export default function AnimatedSlider() {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "#001433"}}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433"}}
                 >
                   Corporate
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "currentColor"} viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "currentColor"} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
@@ -548,21 +567,14 @@ export default function AnimatedSlider() {
                         <div>
                           <span className="block font-bold text-inherit flex px-4 items-center">
                             Welfare
-                            <svg
-                              className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                                csrOpen ? "rotate-180" : ""
-                              }`}
-                              fill="none"
-                              stroke={isScrolledPastBanner ? "white" : "currentColor"}
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M19 9l-7 7-7-7"
-                              ></path>
-                            </svg>
+                         <svg 
+  className="w-4 h-4 ml-1" 
+  fill="none" 
+  stroke={isScrolledPastBanner ? "black" : "#001433"} 
+  viewBox="0 0 24 24"
+>
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+</svg>
                           </span>
                           <span className="block text-sm px-4 text-gray-900 text-inherit">
                             Our impact on society and sustainability efforts
@@ -638,13 +650,13 @@ export default function AnimatedSlider() {
                 </div>
               </div>
 
-              <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "#001433" }}>
+              <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 Aayush Lab
               </Link>
-              <Link to="https://healthcare.aayushwellness.com/" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "#001433" }}>
+              <Link to="https://healthcare.aayushwellness.com/" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 HealthCare
               </Link>
-               <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "#001433" }}>
+               <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 Store
               </Link>
              {/* <div className="navbar-dropdown relative group">
@@ -694,9 +706,7 @@ export default function AnimatedSlider() {
             </div>
             <div className="js pl-[5px]  flex justify-center items-center">
               {/* Search Input */}
-              <button onClick={toggleSearch} className="   pl-[20px] pr-3  relative hidden md:flex">
-                <img src={searchIcon || "/placeholder.svg"} alt="Search" className="h-6 w-6" />
-              </button>
+          
               {isSearchOpen && (
                 <div class="sp" className=" hidden md:flex  absolute right-44 top-16 z-[99999]">
                   <input
@@ -718,27 +728,17 @@ export default function AnimatedSlider() {
                   <img src={searchIcon || "/placeholder.svg"} alt="Search" className="h-6 w-6" />
                 </button> */}
 
-                {isSearchOpen && (
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="px-2 py-2 border rounded-md  absolute top-14 left-[30%] z-[9999]"
-                    onBlur={() => setIsSearchOpen(false)}
-                  />
-                )}
-                <button
-                  id="mobile-menu-button"
-                  className=" hover:text-primary/80 focus:outline-none"
-                  onClick={toggleMenu}
-                >
-                  {/* Mobile Search */}
-
-                  <img
-                    className="h-7"
-                    src="https://cdn.shopify.com/s/files/1/0636/5226/6115/files/svgviewer-output_5.svg?v=1741865350"
-                    alt="menu"
-                  />
-                </button>
+              <button
+    id="mobile-menu-button"
+    className="hover:text-primary/80 focus:outline-none"
+    onClick={toggleMenu}
+  >
+    <img 
+      className="h-7" 
+      src={menu} 
+      alt="menu" 
+    />
+  </button>
               </div>
             </div>
           </div>
