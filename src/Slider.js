@@ -337,7 +337,7 @@ export default function AnimatedSlider() {
             <Link to="/">
                 <img
                   className="md:h-[4rem] h-[4rem] md:pt-2 md:pb-2"
-                  src={isScrolledPastBanner ? "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png-white.png?v=173476339" : "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"}
+                  src={isScrolledPastBanner ? "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951" : "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"}
                   alt="logo"
                  style ={{width:"160px", height:"10vh"}}/>
               </Link>
