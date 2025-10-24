@@ -18,7 +18,7 @@
   color: #1a1a1a;
   margin: 0 0 60px 0;
   letter-spacing: 2px;
-  font-family: 'Arial', sans-serif;
+  
 }
 
 .gummy-slider-wrapper {
@@ -97,7 +97,7 @@
   margin: 0 0 8px 0;
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
-  font-family: 'Arial', sans-serif;
+ 
 }
 
 .gummy-card:hover .gummy-card-title {
@@ -331,6 +331,7 @@
   font-weight: 700;
   font-size: 14px;
 }
+
 
 
 
