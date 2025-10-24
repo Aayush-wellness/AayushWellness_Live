@@ -31,7 +31,7 @@ const bannerData = [
   type: "banner",
   image: {
     desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25.jpg?v=1760430612",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25_Mobile.jpg?v=1760446777"
+   
   },
  
   description: "",
