@@ -26,18 +26,6 @@ const bannerData = [
 
 
 
-{
-  id: 2,
-  type: "banner",
-  image: {
-    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Sleep_Banner_14-10-25.jpg?v=1760430612",
-   
-  },
- 
-  description: "",
-  buttonText: "Visit Now",
-  path: "https://store.aayushwellness.com/"
-},
   
 
    {
