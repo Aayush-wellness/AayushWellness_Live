@@ -1238,7 +1238,7 @@ export default function AnimatedSlider() {
   className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
   style={{
     color: 'white',                 // fill color of the text
-    fontSize: '2.5rem',
+    fontSize: '2rem',
     WebkitTextStroke: '2px black',  // black outline around text
     textStroke: '2px black',        // for other browsers
   }}
