@@ -354,10 +354,10 @@ export default function AnimatedSlider() {
             <div className="flex items-center">
               <Link to="/">
                 <img
-                  className="md:h-[4rem] h-[4rem] md:pt-2 md:pb-2"
-                  src={isScrolledPastBanner ? "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951" : "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"}
+                  className="md:pt-2 md:pb-2"
+                  src="https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"
                   alt="logo"
-                  style={{ width: "160px", height: "10vh" }} />
+                  style={{ width: "160px", height: "auto", display: "block" }} />
               </Link>
             </div>
             <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{ color: isScrolledPastBanner ? "black" : "#001433" }}>
