@@ -10,26 +10,26 @@ import menu from "./images/menu.png";
 
 const bannerData = [
 
-  
-{
-  id: 1,
-  type: "banner",
-  image: {
-    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25.jpg?v=1760430612",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25_Mobile_1.jpg?v=1760446779",
-  
+
+  {
+    id: 1,
+    type: "banner",
+    image: {
+      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25.jpg?v=1760430612",
+      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25_Mobile_1.jpg?v=1760446779",
+
+    },
+    title: "",
+    description: "",
+    buttonText: "Visit Now",
+    path: "https://store.aayushwellness.com/"
   },
-  title: "",
-  description: "",
-  buttonText: "Visit Now",
-  path: "https://store.aayushwellness.com/"
-},
 
 
 
 
 
-   {
+  {
     id: 3,
     type: "banner",
     image: {
@@ -40,9 +40,9 @@ const bannerData = [
     description: "Sudden health issues? Connect with certified doctors securely and affordably from home, anywhere in India.",
     buttonText: "Read More",
     path: "/article-consultation"
-    
+
   },
-    {
+  {
     id: 4,
     type: "banner",
     image: {
@@ -53,20 +53,20 @@ const bannerData = [
     description: "Mumbai, Hyderabad, Bangalore, Pune",
     buttonText: "Read More",
     path: "/aayush-labs-announcement"
-    
+
   },
- {
-  id: 5,
-  type: "video",
-  thumbnail: {
-    desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
-    mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869"
+  {
+    id: 5,
+    type: "video",
+    thumbnail: {
+      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
+      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869"
+    },
+    videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
+    videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/q177lanbq16ep5td0pv2_kictoo.mp4",
+    title: "A New Era of Healthcare",
+    description: "We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness empowering individuals towards lifelong well-being.",
   },
-  videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
-  videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.mp4", 
-  title: "A New Era of Healthcare",
-  description: "We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness empowering individuals towards lifelong well-being.",
-},
   // {
   //   id: 4,
   //   type: "banner",
@@ -101,7 +101,7 @@ export default function AnimatedSlider() {
   const sliderRef = useRef(null)
   const [csrOpen, setCsrOpen] = useState(false)
   const [isScrolledPastBanner, setIsScrolledPastBanner] = useState(false); // New state for navbar background
-  
+
 
   console.log("bannerData :", bannerData)
 
@@ -172,7 +172,7 @@ export default function AnimatedSlider() {
   }
 
   console.log("currentSlide :", currentSlide)
-  
+
   // Use the selected video source based on device
   const videoSource = isMobile ? videos.mobile.src : videos.desktop.src
 
@@ -207,25 +207,25 @@ export default function AnimatedSlider() {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
-useEffect(() => {
-  const handleScroll = () => {
-    const banner = sliderRef.current;
-    if (banner) {
-      const bannerHeight = banner.offsetHeight;
-      const scrollPosition = window.scrollY;
-      // Set to true when scrolled past 50px from the top of the banner
-      setIsScrolledPastBanner(scrollPosition > 50);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const banner = sliderRef.current;
+      if (banner) {
+        const bannerHeight = banner.offsetHeight;
+        const scrollPosition = window.scrollY;
+        // Set to true when scrolled past 50px from the top of the banner
+        setIsScrolledPastBanner(scrollPosition > 50);
+      }
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   useEffect(() => {
     const video = videoRef.current;
-    
+
     // Pause any currently playing video when slide changes
     if (video) {
       video.pause();
@@ -262,7 +262,7 @@ useEffect(() => {
         const hls = new Hls();
         hls.loadSource(videoSrc);
         hls.attachMedia(video);
-        
+
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
           video.play().catch(error => {
             console.log('Autoplay prevented:', error);
@@ -340,28 +340,27 @@ useEffect(() => {
   return (
     <>
       <nav
-  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    isScrolledPastBanner 
-      ? "bg-white/40 backdrop-blur-sm text-black shadow-md" 
-      : "bg-transparent text-[#001433]"
-  } font-sans`}
-  style={{
-    fontWeight: "bold",
-    fontSize: "clamp(0.875rem, 0.9rem + 0.2667vw, 1.125rem)",
-  }}
->
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolledPastBanner
+          ? "bg-white/40 backdrop-blur-sm text-black shadow-md"
+          : "bg-transparent text-[#001433]"
+          } font-sans`}
+        style={{
+          fontWeight: "bold",
+          fontSize: "clamp(0.875rem, 0.9rem + 0.2667vw, 1.125rem)",
+        }}
+      >
         <div className="max-w-[109rem] mx-auto px-4">
           <div className="flex justify-between md:justify-between items-center h-auto">
             <div className="flex items-center">
-            <Link to="/">
+              <Link to="/">
                 <img
                   className="md:h-[4rem] h-[4rem] md:pt-2 md:pb-2"
                   src={isScrolledPastBanner ? "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951" : "https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"}
                   alt="logo"
-                 style ={{width:"160px", height:"10vh"}}/>
+                  style={{ width: "160px", height: "10vh" }} />
               </Link>
             </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{color: isScrolledPastBanner ? "black" : "#001433"}}>
+            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{ color: isScrolledPastBanner ? "black" : "#001433" }}>
               <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
                 Home
               </Link>
@@ -369,16 +368,16 @@ useEffect(() => {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ?"black" : "#001433" }}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
                 >
                   Our Story
                   <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "#001433"} viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
 
                 {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full w-[1110px] h-[490px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
+                <div className="absolute left-0 top-full w-[1110px] h-[380px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
                   {/* Left Side: Title & Description */}
                   <div className="w-[60%] mt-10">
                     <h3 className="text-3xl font-bold text-gray-900">Our Story</h3>
@@ -412,25 +411,25 @@ useEffect(() => {
 
 
 
-<Link
-  to="/healthcare"
-  className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
->
-  <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
-  <span className="block text-sm px-4 text-grey-900 text-inherit">
-    Explore our healthcare initiatives and wellness programs
-  </span>
-</Link>
+                    <Link
+                      to="/healthcare"
+                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Explore our healthcare initiatives and wellness programs
+                      </span>
+                    </Link>
 
-<Link
-  to="/growth-accelerator"
-  className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
->
-  <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
-  <span className="block text-sm px-4 text-grey-900 text-inherit">
-    Learn how we drive innovation and growth
-  </span>
-</Link>
+                    <Link
+                      to="/growth-accelerator"
+                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
+                    >
+                      <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
+                      <span className="block text-sm px-4 text-grey-900 text-inherit">
+                        Learn how we drive innovation and growth
+                      </span>
+                    </Link>
 
                   </div>
                 </div>
@@ -519,7 +518,7 @@ useEffect(() => {
                       </span>
                     </Link>
 
-                          <Link
+                    <Link
                       to="/brain-fuel"
                       className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
@@ -535,7 +534,7 @@ useEffect(() => {
               <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433"}}
+                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
                 >
                   Corporate
                   <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "currentColor"} viewBox="0 0 24 24">
@@ -567,14 +566,14 @@ useEffect(() => {
                         <div>
                           <span className="block font-bold text-inherit flex px-4 items-center">
                             Welfare
-                         <svg 
-  className="w-4 h-4 ml-1" 
-  fill="none" 
-  stroke={isScrolledPastBanner ? "black" : "#001433"} 
-  viewBox="0 0 24 24"
->
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-</svg>
+                            <svg
+                              className="w-4 h-4 ml-1"
+                              fill="none"
+                              stroke={isScrolledPastBanner ? "black" : "#001433"}
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                           </span>
                           <span className="block text-sm px-4 text-gray-900 text-inherit">
                             Our impact on society and sustainability efforts
@@ -637,13 +636,13 @@ useEffect(() => {
                         Partner with us for sustainable growth
                       </span>
                     </Link>
-                        <Link
+                    <Link
                       to="/press-releases"
                       className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
                       <span className="block font-bold w-full px-4 text-inherit">Press Releases</span>
                       <span className="block text-sm px-4 text-gray-900 text-inherit">
-                         Stay updated with our latest announcements and milestones
+                        Stay updated with our latest announcements and milestones
                       </span>
                     </Link>
                   </div>
@@ -656,10 +655,10 @@ useEffect(() => {
               <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 HealthCare
               </Link>
-               <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
+              <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 Store
               </Link>
-             {/* <div className="navbar-dropdown relative group">
+              {/* <div className="navbar-dropdown relative group">
                 <button
                   className="hover:text-primary/80 flex items-center mt-1"
                   style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
@@ -706,7 +705,7 @@ useEffect(() => {
             </div>
             <div className="js pl-[5px]  flex justify-center items-center">
               {/* Search Input */}
-          
+
               {isSearchOpen && (
                 <div class="sp" className=" hidden md:flex  absolute right-44 top-16 z-[99999]">
                   <input
@@ -728,26 +727,25 @@ useEffect(() => {
                   <img src={searchIcon || "/placeholder.svg"} alt="Search" className="h-6 w-6" />
                 </button> */}
 
-              <button
-    id="mobile-menu-button"
-    className="hover:text-primary/80 focus:outline-none"
-    onClick={toggleMenu}
-  >
-    <img 
-      className="h-7" 
-      src={menu} 
-      alt="menu" 
-    />
-  </button>
+                <button
+                  id="mobile-menu-button"
+                  className="hover:text-primary/80 focus:outline-none"
+                  onClick={toggleMenu}
+                >
+                  <img
+                    className="h-7"
+                    src={menu}
+                    alt="menu"
+                  />
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
           id="mobile-menu"
-          className={`fixed top-0 left-0 h-full w-full bg-white shadow-md z-50 transition-all duration-300 ${
-            isMenuOpen ? "block !translate-x-0" : "hidden !-translate-x-full"
-          }`}
+          className={`fixed top-0 left-0 h-full w-full bg-white shadow-md z-50 transition-all duration-300 ${isMenuOpen ? "block !translate-x-0" : "hidden !-translate-x-full"
+            }`}
         >
           <div className="flex justify-between items-center px-6 ">
             {/* Logo on the left */}
@@ -823,23 +821,23 @@ useEffect(() => {
 
 
 
-<Link
-  to="/healthcare"
-  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-  onClick={() => setIsAboutUsDropdownOpen(false)}
->
-  Healthcare
-  <p className="text-sm text-gray-600">Explore our healthcare initiatives and wellness programs</p>
-</Link>
+                    <Link
+                      to="/healthcare"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsAboutUsDropdownOpen(false)}
+                    >
+                      Healthcare
+                      <p className="text-sm text-gray-600">Explore our healthcare initiatives and wellness programs</p>
+                    </Link>
 
-<Link
-  to="/growth-accelerator"
-  className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-  onClick={() => setIsAboutUsDropdownOpen(false)}
->
-  Accelerator
-  <p className="text-sm text-gray-600">Learn how we drive innovation and growth</p>
-</Link>
+                    <Link
+                      to="/growth-accelerator"
+                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
+                      onClick={() => setIsAboutUsDropdownOpen(false)}
+                    >
+                      Accelerator
+                      <p className="text-sm text-gray-600">Learn how we drive innovation and growth</p>
+                    </Link>
 
                   </div>
                 </div>
@@ -933,7 +931,7 @@ useEffect(() => {
                     </Link>
 
 
-                         <Link
+                    <Link
                       to="/brain-fuel"
                       className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
                     >
@@ -984,9 +982,8 @@ useEffect(() => {
                       >
                         <span>welfare</span>
                         <svg
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            isCsrSubcategoryOpen ? "rotate-180" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform duration-200 ${isCsrSubcategoryOpen ? "rotate-180" : ""
+                            }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -1052,7 +1049,7 @@ useEffect(() => {
                       Investors
                       <p className="text-sm text-gray-600">Partner with us for sustainable growth</p>
                     </Link>
-                         <Link
+                    <Link
                       to="/press-releases"
                       className="block px-4 py-3 text-[#004037] font-bold "
                       onClick={() => setIsCorporateDropdownOpen(false)}
@@ -1081,7 +1078,7 @@ useEffect(() => {
             >
               Healthcare
             </Link>
-              <Link
+            <Link
               to="https://store.aayushwellness.com/?gad_source=1"
               className="block py-4 font-extrabold text-[#004037] text-[36px] "
               onClick={handleDropdownLinkClick}
@@ -1186,82 +1183,81 @@ useEffect(() => {
               )}
             </div> */}
 
-        
+
           </div>
         </div>
       </nav>
 
       {/* Banner Section */}
-  <div className="relative w-full h-screen md:h-screen sm:h-[60vh] overflow-hidden bg-gray-100 mb-10" ref={sliderRef}>
-    {/* Banner Image/Video */}
-    <div className="relative w-full h-full">
-     {currentSlide.type === 'video' ? (
-  <div className="relative w-full h-full">
-    <video
-      ref={videoRef}
-      className="w-full h-full object-cover"
-      poster={isMobile ? currentSlide.thumbnail.mobile : currentSlide.thumbnail.desktop}
-      loop
-      muted
-      autoPlay
-      playsInline
-    >
-      <source
-        src={isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl}
-        type={
-          (isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl).endsWith('.m3u8')
-            ? 'application/x-mpegURL'
-            : 'video/mp4'
-        }
-      />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-) : (
-        <img
-          src={isMobile ? currentSlide.image.mobile : currentSlide.image.desktop}
-          alt={currentSlide.title}
-          className="w-full h-full "
-        />
-      )}
-
-
-           {/* Overlay Content */}
-        <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
-        style={{
-         
-          height: '100vh',
-          opacity: 0.6,
-        }}>
-            <div className="max-w-4xl mx-auto text-center w-full px-4 text-white ">
-         <h2
-  className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
-  style={{
-    color: 'white',                 // fill color of the text
-    fontSize: '2rem',
-    WebkitTextStroke: '2px black',  // black outline around text
-    textStroke: '2px black',        // for other browsers
-  }}
->
-  {currentSlide.title}
-</h2>
-
-          <p className="text-lg sm:text-xl md:text-2xl text-[#00143] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed" style={{display: 'none' }} >
-            {currentSlide.description}
-          </p>
-          {currentSlide.path ? (
-            <Link
-              to={currentSlide.path}
-              className="inline-flex items-center bg-black text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-gray-800 transition-colors text-lg sm:text-xl"
-            >
-                  {currentSlide.buttonText}
-              <ChevronRight className="ml-2 w-6 h-6" />
-            </Link>
+      <div className="relative w-full h-auto md:h-screen overflow-hidden bg-gray-100 mb-10" ref={sliderRef}>
+        {/* Banner Image/Video */}
+        <div className="relative w-full h-auto md:h-full">
+          {currentSlide.type === 'video' ? (
+            <div className="relative w-full h-auto md:h-full">
+              <video
+                ref={videoRef}
+                className="w-full h-auto md:h-full object-cover"
+                style={{ height: isMobile ? '75vh' : '100vh' }}
+                poster={isMobile ? currentSlide.thumbnail.mobile : currentSlide.thumbnail.desktop}
+                loop
+                muted
+                autoPlay
+                playsInline
+              >
+                <source
+                  src={isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl}
+                  type={
+                    (isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl).endsWith('.m3u8')
+                      ? 'application/x-mpegURL'
+                      : 'video/mp4'
+                  }
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           ) : (
-            <div></div>
+            <img
+              src={isMobile ? currentSlide.image.mobile : currentSlide.image.desktop}
+              alt={currentSlide.title}
+              className="w-full h-auto md:h-full"
+            />
           )}
-        </div>
-      </div>
+
+
+          {/* Overlay Content */}
+          <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
+            style={{
+              opacity: 0.6,
+            }}>
+            <div className="max-w-4xl mx-auto text-center w-full px-4 text-white ">
+              <h2
+                className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
+                style={{
+                  color: 'white',                 // fill color of the text
+                  fontSize: '2rem',
+                  WebkitTextStroke: '2px black',  // black outline around text
+                  textStroke: '2px black',        // for other browsers
+                }}
+              >
+                {currentSlide.title}
+              </h2>
+
+              <p className="text-lg sm:text-xl md:text-2xl text-[#00143] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed" style={{ display: 'none' }} >
+                {currentSlide.description}
+              </p>
+              {currentSlide.path ? (
+                <Link
+                  to={currentSlide.path}
+                  className="inline-flex items-center bg-black text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-gray-800 transition-colors text-lg sm:text-xl"
+                >
+                  {currentSlide.buttonText}
+                  <ChevronRight className="ml-2 w-6 h-6" />
+                </Link>
+              ) : (
+                <div></div>
+              )}
+            </div>
+          </div>
         </div>
 
         {/* Navigation Dots */}
@@ -1270,9 +1266,8 @@ useEffect(() => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'bg-[#33cccc] w-8' : 'bg-white/50 w-3'
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-[#33cccc] w-8' : 'bg-black/50 w-3'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
