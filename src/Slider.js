@@ -653,7 +653,7 @@ useEffect(() => {
               <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 Aayush Lab
               </Link>
-              <Link to="https://healthcare.aayushwellness.com/" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
+              <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
                 HealthCare
               </Link>
                <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
