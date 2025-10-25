@@ -355,7 +355,7 @@ export default function AnimatedSlider() {
               <Link to="/">
                 <img
                   className="md:pt-2 md:pb-2"
-                  src="https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"
+                  src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png_2.png?v=1752667313"
                   alt="logo"
                   style={{ width: "160px", height: "auto", display: "block" }} />
               </Link>
@@ -750,9 +750,9 @@ export default function AnimatedSlider() {
           <div className="flex justify-between items-center px-6 ">
             {/* Logo on the left */}
             <img
-              className="h-15 w-36 "
-              src="https://aayushlife.com/cdn/shop/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_240x.png?v=1729951951"
+              src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png_2.png?v=1752667313"
               alt="Logo"
+              style={{ width: "144px", height: "auto", display: "block" }}
             />
 
             {/* Close Button on the right */}
@@ -1189,7 +1189,7 @@ export default function AnimatedSlider() {
       </nav>
 
       {/* Banner Section */}
-      <div className="relative w-full h-auto md:h-screen overflow-hidden bg-gray-100 mb-10" ref={sliderRef}>
+      <div className="relative w-full h-auto md:h-screen overflow-hidden bg-gray-100 mb-10 mt-24 md:mt-0" ref={sliderRef}>
         {/* Banner Image/Video */}
         <div className="relative w-full h-auto md:h-full">
           {currentSlide.type === 'video' ? (
@@ -1197,7 +1197,7 @@ export default function AnimatedSlider() {
               <video
                 ref={videoRef}
                 className="w-full h-auto md:h-full object-cover"
-                style={{ height: isMobile ? '75vh' : '100vh' }}
+                style={{ height: isMobile ? '85vh' : '100vh' }}
                 poster={isMobile ? currentSlide.thumbnail.mobile : currentSlide.thumbnail.desktop}
                 loop
                 muted
