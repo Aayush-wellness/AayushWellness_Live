@@ -640,7 +640,7 @@ export default function AnimatedSlider() {
                 className=" hover:text-primary/80"
                 style={{ fontFamily: '"Inter", sans-serif' }}
               >
-                Ayush Lab
+                Aayush Lab
               </Link>
               <Link
                 to="/healthcare"
