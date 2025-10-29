@@ -123,7 +123,7 @@ const NewFooter = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 md:pl-[3rem] ">
             <div className="min-w-[120px]">
               <p
-             className="text-[#13233b] font-bold text-[25px]"
+             className="text-[white] font-bold text-[25px]"
              style={{ fontFamily: 'ROGBold' }}
                 // style={{ color: '#FF0000' }}
               >
@@ -162,7 +162,7 @@ const NewFooter = () => {
             </div>
             <div className="min-w-[120px]">
               <p
-               className="text-[#13233b] font-bold text-[25px]"
+               className="text-[white] font-bold text-[25px]"
                style={{ fontFamily: 'ROGBold' }}
                 // style={{ color: '#FF0000' }}
               >
@@ -197,7 +197,7 @@ const NewFooter = () => {
             </div>
             <div className="min-w-[120px]">
             <p
-  className="text-[#13233b] font-bold text-[25px]"
+  className="text-[white] font-bold text-[25px]"
   style={{ fontFamily: 'ROGBold' }}
 >
   Newsroom
@@ -232,7 +232,7 @@ const NewFooter = () => {
             </div>
             <div className="min-w-[120px]">
               <p
-               className="text-[#13233b] font-bold text-[25px]"
+               className="text-[white] font-bold text-[25px]"
                style={{ fontFamily: 'ROGBold' }}
                 // style={{ color: '#FF0000' }}
               >
