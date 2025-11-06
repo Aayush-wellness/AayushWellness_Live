@@ -48,7 +48,7 @@ const CleanEnergyHero = () => {
   }, [isMobile]);
 
   return (
-    <div className="md:flex md:w-full bg-[#000] block items-center pl-[20px] blocks">
+    <div className="md:flex md:w-full bg-[#000] block items-center pl-[20px] py-[30px] blocks mt-[90px]">
       {/* Text Content */}
       <div className="HomeHero_content__DYNN6" style={{fontFamily: "ROGBold"}}>
         <BlurText
@@ -57,7 +57,7 @@ const CleanEnergyHero = () => {
           delay={150}
           animateBy="words"
           direction="top"
-          className="md:text-6xl mb-8 text-[30px] font-bold text-[#fff] uppercase" style={{ fontFamily: "ROGBold" }}
+          className="md:text-6xl mb-8 text-[30px] font-bold text-[#fff] uppercase mt-[60px]" style={{ fontFamily: "ROGBold" }}
         />
         <p className="HomeHero_copy__GS3c3 !text-[#fff]" style={{fontFamily: "Minionpro"}}>
           Aayush Wellness blends ancient Ayurveda with modern science to create
