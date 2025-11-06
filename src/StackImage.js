@@ -31,7 +31,7 @@ const sectionsData = [
     videoSrc: "https://cdn.shopify.com/videos/c/o/v/813b7c6a2fb54179886893f2b4086b5f.mp4", // Unique video link for new product 1
     imageSrc: null,
     title: "Healthcare at Your Fingertips", // Changed name
-   description: `
+    description: `
 Book health checkups anytime, anywhere with Aayush Labs your trusted online health platform. Enjoy free home sample collection, fast reports, and doctor consultations all from the comfort of your home.
 
         <br/>
@@ -55,105 +55,105 @@ Book health checkups anytime, anywhere with Aayush Labs your trusted online heal
 ];
 
 const StackImage = () => {
-    const [activeContentIndex, setActiveContentIndex] = useState(0); // 0 for Sleep Gummies, 1 for Pan Masala, 2 for New A, 3 for New B
+  const [activeContentIndex, setActiveContentIndex] = useState(0); // 0 for Sleep Gummies, 1 for Pan Masala, 2 for New A, 3 for New B
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setActiveContentIndex((prevIndex) => (prevIndex + 1) % sectionsData.length);
-      }, 9000); // Change content every 9 seconds
-      return () => clearInterval(interval);
-    }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveContentIndex((prevIndex) => (prevIndex + 1) % sectionsData.length);
+    }, 9000); // Change content every 9 seconds
+    return () => clearInterval(interval);
+  }, []);
 
-    const currentSection = sectionsData[activeContentIndex];
+  const currentSection = sectionsData[activeContentIndex];
 
-    return (
-      <div className={`Block_container__Nv4cD Block_isCream__VRtaMm StackedContent_container__DfJEU snipcss-YBdoL blocks ${activeContentIndex % 2 === 0 ? "active-background" : ""}`}>
-        <div className="Container_container__NvvWg StackedContent_wrapper__2JCtc snipcss0-1-1-2 style-ee6GF" id="style-ee6GF">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeContentIndex} // Key changes when activeContentIndex changes, triggering re-render and animation
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="StackedContent_mediaContainer__5BNSM"
-            >
-              <div className={`StackedContent_mediaWrapper___gRyP StackedContent_isActive__U4mo3`}>
-                <div>
-                  {currentSection.videoSrc ? (
-                    <video
-                      loop
-                      autoPlay
-                      muted
-                      playsInline
-                      alt={currentSection.title}
-                      loading="lazy"
-                      width="1528"
-                      height="1644"
-                      decoding="async"
-                      data-nimg="1"
-                      className="StackedContent_media__haQuf style-mKRVT image-transition"
-                      src={currentSection.videoSrc}
-                    />
-                  ) : (
-                    <img
-                      alt={currentSection.title}
-                      loading="lazy"
-                      width="1528"
-                      height="1644"
-                      decoding="async"
-                      data-nimg="1"
-                      className="StackedContent_media__haQuf style-9BbQF image-transition"
-                      src={currentSection.imageSrc}
-                    />
-                  )}
-                </div>
+  return (
+    <div className={`Block_container__Nv4cD Block_isCream__VRtaMm StackedContent_container__DfJEU snipcss-YBdoL blocks ${activeContentIndex % 2 === 0 ? "active-background" : ""}`}>
+      <div className="Container_container__NvvWg StackedContent_wrapper__2JCtc snipcss0-1-1-2 style-ee6GF" id="style-ee6GF">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeContentIndex} // Key changes when activeContentIndex changes, triggering re-render and animation
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="StackedContent_mediaContainer__5BNSM"
+          >
+            <div className={`StackedContent_mediaWrapper___gRyP StackedContent_isActive__U4mo3`}>
+              <div>
+                {currentSection.videoSrc ? (
+                  <video
+                    loop
+                    autoPlay
+                    muted
+                    playsInline
+                    alt={currentSection.title}
+                    loading="lazy"
+                    width="1528"
+                    height="1644"
+                    decoding="async"
+                    data-nimg="1"
+                    className="StackedContent_media__haQuf style-mKRVT image-transition"
+                    src={currentSection.videoSrc}
+                  />
+                ) : (
+                  <img
+                    alt={currentSection.title}
+                    loading="lazy"
+                    width="1528"
+                    height="1644"
+                    decoding="async"
+                    data-nimg="1"
+                    className="StackedContent_media__haQuf style-9BbQF image-transition"
+                    src={currentSection.imageSrc}
+                  />
+                )}
               </div>
-            </motion.div>
-          </AnimatePresence>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeContentIndex} // Key changes when activeContentIndex changes, triggering re-render and animation
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="StackedContent_contentWrapper__6MXgH snipcss0-2-2-10"
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeContentIndex} // Key changes when activeContentIndex changes, triggering re-render and animation
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="StackedContent_contentWrapper__6MXgH snipcss0-2-2-10"
+          >
+            <div
+              key={activeContentIndex}
+              data-section-index={activeContentIndex}
+              className={`StackedContent_content__QTFkv StackedContent_isActive__U4mo3`}
             >
-              <div
-                key={activeContentIndex}
-                data-section-index={activeContentIndex}
-                className={`StackedContent_content__QTFkv StackedContent_isActive__U4mo3`}
+              <BlurText
+                text={currentSection.title}
+                delay={150}
+                animateBy="words"
+                direction="top"
+                className="md:text-6xl mb-8 text-[25px] font-bold text-white" style={{ fontFamily: "ROGBold" }}
+              />
+              <p className="text-[20px] text-white" style={{ fontFamily: "Minionpro" }} dangerouslySetInnerHTML={{ __html: currentSection.description }} />
+              <a
+                className="BaseButton_baseButton__gki38 BaseButton_isLushGreen__Of4fS BaseButton_hasOutline__IILGk StackedContent_cta__9aF3N"
+                text="Learn more"
+                href={currentSection.link}
               >
-                <BlurText
-                  text={currentSection.title}
-                  delay={150}
-                  animateBy="words"
-                  direction="top"
-                  className="md:text-6xl mb-8 text-[25px] font-bold text-[#000]" style={{ fontFamily: "ROGBold" }}
-                />
-                <p className="text-[20px]" style={{ fontFamily: "Minionpro" }} dangerouslySetInnerHTML={{ __html: currentSection.description }} />
-                <a
-                  className="BaseButton_baseButton__gki38 BaseButton_isLushGreen__Of4fS BaseButton_hasOutline__IILGk StackedContent_cta__9aF3N"
-                  text="Learn more"
-                  href={currentSection.link}
-                >
-                  <span className="text-[20px]" style={{ fontFamily: "Minionpro", color: "#33cccc" }}>{currentSection.linkText}</span>
-                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+                <span className="text-[20px]" style={{ fontFamily: "Minionpro", color: "#000000" }}>{currentSection.linkText}</span>
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M7.586.531a.75.75 0 1 0-1.172.938L8.64 4.25H1a.75.75 0 0 0 0 1.5h7.64L6.414 8.531a.75.75 0 1 0 1.172.938l3.2-4a.75.75 0 0 0 0-.938l-3.2-4Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
 export default StackImage;
