@@ -35,23 +35,23 @@ function HeroSection() {
 
   return (
     <div style={{ position: 'relative', zIndex: 1 }}>
-      <div className="Block_container__Nv4cD Block_isCream__VRtaM TextMedia_container__1OeME TextMedia_isCream__1R3ST snipcss-6nyWs blocksb !bg-[#f9f9f9]">
+      <div className="Block_container__Nv4cD Block_isCream__VRtaM TextMedia_container__1OeME TextMedia_isCream__1R3ST snipcss-6nyWs blocksb !bg-black" >
         <div>
           <div className="Container_container__NvvWg TextMedia_wrapper__Uesgc">
             <div className="TextMedia_content__jyQfX" style={{ fontFamily: "ROGBold", color: "#33cccc" }}>
               <span className="TextMedia_eyebrow__y7WFh style-pFboy" id="style-pFboy">Our story</span>
 
-              <div className='text-[#004037] font-bold md:text-4xl text-[25px]'>
+              <div className='text-[white] font-bold md:text-4xl text-[25px]'>
                 <BlurText
                   text="BUILDING A FUTURE BY TRANSFORMING WELLNESS, NATURALLY"
                   animateOn="view"
                   revealDirection="center"
-                  className='text-[#000] font-bold md:text-6xl text-[25px] md:text-[60px]'
+                  className='text-white font-bold md:text-6xl text-[25px] md:text-[60px]'
                 />
               </div>
 
               <div className="RichText_container__wB3Cy TextMedia_copy__Ne6y6 style-STHt3" id="style-STHt3">
-                <p id="style-ZG7s3" className="style-ZG7s3 text-[21px]" style={{ fontFamily: "Minionpro", color: "#000" }}>
+                <p id="style-ZG7s3" className="style-ZG7s3 text-[21px] text-white" style={{ fontFamily: "Minionpro", color: "white" }}>
                   Aayush Wellness was founded with a vision to make holistic well-being accessible to all. We believe true wellness comes from balancing mind, body, and soul. Our journey began with the goal of blending ancient Ayurvedic wisdom with modern science to create high-quality health and wellness solutions. Today, we continue to innovate, offering premium supplements and lifestyle products that empower individuals to lead healthier, happier lives.
                 </p>
               </div>
@@ -68,7 +68,7 @@ function HeroSection() {
 
             <div className="TextMedia_mediaWrapper__e1HP_ style-POjkF" id="style-POjkF">
               {/* Instagram Feed */}
-            <div class="elfsight-app-93466d10-69d0-4034-a31b-86d093059702" data-elfsight-app-lazy></div>
+              <div class="elfsight-app-93466d10-69d0-4034-a31b-86d093059702" data-elfsight-app-lazy></div>
             </div>
           </div>
         </div>
