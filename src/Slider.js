@@ -1,1294 +1,503 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { Play, ChevronRight } from "lucide-react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import closepng from "./images/close.png";
-import searchIcon from "./images/search-gray.svg";
-import Hls from "hls.js";
-import menu from "./images/menu.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const bannerData = [
+const Slider = () => {
+  const [current, setCurrent] = useState(1);
+  const wrapperRef = useRef(null);
 
-
-  {
-    id: 1,
-    type: "banner",
-    image: {
-      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25.jpg?v=1760430612",
-      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Beauty_Banner_14-10-25_Mobile_1.jpg?v=1760446779",
-
+  const slides = [
+    {
+      id: 1,
+      title: "Exhausted? Meet Your Sleep Buddy ",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Artboard_1_Mobile.jpg?v=1762326373",
+      desktopImage: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Gummies_Website_Banner_04-11-2025_n.jpg?v=1762240729", // Desktop image URL - replace tomorrow
+      buttonText: "SHOP NOW",
     },
-    title: "",
-    description: "",
-    buttonText: "Visit Now",
-    path: "https://store.aayushwellness.com/"
-  },
-
-
-
-
-
-  {
-    id: 3,
-    type: "banner",
-    image: {
-      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Web_Banner_For_Press_Reslease.jpg?v=1758627170",
-      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile_1dce2cf9-a91f-4be2-8c9a-fbb3f6a72c8d.jpg?v=1758634995"
+    {
+      id: 2,
+      title: "Tired Skin? Try This ",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Artboard_2_Mobile.jpg?v=1762326361",
+      desktopImage: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Gummies_Website_Banner_04-11-2025_B.jpg?v=1762240729", // Desktop image URL - replace tomorrow
+      buttonText: "SHOP NOW",
     },
-    title: "Instant Online Doctor Consultation",
-    description: "Sudden health issues? Connect with certified doctors securely and affordably from home, anywhere in India.",
-    buttonText: "Read More",
-    path: "/article-consultation"
-
-  },
-  {
-    id: 4,
-    type: "banner",
-    image: {
-      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-17_134446.png?v=1758096902",
-      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Home_page_slider_banner_1_mobile.jpg?v=1758104854"
+    {
+      id: 3,
+      title: "Herbal in Every Bite",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Artboard_4_Mobile.jpg?v=1762347166",
+      desktopImage: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Herbal_Website_Banner_05-11-2025_H_1.jpg?v=1762347166", // Desktop image URL - replace tomorrow
+      buttonText: "SHOP NOW",
     },
-    title: "Smarter, Faster & Accessible Diagnostics Across India",
-    description: "Mumbai, Hyderabad, Bangalore, Pune",
-    buttonText: "Read More",
-    path: "/aayush-labs-announcement"
-
-  },
-  {
-    id: 5,
-    type: "video",
-    thumbnail: {
-      desktop: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869",
-      mobile: "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-23_185410.png?v=1758633869"
+ {
+      id: 4,
+      title: " Your Doctor, Just a Click Away",
+      image: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Artboard_3_Mobile_3.jpg?v=1762429458",
+      desktopImage: "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/lab_Website_Banner_04-11-2025_L_3.jpg?v=1762429462", // Desktop image URL - replace tomorrow
+      buttonText: "SHOP NOW",
     },
-    videoUrl: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
-    videoUrlMobile: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/q177lanbq16ep5td0pv2_kictoo.mp4",
-    title: "A New Era of Healthcare",
-    description: "We prioritise prevention over treatment, offering healthcare, science-backed products, and holistic wellness empowering individuals towards lifelong well-being.",
-  },
-  // {
-  //   id: 4,
-  //   type: "banner",
-  //   image: {
-  //     desktop: "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg",
-  //     mobile: "https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg"
-  //   },
-  //   title: "Wellness Programs",
-  //   description: "Comprehensive wellness solutions for a healthier you",
-  //   buttonText: "Explore",
-  //   path: "/wellness"
-  // }
-];
-
-export default function AnimatedSlider() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false)
-  const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false)
-  const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false)
-  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false)
-  const [isCsrSubcategoryOpen, setIsCsrSubcategoryOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false)
-  const [isCorporateDropdownOpen, setIsCorporateDropdownOpen] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const [showText, setShowText] = useState(false)
-  const videoRef = useRef(null)
-  const intervalRef = useRef(null)
-  const sliderRef = useRef(null)
-  const [csrOpen, setCsrOpen] = useState(false)
-  const [isScrolledPastBanner, setIsScrolledPastBanner] = useState(false); // New state for navbar background
 
 
-  console.log("bannerData :", bannerData)
+  
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev === bannerData.length - 1 ? 0 : prev + 1))
-    if (isVideoPlaying) {
-      videoRef.current?.pause()
-      setIsVideoPlaying(false)
-    }
-  }
+  ];
 
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? bannerData.length - 1 : prev - 1))
-    if (isVideoPlaying) {
-      videoRef.current?.pause()
-      setIsVideoPlaying(false)
-    }
-  }
+  const loopSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
-  const goToSlide = (index) => {
-    setActiveIndex(index)
-    if (isVideoPlaying) {
-      videoRef.current?.pause()
-      setIsVideoPlaying(false)
-    }
-  }
-
-  const toggleVideoPlay = () => {
-    const currentSlide = bannerData[activeIndex]
-    if (currentSlide.type === 'video') {
-      if (isVideoPlaying) {
-        videoRef.current?.pause()
-      } else {
-        videoRef.current?.play()
-      }
-      setIsVideoPlaying(!isVideoPlaying)
-    }
-  }
+  const goNext = () => setCurrent((p) => p + 1);
+  const goPrev = () => setCurrent((p) => p - 1);
 
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      nextSlide()
-    }, 5000)
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-      }
-    }
-  }, [activeIndex])
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768)
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  const currentSlide = bannerData[activeIndex]
-  const videos = {
-    desktop: {
-      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/Homeabnner1_g5eydo.m3u8",
-      text: "Transforming Wellness , Transforming Lives",
-    },
-    mobile: {
-      src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/ngahi3e9q6of8ezb7zfw_1_tj1owt.m3u8",
-      text: "Transforming wellness, transforming lives",
-    },
-  }
-
-  console.log("currentSlide :", currentSlide)
-
-  // Use the selected video source based on device
-  const videoSource = isMobile ? videos.mobile.src : videos.desktop.src
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting)
-        setIsScrolledPastBanner(!entry.isIntersecting); // Update state based on banner visibility
-        if (entry.isIntersecting) {
-          setTimeout(() => setShowText(true), 5000) // Start text animation after 5 seconds
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (sliderRef.current) {
-      observer.observe(sliderRef.current)
-    }
-
-    return () => {
-      if (sliderRef.current) {
-        observer.unobserve(sliderRef.current)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640)
-    }
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-  useEffect(() => {
-    const handleScroll = () => {
-      const banner = sliderRef.current;
-      if (banner) {
-        const bannerHeight = banner.offsetHeight;
-        const scrollPosition = window.scrollY;
-        // Set to true when scrolled past 50px from the top of the banner
-        setIsScrolledPastBanner(scrollPosition > 50);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const interval = setInterval(goNext, 4000);
+    return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
-    const video = videoRef.current;
-
-    // Pause any currently playing video when slide changes
-    if (video) {
-      video.pause();
-    }
-
-    // If the current slide is a video, play it
-    if (currentSlide.type === 'video') {
-      const playVideo = () => {
-        if (video) {
-          const playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Autoplay prevented:', error);
-            });
-          }
-        }
-      };
-
-      // Small delay to ensure the video is in the DOM
-      const timer = setTimeout(playVideo, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [activeIndex, currentSlide.type]);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Only initialize if it's a video slide
-    if (currentSlide.type === 'video') {
-      const videoSrc = currentSlide.videoUrl;
-
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(videoSrc);
-        hls.attachMedia(video);
-
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          video.play().catch(error => {
-            console.log('Autoplay prevented:', error);
-          });
-        });
-
-        return () => {
-          hls.destroy();
-        };
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        // For Safari
-        video.src = videoSrc;
-        video.addEventListener('loadedmetadata', () => {
-          video.play().catch(error => {
-            console.log('Autoplay prevented:', error);
-          });
-        });
-      }
+    if (current === loopSlides.length - 1) {
+      setTimeout(() => {
+        if (wrapperRef.current) wrapperRef.current.style.transition = "none";
+        setCurrent(1);
+        setTimeout(() => {
+          if (wrapperRef.current)
+            wrapperRef.current.style.transition =
+              "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        }, 20);
+      }, 600);
     }
-  }, [currentSlide]);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev)
-    console.log("Menu toggled:", isMenuOpen)
-  }
-
-  const toggleAyurvedaDropdown = () => {
-    setIsAyurvedaDropdownOpen(!isAyurvedaDropdownOpen)
-    toggleIcon("svg", "svg4")
-  }
-
-  const toggleWellnessDropdown = () => {
-    setIsWellnessDropdownOpen(!isWellnessDropdownOpen)
-    toggleIcon("svg", "svg2")
-  }
-
-  const toggleNewsroomDropdown = () => {
-    setIsNewsroomDropdownOpen(!isNewsroomDropdownOpen)
-    toggleIcon("svg1", "svg3")
-  }
-
-  const toggleAboutUsDropdown = () => {
-    setIsAboutUsDropdownOpen(!isAboutUsDropdownOpen)
-    toggleIcon("svg5", "svg6")
-  }
-
-  const toggleCsrSubcategory = () => {
-    setIsCsrSubcategoryOpen(!isCsrSubcategoryOpen)
-    toggleIcon("svg7", "svg8")
-  }
-
-  const handleDropdownLinkClick = () => {
-    setIsAyurvedaDropdownOpen(false)
-    setIsWellnessDropdownOpen(false)
-    setIsNewsroomDropdownOpen(false)
-    setIsAboutUsDropdownOpen(false)
-    setIsCsrSubcategoryOpen(false)
-    setIsSearchOpen(false)
-    setIsProductDropdownOpen(false)
-  }
-
-  const toggleIcon = (iconIdToToggle, iconIdToToggleOther) => {
-    var iconToToggle = document.getElementById(iconIdToToggle)
-    var iconToToggleOther = document.getElementById(iconIdToToggleOther)
-    if (iconToToggle && iconToToggleOther) {
-      iconToToggle.classList.toggle("svg")
-      iconToToggleOther.classList.toggle("svg")
-    }
-  }
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen)
-  }
+  }, [current]);
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolledPastBanner
-          ? "bg-white/40 backdrop-blur-sm text-black shadow-md"
-          : "bg-transparent text-[#001433]"
-          } font-sans`}
-        style={{
-          fontWeight: "bold",
-          fontSize: "clamp(0.875rem, 0.9rem + 0.2667vw, 1.125rem)",
-        }}
-      >
-        <div className="max-w-[109rem] mx-auto px-4">
-          <div className="flex justify-between md:justify-between items-center h-auto">
-            <div className="flex items-center">
-              <Link to="/">
-                <img
-                  className="md:pt-2 md:pb-2"
-                  src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png_2.png?v=1752667313"
-                  alt="logo"
-                  style={{ width: "160px", height: "auto", display: "block" }} />
-              </Link>
-            </div>
-            <div className="hidden gap-4 md:flex space-x-4  text-[20px] font-[500] items-baseline" style={{ color: isScrolledPastBanner ? "black" : "#001433" }}>
-              <Link to="/" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif' }}>
-                Home
-              </Link>
+      <style>{`
+        .container-hero {
+          width: 100%;
+          padding: 0 4%;
+          
+          overflow: hidden;
+          position: relative;
+          margin-top: 90px;
+        }
 
-              <div className="navbar-dropdown relative group">
-                <button
-                  className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
-                >
-                  Our Story
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "#001433"} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+        .hero-wrapper {
+          display: flex;
+          height: 100%;
+          transition: transform .6s cubic-bezier(0.4,0,0.2,1);
+        }
 
-                {/* Dropdown Menu */}
-                <div className="absolute left-0 top-full w-[1110px] h-[380px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
-                  {/* Left Side: Title & Description */}
-                  <div className="w-[60%] mt-10">
-                    <h3 className="text-3xl font-bold text-gray-900">Our Story</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      We started with a vision to create something meaningful. Our journey has been shaped by passion,
-                      innovation, and dedication.
-                    </p>
-                  </div>
+        .hero-slide {
+          flex: 0 0 93%;
+          margin: 0 0.5%;
+          position: relative;
+          opacity: 0.6;
+          transform: scale(.94);
+          transition: .4s;
+          border-radius: 22px;
+          overflow: hidden;
+        }
 
-                  {/* Right Side: Links */}
-                  <div className="w-[35%] flex flex-col gap-3 mt-12 ">
-                    <Link
-                      to="/about-us"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white "
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">About Us </span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        We started with a vision to create something
-                      </span>
-                    </Link>
+        .hero-slide.active {
+          opacity: 1;
+          transform: scale(1);
+        }
 
-                    <Link
-                      to="/about/mission-vision"
-                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Mission & Vision</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Our mission is to do something Great
-                      </span>
-                    </Link>
+        .hero-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
 
+        .hero-img-desktop {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
 
+        @media (max-width: 768px) {
+          .hero-img-desktop {
+            display: none;
+          }
+        }
 
-                    <Link
-                      to="/healthcare"
-                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Healthcare</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Explore our healthcare initiatives and wellness programs
-                      </span>
-                    </Link>
+        @media (min-width: 769px) {
+          .hero-img {
+            display: none;
+          }
+        }
 
-                    <Link
-                      to="/growth-accelerator"
-                      className="grid grid-cols-1 text-left py-2 rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Accelerator</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Learn how we drive innovation and growth
-                      </span>
-                    </Link>
+        .text-content {
+          position: absolute;
+          bottom: 32%;
+          left: 60px;
+          color: #fff;
+          z-index: 10;
+        
+        }
 
-                  </div>
-                </div>
-              </div>
+        .text-content h1 {
+          font-size: 72px;
+          font-weight: 900;
+          line-height: 1.1;
+          font-family: ROGBold;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          margin: 0;
+        }
 
-              {/* Our Product Dropdown - Desktop */}
-              <div className="navbar-dropdown relative group">
-                <button
-                  className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
-                >
-                  Our Product
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "#001433"} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+        .word {
+          display: inline-block;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          margin-right: 0.3em;
+        }
 
-                {/* Our Product Dropdown Menu */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[1110px] h-[610px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 ">
-                  <div className="w-[60%] mt-10">
-                    <h3 className="text-3xl font-bold text-gray-900"> Our Products</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      Discover our range of premium products designed for your well-being and lifestyle.
-                    </p>
-                  </div>
+        .hero-slide.active .word {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-                  <div className="w-[35%] flex flex-col gap-3 ">
-                    <Link
-                      to="/gummies-sleep"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Dreamy Sleep Gummies</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Supports better sleep and relaxation
-                      </span>
-                    </Link>
+        .hero-slide.active .word:nth-child(1) { transition-delay: 0.2s; }
+        .hero-slide.active .word:nth-child(2) { transition-delay: 0.4s; }
+        .hero-slide.active .word:nth-child(3) { transition-delay: 0.6s; }
+        .hero-slide.active .word:nth-child(4) { transition-delay: 0.8s; }
+        .hero-slide.active .word:nth-child(5) { transition-delay: 1.0s; }
+        .hero-slide.active .word:nth-child(6) { transition-delay: 1.2s; }
+        .hero-slide.active .word:nth-child(7) { transition-delay: 1.4s; }
+        .hero-slide.active .word:nth-child(8) { transition-delay: 1.6s; }
 
-                    <Link
-                      to="/gummies"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Beauty Vitamin Gummies</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Enhances skin, hair, and nail health
-                      </span>
-                    </Link>
+        .shop-btn {
+          position: absolute;
+          right: 60px;
+          bottom: 34%;
+          background: #33CCCC;
+          color: #000;
+          padding: 16px 42px;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 16px;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transition-delay: 0.2s;
+        }
 
-                    <Link
-                      to="/pan-masala"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Herbal Pan Masala</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Refreshing and herbal mouth freshener
-                      </span>
-                    </Link>
+        .hero-slide.active .shop-btn {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-                    <Link
-                      to="/ourproduct"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">View Our Products</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        {" "}
-                        Explore our full range of high-quality products
-                      </span>
-                    </Link>
+        .divider-line {
+          position: absolute;
+          right: 60px;
+          bottom: 38%;
+          width: 150px;
+          height: 3px;
+          background: #fff;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transition-delay: 0.4s;
+        }
 
-                    <Link
-                      to="/consultation"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Book Doctor Consultation</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Connect with qualified healthcare professionals online
-                      </span>
-                    </Link>
+        .hero-slide.active .divider-line {
+          opacity: 1;
+          transform: translateY(0);
+        }
 
-                    <Link
-                      to="/healthcheck"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Health checkups at Home</span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Convenient diagnostic tests and screenings at your doorstep
-                      </span>
-                    </Link>
+        .dots-row {
+          position: absolute;
+          bottom: 60px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
 
-                    <Link
-                      to="/brain-fuel"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel </span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Enhances focus, memory, and cognitive function
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+        .dot {
+          width: 12px;
+          height: 12px;
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .dot:hover {
+          background: rgba(255, 255, 255, 0.7);
+          border-color: rgba(255, 255, 255, 0.6);
+          transform: scale(1.2);
+        }
+        
+        .dot.active { 
+          background: #fff;
+          border-color: #fff;
+          transform: scale(1.3);
+          box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+        }
 
-              <div className="navbar-dropdown relative group">
-                <button
-                  className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}
-                >
-                  Corporate
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "black" : "currentColor"} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+        .arrow-left, .arrow-right {
+          position: absolute;
+          bottom: 90px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          width: 60px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-                {/* Dropdown Menu */}
-                <div className="absolute left-1/2 top-full w-[1110px] h-auto bg-white shadow-lg rounded-lg p-5 opacity-0 invisible transform -translate-x-1/2 translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6">
-                  {/* Left Side: Title & Description */}
-                  <div className="w-[60%] mt-10">
-                    <h3 className="text-3xl font-bold text-[#004037]">Corporate Initiatives</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      Our dedication to ethical business practices, community engagement, and sustainable growth.
-                    </p>
-                    <p className="text-lg text-gray-600 mt-2">
-                      We believe in making a lasting impact through responsible actions and meaningful partnerships.
-                    </p>
-                  </div>
+        .arrow-left:hover, .arrow-right:hover {
+          transform: scale(1.1);
+        }
 
-                  {/* Right Side: Links */}
-                  <div className="w-[35%] flex flex-col gap-3 mt-8">
-                    {/* CSR Dropdown */}
-                    <div className="relative">
-                      <button
-                        onClick={() => setCsrOpen(!csrOpen)}
-                        className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white flex justify-between items-center"
-                      >
-                        <div>
-                          <span className="block font-bold text-inherit flex px-4 items-center">
-                            Welfare
-                            <svg
-                              className="w-4 h-4 ml-1"
-                              fill="none"
-                              stroke={isScrolledPastBanner ? "black" : "#001433"}
-                              viewBox="0 0 24 24"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                          </span>
-                          <span className="block text-sm px-4 text-gray-900 text-inherit">
-                            Our impact on society and sustainability efforts
-                          </span>
-                        </div>
-                      </button>
+        .arrow-left { 
+          left: 20%;
+          transform: translateX(-60px);
+        }
+        .arrow-right { 
+          right: 20%;
+          transform: translateX(60px);
+        }
 
-                      {csrOpen && (
-                        <div className="absolute left-0 top-full mt-2 w-full bg-white shadow-md rounded-lg p-3 flex flex-col gap-2 border border-gray-200">
-                          <Link
-                            to="/csr-at-aayush/malnutrition"
-                            className="grid grid-cols-1 text-left py-2 text-black rounded-md hover:bg-[#004037] !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                          >
-                            <span className="block font-bold w-full px-4 text-inherit">Malnutrition</span>
-                            <span className="block text-sm px-4 text-gray-900 text-inherit">
-                              Fighting malnutrition with dedicated programs
-                            </span>
-                          </Link>
+        .arrow-left:hover {
+          transform: translateX(-60px) scale(1.1);
+        }
+        .arrow-right:hover {
+          transform: translateX(60px) scale(1.1);
+        }
 
-                          <Link
-                            to="/csr-at-aayush/health-check"
-                            className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                          >
-                            <span className="block font-bold w-full px-4 text-inherit">Healthcare Check</span>
-                            <span className="block text-sm px-4 text-gray-900 text-inherit">
-                              Providing essential healthcare services
-                            </span>
-                          </Link>
+        .custom-arrow {
+          position: relative;
+          width: 35px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
 
-                          <Link
-                            to="/sustainability"
-                            className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                          >
-                            <span className="block font-bold w-full px-4 text-inherit">Sustainability</span>
-                            <span className="block text-sm px-4 text-gray-900 text-inherit">
-                              Driving positive change for a greener future
-                            </span>
-                          </Link>
-                        </div>
-                      )}
-                    </div>
+        .custom-arrow::before {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
 
-                    {/* Other Links */}
-                    <Link
-                      to="/career"
-                      className="grid grid-cols-1 text-left py-2 text- rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Careers</span>
-                      <span className="block text-sm px-4 text-gray-900 text-inherit">
-                        Join our team and shape the future
-                      </span>
-                    </Link>
+        .custom-arrow::after {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.3s ease;
+        }
 
-                    <Link
-                      to="/investors"
-                      className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Investors</span>
-                      <span className="block text-sm px-4 text-gray-900 text-inherit">
-                        Partner with us for sustainable growth
-                      </span>
-                    </Link>
-                    <Link
-                      to="/press-releases"
-                      className="grid grid-cols-1 text-left py-2 text-black rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Press Releases</span>
-                      <span className="block text-sm px-4 text-gray-900 text-inherit">
-                        Stay updated with our latest announcements and milestones
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+        .arrow-left .custom-arrow::before {
+          left: 0;
+          top: -1px;
+          transform: rotate(35deg);
+          transform-origin: left center;
+        }
 
-              <Link to="https://aayushlabs.com/?srsltid=AfmBOoqif7RKwRAUtj_bt5ziTTmtIgEvdmUvMJUjGc4W9II-YGKi9-0H" className=" hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
-                Aayush Lab
-              </Link>
-              <Link to="/healthcare" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
-                HealthCare
-              </Link>
-              <Link to="https://store.aayushwellness.com/?gad_source=1" className="hover:text-primary/80" style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "black" : "#001433" }}>
-                Store
-              </Link>
-              {/* <div className="navbar-dropdown relative group">
-                <button
-                  className="hover:text-primary/80 flex items-center mt-1"
-                  style={{ fontFamily: '"Inter", sans-serif', color: isScrolledPastBanner ? "white" : "white" }}
-                >
-                   Store
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke={isScrolledPastBanner ? "white" : "currentColor"} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
+        .arrow-left .custom-arrow::after {
+          left: 0;
+          top: 1px;
+          transform: rotate(-35deg);
+          transform-origin: left center;
+        }
 
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-full w-[900px] h-[310px] bg-white shadow-lg rounded-lg p-5 opacity-0 invisible translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 flex justify-between z-50 mt-6 mr-10 ml-[-290px]">
-                  <div className="w-[60%] mt-10">
-                    <h3 className="text-3xl font-bold text-gray-900"> Store</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                     Here you can get you all the products 
-                    </p>
-                  </div>
+        .arrow-right .custom-arrow::before {
+          right: 0;
+          top: -1px;
+          transform: rotate(-35deg);
+          transform-origin: right center;
+        }
 
-                  <div className="w-[35%] flex flex-col gap-3 ">
-                    <Link
-                      to="/gummies-sleep"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Herbal Masala</span>
-                      <span className="block text-sm px-4 text-gray-900 text-inherit">
-                        Herbal Masala | 100% Natural | 100% Organic | 100% Pure
-                      </span>
-                     
-                    </Link>
+        .arrow-right .custom-arrow::after {
+          right: 0;
+          top: 1px;
+          transform: rotate(35deg);
+          transform-origin: right center;
+        }
 
-                    <Link
-                      to="/gummies"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Gummies</span>
-                      <span className="block text-sm px-4 text-gray-900 text-inherit">
-                        Gummies | 100% Natural | 100% Organic | 100% Pure
-                      </span>                    
-                    </Link>
+        /* Responsive font sizes for different screen sizes */
+        @media (min-width: 1024px) and (max-width: 1366px) {
+          .text-content h1 {
+            font-size: 58px;
+          }
+        }
 
-                  </div>
-                </div>
-              </div> */}
-            </div>
-            <div className="js pl-[5px]  flex justify-center items-center">
-              {/* Search Input */}
+        @media (min-width: 1367px) and (max-width: 1920px) {
+          .text-content h1 {
+            font-size: 65px;
+          }
+        }
 
-              {isSearchOpen && (
-                <div class="sp" className=" hidden md:flex  absolute right-44 top-16 z-[99999]">
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    className="px-4 py-2 border rounded-md focus:outline-none text-black"
-                    onBlur={() => setIsSearchOpen(false)} // Hide search input when it loses focus
-                  />
-                </div>
-              )}
-            </div>
+        @media (min-width: 1921px) {
+          .text-content h1 {
+            font-size: 78px;
+          }
+        }
 
-            <div className="md:hidden">
-              <div className="flex">
-                {/* <button
-                  onClick={toggleSearch}
-                  className="block py-2 px-2  hover:text-primary/80"
-                >
-                  <img src={searchIcon || "/placeholder.svg"} alt="Search" className="h-6 w-6" />
-                </button> */}
+        /* Tablet font sizes */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .text-content h1 {
+            font-size: 52px;
+          }
+        }
 
-                <button
-                  id="mobile-menu-button"
-                  className="hover:text-primary/80 focus:outline-none"
-                  onClick={toggleMenu}
-                >
-                  <img
-                    className="h-7"
-                    src={menu}
-                    alt="menu"
-                  />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        @media (max-width: 768px) {
+          .container-hero {
+         
+            padding: 0 1%;
+         
+            width: 100%;
+          }
+
+          .hero-slide {
+            flex: 0 0 94%;
+            margin: 0 3%;
+            opacity: 1;
+            transform: scale(1);
+          }
+
+          .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+          }
+
+          .text-content {
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 190%;
+          }
+
+          .text-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+          }
+
+          .shop-btn {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 15%;
+            right: auto;
+            padding: 14px 28px;
+            font-size: 15px;
+          }
+
+          .divider-line {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20%;
+            right: auto;
+            width: 100px;
+            height: 3px;
+          }
+
+          .dots-row {
+            bottom: 30px;
+            gap: 10px;
+          }
+
+          .dot {
+            width: 10px;
+            height: 10px;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+          }
+
+          .dot.active {
+            transform: scale(1.2);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+          }
+
+          .arrow-left, .arrow-right {
+            bottom: 60px;
+            width: 50px;
+            height: 30px;
+          }
+
+          .arrow-left { 
+            left: 25%;
+            transform: translateX(-50px);
+          }
+          .arrow-right { 
+            right: 25%;
+            transform: translateX(50px);
+          }
+
+          .arrow-left:hover {
+            transform: translateX(-50px) scale(1.1);
+          }
+          .arrow-right:hover {
+            transform: translateX(50px) scale(1.1);
+          }
+
+          .custom-arrow {
+            width: 30px;
+            height: 2px;
+          }
+
+          .custom-arrow::before,
+          .custom-arrow::after {
+            width: 10px;
+            height: 2px;
+          }
+        }
+          
+      `}
+      </style>
+
+      <div className="container-hero">
         <div
-          id="mobile-menu"
-          className={`fixed top-0 left-0 h-full w-full bg-white shadow-md z-50 transition-all duration-300 ${isMenuOpen ? "block !translate-x-0" : "hidden !-translate-x-full"
-            }`}
+          ref={wrapperRef}
+          className="hero-wrapper"
+          style={{ transform: window.innerWidth <= 768 ? `translateX(-${current * 100}%)` : `translateX(-${current * 94 - 1.5}%)` }}
         >
-          <div className="flex justify-between items-center px-6 ">
-            {/* Logo on the left */}
-            <img
-              src="https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Wellness_Limited_-_Logo_-_17-10-2024-02_-_png_2.png?v=1752667313"
-              alt="Logo"
-              style={{ width: "144px", height: "auto", display: "block" }}
-            />
+          {loopSlides.map((s, i) => (
+            <div key={i} className={`hero-slide ${i === current ? "active" : ""}`}>
+              {/* Image for Desktop */}
+              <img src={s.desktopImage} className="hero-img-desktop" alt={s.title} />
 
-            {/* Close Button on the right */}
-            <button className="hover:text-primary/80 focus:outline-none" onClick={toggleMenu}>
-              <img className="h-8" src={closepng || "/placeholder.svg"} alt="Close Menu" />
-            </button>
-          </div>
+              {/* Image for Mobile */}
+              <img src={s.image} className="hero-img" alt={s.title} />
 
-          <div className="flex flex-col mt-10 px-6 overflow-y-auto h-full pb-20">
-            {/* Home Link */}
-            <Link
-              to="/"
-              className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
-            >
-              Home
-            </Link>
-            <div className="h-px w-full bg-gray-200 my-1"></div>
-
-            <div className="relative">
-              <button
-                onClick={() => setIsAboutUsDropdownOpen(!isAboutUsDropdownOpen)}
-                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-              >
-                <span>Our Story</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-200 ${isAboutUsDropdownOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-
-              {isAboutUsDropdownOpen && (
-                <div className="rounded-md mt-2 mb-3 py-2 ">
-                  {/* Title & Description */}
-                  <div className="px-4 py-2">
-                    <h3 className="text-xl font-bold text-[#004037]">Our Story</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      We started with a vision to create something meaningful. Our journey has been shaped by passion,
-                      innovation, and dedication.
-                    </p>
-                  </div>
-
-                  {/* Dropdown Links */}
-                  <div className="flex flex-col">
-                    <Link
-                      to="/about-us"
-                      className="block px-4 py-3 text-[#004037] font-bold transition"
-                      onClick={() => setIsAboutUsDropdownOpen(false)}
-                    >
-                      About Us
-                      <p className="text-sm text-gray-600">We started with a vision to create something</p>
-                    </Link>
-
-                    <Link
-                      to="/about/mission-vision"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsAboutUsDropdownOpen(false)}
-                    >
-                      Mission & Vision
-                      <p className="text-sm text-gray-600">Our mission is to do something Great</p>
-                    </Link>
-
-
-
-                    <Link
-                      to="/healthcare"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsAboutUsDropdownOpen(false)}
-                    >
-                      Healthcare
-                      <p className="text-sm text-gray-600">Explore our healthcare initiatives and wellness programs</p>
-                    </Link>
-
-                    <Link
-                      to="/growth-accelerator"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsAboutUsDropdownOpen(false)}
-                    >
-                      Accelerator
-                      <p className="text-sm text-gray-600">Learn how we drive innovation and growth</p>
-                    </Link>
-
-                  </div>
-                </div>
-              )}
+              <div className="text-content">
+                <h1>
+                  {s.title.split(' ').map((word, wordIndex) => (
+                    <span key={wordIndex} className="word">{word}</span>
+                  ))}
+                </h1>
+              </div>
+           
+              <button className="shop-btn">{s.buttonText}</button>
             </div>
-
-            <div className="h-px w-full bg-gray-200 my-1"></div>
-
-            {/* Our Product Dropdown - Mobile */}
-            <div className="relative">
-              <button
-                onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-              >
-                <span>Our Product</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-200 ${isProductDropdownOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-
-              {/* Dropdown Menu */}
-              {isProductDropdownOpen && (
-                <div className="rounded-md mt-2 mb-3 py-2 ">
-                  {/* Title & Description */}
-                  <div className="px-4 py-2 ">
-                    <h3 className="text-xl font-bold text-[#004037]">Our Product</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      Discover our range of premium products designed for your well-being and lifestyle.
-                    </p>
-                  </div>
-
-                  {/* Dropdown Links */}
-                  <div className="flex flex-col">
-                    <Link
-                      to="/gummies-sleep"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Dreamy Sleep Gummies
-                      <p className="text-sm text-gray-600">Supports better sleep and relaxation</p>
-                    </Link>
-
-                    <Link
-                      to="/gummies"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Beauty Vitamin Gummies
-                      <p className="text-sm text-gray-600">Enhances skin, hair, and nail health</p>
-                    </Link>
-
-                    <Link
-                      to="/pan-masala"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Herbal Pan Masala
-                      <p className="text-sm text-gray-600">Refreshing and herbal mouth freshener</p>
-                    </Link>
-
-                    <Link
-                      to="/ourproduct"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      View Our Product
-                      <p className="text-sm text-gray-600"> Explore our full range of high-quality products</p>
-                    </Link>
-
-                    <Link
-                      to="/consultation"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Book Doctor Consultation
-                      <p className="text-sm text-gray-600">Connect with qualified healthcare professionals online</p>
-                    </Link>
-
-                    <Link
-                      to="/healthcheck"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Health checkups at Home
-                      <p className="text-sm text-gray-600">Convenient diagnostic tests and screenings at your doorstep</p>
-                    </Link>
-
-
-                    <Link
-                      to="/brain-fuel"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel </span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Enhances focus, memory, and cognitive function
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="h-px w-full bg-gray-200 my-1"></div>
-            <div className="relative">
-              <button
-                onClick={() => setIsCorporateDropdownOpen(!isCorporateDropdownOpen)}
-                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-              >
-                <span>Corporate</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-200 ${isCorporateDropdownOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-
-              {isCorporateDropdownOpen && (
-                <div className="rounded-md mt-2 mb-3 py-2 ">
-                  {/* Title & Description */}
-                  <div className="px-4 py-2">
-                    <h3 className="text-xl font-bold text-[#004037]">Corporate Initiatives</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      Our dedication to ethical business practices, community engagement, and sustainability.
-                    </p>
-                  </div>
-
-                  {/* Dropdown Links */}
-                  <div className="flex flex-col">
-                    {/* CSR Section with Dropdown */}
-                    <div className="relative">
-                      <button
-                        onClick={() => setIsCsrSubcategoryOpen(!isCsrSubcategoryOpen)}
-                        className="block w-full px-4 py-3 text-[#004037] font-extrabold  flex justify-between items-center"
-                      >
-                        <span>welfare</span>
-                        <svg
-                          className={`w-4 h-4 transition-transform duration-200 ${isCsrSubcategoryOpen ? "rotate-180" : ""
-                            }`}
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </button>
-
-                      {isCsrSubcategoryOpen && (
-                        <div className="ml-4  mt-2 py-2">
-                          <Link
-                            to="/csr-at-aayush/malnutrition"
-                            className="block px-4 py-3 text-[#004037] "
-                            onClick={() => {
-                              setIsCsrSubcategoryOpen(false)
-                              setIsCorporateDropdownOpen(false)
-                            }}
-                          >
-                            Malnutrition
-                            <p className="text-sm text-gray-600">Fighting malnutrition with dedicated programs</p>
-                          </Link>
-                          <Link
-                            to="/csr-at-aayush/health-check"
-                            className="block px-4 py-3 text-[#004037] "
-                            onClick={() => {
-                              setIsCsrSubcategoryOpen(false)
-                              setIsCorporateDropdownOpen(false)
-                            }}
-                          >
-                            Healthcare Check
-                            <p className="text-sm text-gray-600">Providing essential healthcare services</p>
-                          </Link>
-                          <Link
-                            to="/sustainability"
-                            className="block px-4 py-3 text-[#004037] "
-                            onClick={() => {
-                              setIsCsrSubcategoryOpen(false)
-                              setIsCorporateDropdownOpen(false)
-                            }}
-                          >
-                            Sustainability
-                            <p className="text-sm text-gray-600">Driving positive change for a greener future</p>
-                          </Link>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Other Links */}
-                    <Link
-                      to="/career"
-                      className="block px-4 py-3 text-[#004037] font-bold "
-                      onClick={() => setIsCorporateDropdownOpen(false)}
-                    >
-                      Careers
-                      <p className="text-sm text-gray-600">Join our team and shape the future</p>
-                    </Link>
-
-                    <Link
-                      to="/investors"
-                      className="block px-4 py-3 text-[#004037] font-bold "
-                      onClick={() => setIsCorporateDropdownOpen(false)}
-                    >
-                      Investors
-                      <p className="text-sm text-gray-600">Partner with us for sustainable growth</p>
-                    </Link>
-                    <Link
-                      to="/press-releases"
-                      className="block px-4 py-3 text-[#004037] font-bold "
-                      onClick={() => setIsCorporateDropdownOpen(false)}
-                    >
-                      Press Releases
-                      <p className="text-sm text-gray-600">Stay updated with our latest announcements and milestones</p>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="h-px w-full bg-gray-200 my-1"></div>
-            <Link
-              to="https://aayushlabs.com/?srsltid=AfmBOoqGsq_TBQl3mTiQ9guIlNE-_0Za-tJWjqpEy2XsKfC2quG1AjNp"
-              className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
-            >
-              Aayush Labs
-            </Link>
-            <div className="h-px w-full bg-gray-200 my-1"></div>
-            <Link
-              to="/healthcare"
-              className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
-            >
-              Healthcare
-            </Link>
-            <Link
-              to="https://store.aayushwellness.com/?gad_source=1"
-              className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
-            >
-              Store
-            </Link>
-            {/* <div className="relative">
-              <button
-                onClick={() => setIsProductDropdownOpen(!isProductDropdownOpen)}
-                className="w-full py-4 font-extrabold text-[#004037] text-[36px] flex items-center justify-between"
-              >
-                <span>Our Product</span>
-                <svg
-                  className={`w-5 h-5 transition-transform duration-200 ${isProductDropdownOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-
-      
-              {isProductDropdownOpen && (
-                <div className="rounded-md mt-2 mb-3 py-2 ">
-              
-                  <div className="px-4 py-2 ">
-                    <h3 className="text-xl font-bold text-[#004037]">Our Product</h3>
-                    <p className="text-lg text-gray-600 mt-2">
-                      Discover our range of premium products designed for your well-being and lifestyle.
-                    </p>
-                  </div>
-
-               
-                  <div className="flex flex-col">
-                    <Link
-                      to="/gummies-sleep"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Dreamy Sleep Gummies
-                      <p className="text-sm text-gray-600">Supports better sleep and relaxation</p>
-                    </Link>
-
-                    <Link
-                      to="/gummies"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Beauty Vitamin Gummies
-                      <p className="text-sm text-gray-600">Enhances skin, hair, and nail health</p>
-                    </Link>
-
-                    <Link
-                      to="/pan-masala"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Herbal Pan Masala
-                      <p className="text-sm text-gray-600">Refreshing and herbal mouth freshener</p>
-                    </Link>
-
-                    <Link
-                      to="/ourproduct"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      View Our Product
-                      <p className="text-sm text-gray-600"> Explore our full range of high-quality products</p>
-                    </Link>
-
-                    <Link
-                      to="/consultation"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Book Doctor Consultation
-                      <p className="text-sm text-gray-600">Connect with qualified healthcare professionals online</p>
-                    </Link>
-
-                    <Link
-                      to="/healthcheck"
-                      className="block px-4 py-3 text-[#004037] font-bold hover:bg-gray-100 transition"
-                      onClick={() => setIsProductDropdownOpen(false)}
-                    >
-                      Health checkups at Home
-                      <p className="text-sm text-gray-600">Convenient diagnostic tests and screenings at your doorstep</p>
-                    </Link>
-
-
-                         <Link
-                      to="/brain-fuel"
-                      className="grid grid-cols-1 text-left py-2  rounded-md !text-[#004037] hover:bg-[#004037] transition w-full hover:!text-white"
-                    >
-                      <span className="block font-bold w-full px-4 text-inherit">Brain Fuel </span>
-                      <span className="block text-sm px-4 text-grey-900 text-inherit">
-                        Enhances focus, memory, and cognitive function
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div> */}
-
-
-          </div>
-        </div>
-      </nav>
-
-      {/* Banner Section */}
-      <div className="relative w-full h-auto md:h-screen overflow-hidden bg-gray-100 mb-10 mt-24 md:mt-0" ref={sliderRef}>
-        {/* Banner Image/Video */}
-        <div className="relative w-full h-auto md:h-full">
-          {currentSlide.type === 'video' ? (
-            <div className="relative w-full h-auto md:h-full">
-              <video
-                ref={videoRef}
-                className="w-full h-auto md:h-full object-cover"
-                style={{ height: isMobile ? '85vh' : '100vh' }}
-                poster={isMobile ? currentSlide.thumbnail.mobile : currentSlide.thumbnail.desktop}
-                loop
-                muted
-                autoPlay
-                playsInline
-              >
-                <source
-                  src={isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl}
-                  type={
-                    (isMobile && currentSlide.videoUrlMobile ? currentSlide.videoUrlMobile : currentSlide.videoUrl).endsWith('.m3u8')
-                      ? 'application/x-mpegURL'
-                      : 'video/mp4'
-                  }
-                />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          ) : (
-            <img
-              src={isMobile ? currentSlide.image.mobile : currentSlide.image.desktop}
-              alt={currentSlide.title}
-              className="w-full h-auto md:h-full"
-            />
-          )}
-
-
-          {/* Overlay Content */}
-          <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 px-4 sm:px-8 bg-gradient-to-t via-black/30 to-transparent"
-            style={{
-              opacity: 0.6,
-            }}>
-            <div className="max-w-4xl mx-auto text-center w-full px-4 text-white ">
-              <h2
-                className="sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
-                style={{
-                  color: 'white',                 // fill color of the text
-                  fontSize: '2rem',
-                  WebkitTextStroke: '2px black',  // black outline around text
-                  textStroke: '2px black',        // for other browsers
-                }}
-              >
-                {currentSlide.title}
-              </h2>
-
-              <p className="text-lg sm:text-xl md:text-2xl text-[#00143] mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed" style={{ display: 'none' }} >
-                {currentSlide.description}
-              </p>
-              {currentSlide.path ? (
-                <Link
-                  to={currentSlide.path}
-                  className="inline-flex items-center bg-black text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-medium hover:bg-gray-800 transition-colors text-lg sm:text-xl"
-                >
-                  {currentSlide.buttonText}
-                  <ChevronRight className="ml-2 w-6 h-6" />
-                </Link>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-3">
-          {bannerData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-[#33cccc] w-8' : 'bg-black/50 w-3'
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="hidden md:flex absolute left-8 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-xl transition-all"
-          aria-label="Previous slide"
-        >
-          <ChevronRight className="w-8 h-8 text-gray-800 transform rotate-180" />
+        <div className="dots-row">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              className={`dot ${current === i + 1 ? "active" : ""}`}
+              onClick={() => setCurrent(i + 1)}
+            ></div>
+          ))}
+        </div>
+        <button className="arrow-left" onClick={goPrev}>
+          <div className="custom-arrow"></div>
         </button>
-        <button
-          onClick={nextSlide}
-          className="hidden md:flex absolute right-8 top-1/2 transform -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-xl transition-all"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-8 h-8 text-gray-800" />
+        <button className="arrow-right" onClick={goNext}>
+          <div className="custom-arrow"></div>
         </button>
       </div>
     </>
-  )
-}
+  );
+};
+
+export default Slider;
