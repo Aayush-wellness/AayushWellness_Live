@@ -51,6 +51,7 @@
       display: flex; 
       flex-wrap: wrap; 
       gap: 0.25rem;
+      padding: 0 20px;
   } 
   
   :before,:after { 
@@ -452,15 +453,16 @@
   }     
   
   .kptVHS { 
-      margin-top: 3.5rem; 
+      margin-top: 1.5rem; 
       margin-bottom: 5rem; 
       text-align: center; 
       min-width: 100%;
+      padding: 0 20px;
   } 
   
   @media (min-width: 1266px){ 
     .kptVHS { 
-      margin-top: 2.5rem; 
+      margin-top: -.5rem; 
       margin-bottom: 5rem;
     } 
   }     
@@ -531,11 +533,26 @@
 
 
 
- /* Apply margin only for larger screens */
+ /* Remove margin for all screens to ensure full black background */
 @media (min-width: 1024px) { 
     .homedoctor-container {
-      margin: 0px 88.5px 80px;
+      margin: 0;
     }
+  }
+
+  /* Black background for the main container */
+  .homedoctor-container {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Ensure the blocks class also has black background */
+  .homedoctor-container.blocks {
+    background-color: black;
+    height:190vh;
   }
 
 
@@ -604,7 +621,7 @@
 }
 
 .typographystyle__Typography-sc-1r2rdgq-1{
-    color:rgb(77, 77, 77);
+    color: black;
     font-weight: normal;
     
 }
