@@ -17,6 +17,7 @@ import StackImage from "./StackImage";
 import HeroSection from "./HeroSection";
 import NewFooter from "./NewFooter";
 import GummyProductSlider from "./GummyProductSlider";
+import Header from './Header';
 
 
 import "./index.css";
@@ -33,29 +34,30 @@ import Homedoctor from "./Homedoctor";
 
 function Layout() {
   return (
-     <>
-     
-      <Sliding />     
-      <CleanEnergyHero/>
+    <>
+      <Header />
+      <Sliding />
+      <CleanEnergyHero />
+<GummyProductSlider />
       <StackImage />
-    <GummyProductSlider/>
-   
+    
 
-        
-      <AwCard/>
-      <AwCard2/>
-    <Homedoctor/>
+
+
+      <AwCard />
+      <AwCard2 />
+      <Homedoctor />
       <HeroSection />
-       {/* <SectionTrail/>  */}
+      {/* <SectionTrail/>  */}
 
- 
+
       {/* <SliderThird />  */}
-     {/* <SectionSixAbove /> */}
+      {/* <SectionSixAbove /> */}
       {/* <SectionFive /> */}
 
-   {/* <CircularSlider/>  */}
-   <HomeBlog/>
- 
+      {/* <CircularSlider/>  */}
+      <HomeBlog />
+
       <NewFooter />
       {/* <FooterCopyright /> */}
     </>
