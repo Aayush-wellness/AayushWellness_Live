@@ -26,7 +26,7 @@ const cardData = [
     description: 'Book full-body checkups with free home sample collection & online reports.',
   
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Gemini_Generated_Image_w1wzlow1wzlow1wz.png?v=1758715400',
+    image: 'https://cdn.shopify.com/s/files/1/0674/9614/9171/files/labs_images_1.png?v=1762241887',
     category: 'Healthcare'
   },
   { 
@@ -34,7 +34,7 @@ const cardData = [
     title: 'Track & Improve Your Wellness',
     description: 'Track your wellness goals with easy, reliable diagnostics.',
   
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_174517.png?v=1758716191',
+    image: 'https://cdn.shopify.com/s/files/1/0674/9614/9171/files/labs_image_2_1.png?v=1762241887',
     category: 'Healthcare'
   },
   { 
@@ -42,7 +42,7 @@ const cardData = [
     title: ' Complete Mind-Body Care',
     description: ' Access holistic health solutions for total well-being.',
    
-    image: 'https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Screenshot_2025-09-24_174532.png?v=1758716191',
+    image: 'https://cdn.shopify.com/s/files/1/0674/9614/9171/files/labs_images_3_1.png?v=1762241887',
     category: 'Healthcare'
   },
   
