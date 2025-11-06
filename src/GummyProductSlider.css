@@ -2,7 +2,7 @@
 .gummy-slider-section {
   width: 100%;
   padding: 80px 20px;
-  background-color: #f5f5f5;
+  background-color: #000000;
 }
 
 .gummy-slider-container {
@@ -15,7 +15,7 @@
   font-size: 48px;
   font-weight: 700;
   text-align: center;
-  color: #1a1a1a;
+  color: white;
   margin: 0 0 60px 0;
   letter-spacing: 2px;
   
