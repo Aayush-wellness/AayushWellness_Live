@@ -1,13 +1,11 @@
 [
-  
   {
     "id": 1,
     "header": "Annual Report",
     "text": [
       {
         "id": 1,
-       
-        "quarter":"quarter 1",
+        "quarter": "quarter 1",
         "head": "FY 2015-16 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/FY_2015-16.pdf?v=1724654515"
       },
@@ -23,7 +21,6 @@
       },
       {
         "id": 4,
-        
         "head": "FY 2018-19",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/FY_2018-19.pdf?v=1724654515"
       },
@@ -46,15 +43,12 @@
         "id": 8,
         "head": "FY 2022-23",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/FY_2022-23.pdf?v=1724654511"
-      }
-
-      ,
+      },
       {
         "id": 100,
         "head": "FY 2023-24",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/FY_2023-24.pdf?v=1725882645"
-      }
-,
+      },
       {
         "id": 101,
         "head": "FY 2024-25",
@@ -244,66 +238,48 @@
         "head": "Intimation of Postponement of BM_31.03.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_Postponement_of_BM_31.03.2024.pdf?v=1724656366"
       },
-       {
-        
+      {
         "id": 55,
         "header": "FY 2024-25",
         "head": "BM_Intimation-27.05.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-27.05.2024.pdf?v=1726811568"
       },
-       {
-        
+      {
         "id": 58,
-       
         "head": "BM_Intimation_for_Postponement_and_Rescheduling_of_Board_Meeting-27.05.2024.pdf",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation_for_Postponement_and_Rescheduling_of_Board_Meeting-27.05.2024.pdf?v=1726811568"
       },
-
-      
       {
         "id": 35,
         "head": "Intimation of BM_03.06.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_BM_30.06.2024.pdf?v=1724656605"
       },
-
-       {
-        
+      {
         "id": 54,
         "head": "BM_Intimation-15.06.2024.pdf",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-15.06.2024.pdf?v=1726811568"
       },
-      
       {
-        
         "id": 52,
         "head": "BM_Intimation_for_Postponement_and_Rescheduling_of_Board_Meeting-15.06.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation_for_Postponement_and_Rescheduling_of_Board_Meeting-15.06.2024.pdf?v=1726811567"
       },
-
-      
       {
         "id": 36,
         "head": "Intimation_of_BM_12.08.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_BM_12.08.2024.pdf?v=1724656604"
-      }
-      ,
-
-      
+      },
       {
         "id": 201,
         "head": "Intimation_of_BM_29.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_BM_29.10.2024.pdf?v=1731496275"
-      }
-       ,
-
-      
+      },
       {
         "id": 202,
         "head": "Intimation_of_BM_13.11.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_BM_13.11.2024.pdf?v=1731496275"
       },
-       {
+      {
         "id": 203,
         "head": "BM Intimation-UFR-13.02.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-UFR-13.02.2025.pdf?v=1762340988"
@@ -313,38 +289,32 @@
         "head": "BM Intimation-Interim Dividend-20.02.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-Interim_Dividend-20.02.2025.pdf?v=1762340988"
       },
-
       {
-        
         "id": 56,
         "header": "FY 2025-26",
         "head": "BM Intimation-21.05.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-21.05.2025.pdf?v=1762341611"
       },
-       {
-        
+      {
         "id": 205,
-       
         "head": "BM Intimation-29.05.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-29.05.2025.pdf?v=1762341611"
       },
-
-      
       {
         "id": 206,
         "head": "BM Intimation-Interim Dividend-24.07.2025",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-Interim_Dividend-24.07.2025.pdf?v=1762341611"
       },
       {
         "id": 207,
         "head": "BM Intimation-06.08.2025",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation-06.08.2025.pdf?v=1762341610"
+      },
+       {
+        "id": 208,
+        "head": "BM Intimation_06.11.2025",
+        "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Intimation_06.11.2025.pdf?v=1762496107"
       }
-
-
-      
     ]
   },
   {
@@ -564,210 +534,159 @@
         "head": "Outcome of BM_31.03.2024 AFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Outcome_of_BM_31.03.2024_AFR_58aa1843-7569-49f3-b34b-41dde53fbc7b.pdf?v=1724665902"
       },
-       {
+      {
         "id": 61,
         "head": "BM_Outcome-30.05.2024",
         "header": "FY 2024-25",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-30.05.2024.pdf?v=1726812640"
       },
-       {
+      {
         "id": 62,
         "head": "BM_Outcome-19.06.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-19.06.2024.pdf?v=1726812639"
       },
-       {
+      {
         "id": 63,
         "head": "BM_Outcome-12.08.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-12.08.2024.pdf?v=1726812640"
-      }
-      ,
-       {
+      },
+      {
         "id": 64,
         "head": "BM_Outcome-29.08.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-29.08.2024.pdf?v=1726812639"
-      }
-       ,
-       {
+      },
+      {
         "id": 65,
         "head": "BM_outcome-02.09.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_outcome-02.09.2024.pdf?v=1726812640"
-      }
-       ,
-       {
+      },
+      {
         "id": 205,
         "head": "BM_Outcome_30.09.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BM_Outcome_30.09.2024.pdf?v=1735794103"
-      }
-      ,
-       {
+      },
+      {
         "id": 200,
         "head": "BM_Outcome_29.10.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_29.10.2024.pdf?v=1731498321"
-      }
-        ,
-       {
+      },
+      {
         "id": 201,
         "head": "BM_Outcome_13.11.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_13.11.2024.pdf?v=1731498322"
-      }
-      ,
-       {
+      },
+      {
         "id": 202,
         "head": "BM_Outcome_16.12.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_16.12.2024_1.pdf?v=1735637898"
-      }
-      ,
-       {
+      },
+      {
         "id": 203,
         "head": "BM_Outcome_23.12.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_23.12.2024.pdf?v=1735637988"
-      }
-        
-      ,
-       {
+      },
+      {
         "id": 204,
         "head": "BM_Outcome_27.12.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_27.12.2024.pdf?v=1735638193"
-      }
-       ,
-       {
+      },
+      {
         "id": 210,
         "head": "BM_Outcome_02.01.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BM_Outcome_02.01.2025.pdf?v=1735888352"
       },
       {
         "id": 310,
         "head": "BM Outcome_01.02.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_01.02.2025.pdf?v=1762342150"
       },
       {
         "id": 311,
         "head": "BM Outcome_13.02.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_13.02.2025.pdf?v=1762342150"
       },
-
-     
-       {
+      {
         "id": 211,
         "head": "Outcome_of_BM_25.02.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Outcome_of_BM.pdf?v=1740995297"
       },
-       {
+      {
         "id": 212,
         "head": "Outcome_of_BM_26.04.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/BM_Outcome_26.04.2025.pdf?v=1745906838"
       },
-       {
+      {
         "id": 213,
         "head": "Outcome_of_BM_31.03.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Aayush-BM_Outcome_AFR_31.03.2025_sd.pdf?v=1748604037"
       },
-       {
+      {
         "id": 214,
         "head": "Aayush_BM_Outcome_of_BM_30.05.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Aayush-BM_Outcome_AFR_31.03.2025_sd_1.pdf?v=1749470646"
       },
-       {
+      {
         "id": 215,
         "head": "Aayush_BM_Outcome_of_BM_09.06.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_1.pdf?v=1752237127"
       },
       {
         "id": 216,
         "head": "Aayush_BM_Outcome_of_BM_20.06.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Outcome_of_Board_Meeting.pdf?v=1752237129"
       },
       {
         "id": 217,
         "head": "Aayush_BM_Outcome_of_BM_01.07.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome.pdf?v=1752237132"
       },
       {
         "id": 218,
         "head": "Aayush_BM_Outcome_of_BM_11.07.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome_11.07.2025.pdf?v=1752237134"
       },
       {
         "id": 219,
         "head": "Initmation Of Board Meeting",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_Board_Meeting_Upload.pdf?v=1753677734"
       },
       {
         "id": 220,
         "head": "Outcome of Board Meeting",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Outcome_of_Board_Meeting_Upload.pdf?v=1754118564"
       },
-       {
+      {
         "id": 221,
         "head": "Outcome of Board Meeting",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/outcome_of_BM.pdf?v=1755001950"
       },
-
-
-       {
+      {
         "id": 222,
         "head": "Outcome of Board Meeting 03.09.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/BM_Outcome_Uploaded.pdf?v=1757066316"
       },
-       {
+      {
         "id": 223,
         "head": "Outcome of Board Meeting 04.09.2025",
-    
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Outcome_of_Board_Meeting_Upload.pdf?v=1757066316"
       },
-
-
       {
         "id": 63,
         "head": "BM Outcome-09.06.2025",
         "header": "FY 2025-26",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-09.06.2025.pdf?v=1762342288"
       },
-       {
+      {
         "id": 61,
         "head": "BM Outcome-16.08.2024",
-    
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/BM_Outcome-16.08.2024.pdf?v=1762342288"
       }
-      
-      
-    
-      
-      
     ]
-  }
-  ,
+  },
   {
     "id": 4,
     "header": "News Adv.",
     "text": [
-       
-     
       {
         "id": 1,
         "head": "DEC 2016",
@@ -946,80 +865,60 @@
         "head": "Postal ballot_20.06.2024",
         "header": "FY 2024-25",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Postal_ballot_02.04.2024.pdf?v=1724841931"
-      }
-        ,
+      },
       {
         "id": 76,
         "head": "Postal_Ballot_Notice-23.07.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Postal_Ballot_Notice-23.07.2024.pdf?v=1726816220"
-      }  
-      ,
+      },
       {
         "id": 36,
         "head": "Newspaper_Adv-AFR_31.03.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newapaper_Adv-AFR_31.03.2024.pdf?v=1726815647"
-      }  ,
+      },
       {
         "id": 37,
         "head": "Newspaper_Adv-AFR_30.06.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newapaper_Adv-UFR_30.06.2024.pdf?v=1726815646"
-      }
-      ,
+      },
       {
         "id": 38,
         "head": "Newspaper_advertisement_-_Notice_of_40th_AGM",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_advertisement_-_Notice_of_40th_AGM.pdf?v=1726815647"
       },
       {
         "id": 78,
         "head": "Newspaper Advt-UFR-30.09.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advt-UFR-30.09.2024.pdf?v=1762344272"
       },
-       
       {
         "id": 101,
         "head": "Newspaper_Advertisement_-_Shifting_of_RO",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advertisement_-_Shifting_of_RO.pdf?v=1728293183"
       },
-
       {
         "id": 1122,
         "head": "Newspaper Advt-UFR-31.12.2024",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advt-UFR-31.12.2024.pdf?v=1762344273"
       },
-       {
+      {
         "id": 34,
         "head": "Newspaper Advt-AFR-31.03.2025 ",
         "header": "FY 2025-26",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advt-AFR-31.03.2025_uploaded_but_need_to_rename.pdf?v=1762344456"
       },
-
-       {
+      {
         "id": 105,
         "head": "Newspaper Advt-UFR-30.06.2025",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advt-UFR-30.06.2025.pdf?v=1762344455"
       },
       {
         "id": 106,
         "head": "Newspaper Advt-UFR-30.09.2025",
-      
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Newspaper_Advt-UFR-30.09.2025.pdf?v=1762344455"
       }
-      
-      
-      
-      
     ]
-  }
-  ,
+  },
   {
     "id": 5,
     "header": "TWC",
@@ -1045,7 +944,6 @@
         "head": "Trading Window Closure_31.12.2016 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Trading_Window_Closure_31.12.2019_UFR.pdf?v=1724674224"
       },
-      
       {
         "id": 55,
         "head": "Trading Window Closure_30.06.2017 UFR",
@@ -1067,7 +965,6 @@
         "head": "Trading Window Closure_31.12.2017 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Trading_Window_Closure_31.12.2019_UFR.pdf?v=1724674224"
       },
-      
       {
         "id": 59,
         "head": "Trading Window Closure_30.06.2018 UFR",
@@ -1110,15 +1007,6 @@
         "head": "Trading Window Closure_31.12.2019 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Trading_Window_Closure_31.12.2019_UFR.pdf?v=1724674224"
       },
-
-
-
-
-
-
-
-
-      
       {
         "id": 16,
         "head": "Trading Window Closure_30.06.2020 UFR",
@@ -1213,41 +1101,30 @@
         "id": 93,
         "head": "Trading_Window_Closure_30.09.2024 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Trading_Window_Closure_30.09.2024_UFR.pdf?v=1727353250"
-      }
-      ,
+      },
       {
         "id": 94,
         "head": "Trading_Window_Closure_26.12.2024 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Trading_Window_Closure.pdf?v=1735794125"
-      }
-      ,
-       {
+      },
+      {
         "id": 36,
         "head": "Trading_Window_Closure_25.03.2025 UFR",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Trading_Window_Closure_8850fac1-8311-4359-9a95-b685d4abe119.pdf?v=1742909351"
-      } ,
-       {
+      },
+      {
         "id": 37,
         "head": "Aayus_Trading_Window_Closure",
+        "header": "FY 2025-26",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Aayush_Trading_Window_Closure.pdf?v=1750829156"
-      } ,
-      
-       {
+      },
+      {
         "id": 38,
         "head": "TWC_30.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/TWC_30.09.2025.pdf?v=1758717243"
-      } 
-      
-      
+      }
     ]
-  }
-  
-
-
-
-
-
-  ,
+  },
   {
     "id": 6,
     "header": "Book Closure",
@@ -1255,7 +1132,6 @@
       {
         "id": 51,
         "head": "Book Closure_2016 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Book_Closure_2016_AGM.pdf?v=1724676630"
       },
       {
@@ -1273,11 +1149,9 @@
         "head": "Book Closure_2019 AGM",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Book_closure_2019_AGM.pdf?v=1724676629"
       },
-      
       {
         "id": 55,
         "head": "Book Closure_2020 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Book_closure_2020_AGM.pdf?v=1724676630"
       },
       {
@@ -1294,8 +1168,7 @@
         "id": 58,
         "head": "Book Closure_2023 AGM ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Book_closure_2023_AGM.pdf?v=1724676628"
-      }
-      ,
+      },
       {
         "id": 200,
         "head": "Book Closure_2024 AGM ",
@@ -1306,14 +1179,8 @@
         "head": "Book Closure_2025 AGM",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Book_Closure_2025_AGM.pdf?v=1762342670"
       }
-      
     ]
-  }
-
-
-
-
-  ,
+  },
   {
     "id": 7,
     "header": "Notices",
@@ -1321,7 +1188,6 @@
       {
         "id": 51,
         "head": "Notice of AGM 2016",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Notice_of_AGM_2016.pdf?v=1724677820"
       },
       {
@@ -1339,11 +1205,9 @@
         "head": "Notice of AGM 2019",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Notice_of_AGM_2019.pdf?v=1724677819"
       },
-      
       {
         "id": 55,
         "head": "Notice of AGM 2020",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Notice_of_AGM_2020.pdf?v=1724677821"
       },
       {
@@ -1366,12 +1230,11 @@
         "head": "Notice of AGM 2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Notice_of_AGM_2024.pdf?v=1725883019"
       },
-{
+      {
         "id": 98,
         "head": "Notice_of_AGM 2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/NOTICE_OF_AGM_afe06042-3959-4c04-b479-14db637ba68c.pdf?v=1756976988"
       },
-      
       {
         "id": 59,
         "head": "Notice of postal ballot 28.03.2024",
@@ -1392,16 +1255,8 @@
         "head": "Notice_of_Postal_Ballot_29.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Notice_of_Postal_Ballot_29.10.2024.pdf?v=1731500893"
       }
-      
     ]
-  }
-
-
-
-
-
-
-  ,
+  },
   {
     "id": 8,
     "header": "Scrutinizer Report",
@@ -1409,7 +1264,6 @@
       {
         "id": 51,
         "head": "Scrutinizer Report_2016 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_2016_AGM.pdf?v=1724736884"
       },
       {
@@ -1427,11 +1281,9 @@
         "head": "Scrutinizer Report_2019 AGM",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_2019_AGM.pdf?v=1724736884"
       },
-      
       {
         "id": 55,
         "head": "Scrutinizer Report_2020 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_2020_AGM.pdf?v=1724736885"
       },
       {
@@ -1453,8 +1305,7 @@
         "id": 59,
         "head": "Scrutinizer Report_Postal ballot_06.05.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_2023_AGM.pdf?v=1724736884"
-      }
-      ,
+      },
       {
         "id": 61,
         "head": "Scrutinizer Report Postal Ballot 02.12.2024",
@@ -1464,22 +1315,14 @@
         "id": 62,
         "head": "Scrutinizer Report Postal Ballot 24.07.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_Postal_Ballot_24.07.2024.pdf?v=17623462701"
-      }
-      ,
+      },
       {
         "id": 63,
         "head": "Scrutinizer Report Postal Ballot AGM 27.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Scrutinizer_Report_Postal_Ballot_AGM_27.09.2025.pdf?v=1762346270"
       }
-      
     ]
-  }
-
-
-
-
-
-  ,
+  },
   {
     "id": 9,
     "header": "Voting Results",
@@ -1487,7 +1330,6 @@
       {
         "id": 51,
         "head": "Voting Results_2016 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_Results_2016_AGM.pdf?v=1724765112"
       },
       {
@@ -1505,11 +1347,9 @@
         "head": "Voting Results_2019 AGM",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_Results_2019_AGM.pdf?v=1724765112"
       },
-      
       {
         "id": 55,
         "head": "Voting Results_2020 AGM",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_Results_2020_AGM.pdf?v=1724765111"
       },
       {
@@ -1531,15 +1371,12 @@
         "id": 59,
         "head": "Voting Results_Postal ballot_06.05.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_Results_Postal_ballot_06.05.2024.pdf?v=1724765112"
-      }
-
-      ,
+      },
       {
         "id": 68,
         "head": "Voting Results_Postal ballot_24.07.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_Results___Scrutinizer_Report.pdf?v=1724827954"
-      }
-      ,
+      },
       {
         "id": 200,
         "head": "Voting_result_2024_AGM",
@@ -1555,28 +1392,18 @@
         "head": "Voting_result_postal ballot_AGM_27.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Voting_result_postal_ballot_02.12.2024.pdf?v=1762346960"
       }
-      
-      
-      
     ]
-  }
-
-
-
-
-
-
-  ,
+  },
   {
     "id": 10,
     "header": "Press Release",
     "text": [
-        {
+      {
         "id": 998,
         "head": "Press_Release-29.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_29.10.2024.pdf?v=1730194124"
       },
-        {
+      {
         "id": 999,
         "head": "Press_Release-28.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_-_28.10.2024.pdf?v=1730194124"
@@ -1586,90 +1413,77 @@
         "head": "Press_Release-19.06.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release-19.06.2024.pdf?v=1726816228"
       },
-      
-        {
+      {
         "id": 202,
         "head": "Press_Release_-_24.06.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_-_24.06.2024.pdf?v=1732862291"
       },
-        {
+      {
         "id": 54,
         "head": "Press Release- Website announcement 03.07.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_release_Website_announcement_03.07.2024.pdf?v=1724828247"
       },
-        {
+      {
         "id": 55,
         "head": "Press_Release-12.08.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release-12.08.2024.pdf?v=1726816228"
-      }
-      ,
-        {
+      },
+      {
         "id": 56,
         "head": "Press_Release-20.08.2024.pdf",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Realease-20.08.2024.pdf?v=1726816229"
-      }
-       ,
-        {
+      },
+      {
         "id": 57,
         "head": "Press_Release_-_03.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_-_03.10.2024.pdf?v=1728298103"
-      }
-       ,
-        {
+      },
+      {
         "id": 200,
         "head": "Press_Release_13.11.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_13.11.2024.pdf?v=1731501216"
-      }
-      ,
-        {
+      },
+      {
         "id": 201,
         "head": "Press_Release_-_27.11.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_-_27.11.2024.pdf?v=1732862291"
-      }
-      ,
-        {
+      },
+      {
         "id": 202,
         "head": "Press_Release_12.12.2024.pdf",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_12.12.2024.pdf?v=1734000321"
-      }
-      ,
-        {
+      },
+      {
         "id": 203,
         "head": "Press_Release_23.12.2024.pdf",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_23.12.2024.pdf?v=1735637988"
-      }
-       ,
-        {
+      },
+      {
         "id": 204,
         "head": "Press_Release_28.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_28.10.2024.pdf?v=1762345518"
-      }
-      ,
-        {
+      },
+      {
         "id": 205,
         "head": "Press_Release_29.10.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_29.10.2024.pdf?v=1762345518"
-      }
-      ,
-        {
+      },
+      {
         "id": 206,
         "head": "Press_Release_22.11.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release_22.11.2024.pdf?v=1762345518"
-      }
-      ,
-        {
+      },
+      {
         "id": 207,
         "head": "Press Release-13.02.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release-13.02.2025.pdf?v=1762345518"
-      }
-      ,
-        {
+      },
+      {
         "id": 208,
         "head": "Press_Release_07-01-2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_07-01-2025_1.pdf?v=1736488042"
-      }
-      ,
-        {
+      },
+      {
         "id": 209,
         "head": "Press_Release_29-01-2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_29-01-2025_1.pdf?v=1738234550"
@@ -1679,12 +1493,11 @@
         "head": "Press_Release_HEALTHCARE CENTRE_26-04-2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/PRESS_RELEASE_-_HEALTHCARE_CENTER_26.04.2025.pdf?v=1745906836"
       },
-       {
+      {
         "id": 211,
         "head": "Press Release-30.05.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Press_Release-30.05.2025.pdf?v=1762345746"
       },
-    
       {
         "id": 213,
         "head": "Press_Release 09/06/2025",
@@ -1694,8 +1507,7 @@
         "id": 214,
         "head": "Press_Release 20/06/2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release.pdf?v=1757936348"
-      }
-      ,
+      },
       {
         "id": 215,
         "head": "Press_Release 01/07/2025",
@@ -1705,40 +1517,29 @@
         "id": 216,
         "head": "Press_Release 11/07/2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Press_Release_11.07.2025.pdf?v=1757936348"
-      }
-      ,
+      },
       {
         "id": 217,
         "head": "Press_Release 03/09/2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/PR_Uploaded.pdf?v=1757936348"
-      } ,
+      },
       {
         "id": 218,
         "head": "Press_Release 22/09/2025",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Covering_letter_Press_Release__22.09.2025.pdf?v=1758603465"
       },
-       {
+      {
         "id": 219,
         "head": "Press Release _24.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Press_Release__24.09.2025.pdf?v=1758717243"
       },
-       {
+      {
         "id": 220,
         "head": "Covering Letter 04/10/2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Covering_Letter_for_Press_Release__upload.pdf?v=1759575210"
       }
-      
     ]
-  }
-
-
-
-
-
-  
-
-
-  ,
+  },
   {
     "id": 11,
     "header": "Policies / Scheme",
@@ -1746,7 +1547,6 @@
       {
         "id": 51,
         "head": "Aayush_ESOP scheme_2024",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_ESOP_scheme_2024.pdf?v=1724828462"
       },
       {
@@ -1758,86 +1558,67 @@
         "id": 53,
         "head": "Code of Conduct of Board of Directors and Senior Management Personnel",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Code_of_Conduct_of_Board_of_Directors_and_Senior_Management_Personnel_6579a66a-bd2d-42f2-861e-f8903484efd3.pdf?v=1728299257"
-      }
-      ,
+      },
       {
         "id": 54,
         "head": "Familiarization Programs For Independent Directors",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Familiarization_Programs_For_Independent_Directors_d0da2a86-252c-4701-a0db-d7128651562c.pdf?v=1728299257"
-      }
-      ,
+      },
       {
         "id": 55,
         "head": "Nomination and Remuneration Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Nomination_and_Remuneration_Policy_b682beb8-96c8-4271-88d0-79085c3a09d8.pdf?v=1728300173"
-      }
-
-      ,
+      },
       {
         "id": 56,
         "head": "Policy For Determination of Materiality of Events and Information",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Policy_For_Determination_of_Materiality_of_Events_and_Information_60ec02cc-5004-4a2c-b418-08dd78ce466e.pdf?v=1728300164"
-      }
-
-      ,
+      },
       {
         "id": 57,
         "head": "Policy on Materiality of and dealing with related party transactions",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Policy_on_Materiality_of_and_dealing_with_related_party_transactions_657902b1-72ce-4bd0-a697-a2adb37a6f83.pdf?v=1728300164"
-      }
-      ,
+      },
       {
         "id": 58,
         "head": "Policy on Prevention of Sexual Harrassment of women at workplace",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Policy_on_Prevention_of_Sexual_Harrassment_of_women_at_workplace_cb38abc0-4ecd-452e-acdd-a4af87c2daca.pdf?v=1728300267"
-      }
-      ,
+      },
       {
         "id": 59,
         "head": "Preservation of Documents and Archival Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Preservation_of_Documents_and_Archival_Policy_e12c495b-3123-4e84-8037-47d163fccc88.pdf?v=1728300267"
-      }
-      ,
+      },
       {
         "id": 60,
         "head": "Terms & conditions of Appointment of Independent Directors",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Terms_conditions_of_Appointment_of_Independent_Directors.docx.pdf?v=1728300267"
-      }
-      ,
+      },
       {
         "id": 90,
         "head": "Risk Management Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Risk_Management_Policy_87de7048-8522-4548-bb44-6d2957d3ac86.pdf?v=1728300267"
-      }
-      ,
+      },
       {
         "id": 94,
         "head": "Vigil Mechanism Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Vigil_Mechanism_Policy_b80ffaf5-9342-441b-b676-f74299517ebd.pdf?v=1728300267"
-      }
-
-        ,
+      },
       {
         "id": 200,
         "head": "Aayush Board Evaluation Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush-Board_Evaluation_Policy.pdf?v=1732863486"
-      }
-
-        ,
+      },
       {
         "id": 201,
         "head": "Aayush Code and Practices UPSI",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush-Code_and_Practices_UPSI.pdf?v=1732863486"
-      }
-
-        ,
+      },
       {
         "id": 202,
         "head": "Aayush Tax Policy",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush-Tax_Policy.pdf?v=1732863486"
-      }
-      ,
-      
+      },
       {
         "id": 204,
         "head": "Aayush-Criteria of making Payment to Non-Executive Directors",
@@ -1858,15 +1639,8 @@
         "head": "Aayush-Policy on Appointment and Remuneration of Directors",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush-Policy_on_Appointment_and_Remuneration_of_Directors.pdf?v=1762344968"
       }
-    
-      
     ]
-  }
-
-
-
-
-  ,
+  },
   {
     "id": 13,
     "header": "Updates",
@@ -1874,7 +1648,6 @@
       {
         "id": 51,
         "head": "Update-08.05.2024",
-        
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Update-08.05.2024.pdf?v=1726816247"
       },
       {
@@ -1896,38 +1669,33 @@
         "id": 53,
         "head": "Intimation of Record Date & Split 24.07.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_of_Record_Date_Split_24.07.2024_3e95289a-1d06-4d5e-8554-2e0f1dfde027.pdf?v=1724828936"
-      }
-      ,
+      },
       {
         "id": 58,
         "head": "Update-16.08.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Update-16.08.2024.pdf?v=1726816247"
-      }
-      ,
+      },
       {
         "id": 59,
         "head": "Update-20.08.2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Update-20.08.2024.pdf?v=1726816248"
-      }
-       ,
+      },
       {
         "id": 60,
         "head": "Proceedings_of_AGM_2024",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Proceedings_of_AGM_2024.pdf?v=1728298502"
-      }
-       ,
+      },
       {
         "id": 61,
         "head": "Intimation_Record_Date_for_Bonus_Issue",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Intimation_Record_Date_for_Bonus_Issue_1.pdf?v=1735637809"
-      }
-       ,
+      },
       {
         "id": 62,
         "head": "Intimation_of_WOS_1",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Intimation_of_WOS_1.pdf?v=1736488042"
       },
-       {
+      {
         "id": 63,
         "head": "Reg_30 Announcement for subsidiary incorporation _upload",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Reg_30_Announcement_for_subsidiary_incorporation__upload.pdf?v=1759575212"
@@ -1957,25 +1725,16 @@
         "head": "Reg 30 Intimation for Appointment of Auditor 04.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_30_Intimation_for_Appointment_of_Auditor_04.09.2025.pdf?v=1762346573"
       }
-      
-      
     ]
-  }
-
-
-
-
-
-  ,
+  },
   {
     "id": 18,
     "header": "BSE Compliances",
     "text": [
-      
       {
         "id": 3,
-        "header":"2019-20",
-        "quarter":"Quarter-1",
+        "header": "2019-20",
+        "quarter": "Quarter-1",
         "head": "CGR Non-applicability Letter 10",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_applicability_letter_37015436-8bb5-4253-a920-31c40b075609.pdf?v=1724846086"
       },
@@ -2124,8 +1883,8 @@
       },
       {
         "id": 32,
-         "header":"2020-21",
-        "quarter":"Quarter-1",
+        "header": "2020-21",
+        "quarter": "Quarter-1",
         "head": "CGR Non-applicability Letter 1",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_applicability_letter_d7355260-10bb-4ff7-97d3-45a404bed069.pdf?v=1724849573"
       },
@@ -2170,7 +1929,6 @@
         "head": "Reg 76 2",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_76_1b229ef8-9736-46f5-9064-3e8b87580c77.pdf?v=1724849703"
       },
-    
       {
         "id": 42,
         "head": "SHP 2",
@@ -2217,8 +1975,6 @@
         "head": "UFR 3",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/UFR_bddcabbb-c22a-48f9-a466-76f7faffe7d7.pdf?v=1724849907"
       },
-   
-      
       {
         "id": 53,
         "quarter": "Quarter-4",
@@ -2245,7 +2001,6 @@
         "head": "Reg 76 4",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_76_5b4fba95-1088-4a57-9433-99b5093ef503.pdf?v=1724850139"
       },
-      
       {
         "id": 59,
         "head": "SHP 4",
@@ -2276,7 +2031,6 @@
         "head": "UFR 4",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/UFR_bddcabbb-c22a-48f9-a466-76f7faffe7d7.pdf?v=1724849907"
       },
-    
       {
         "id": 66,
         "head": "IGR BSE",
@@ -2323,7 +2077,6 @@
         "head": "IGR ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/IGR_d1a3e4b8-afb1-4370-a164-95f878a0e3c3.pdf?v=1724911572"
       },
-    
       {
         "id": 76,
         "head": "Reg 745 6",
@@ -2382,7 +2135,7 @@
       },
       {
         "id": 87,
-        "quarter": "Quarter-4", 
+        "quarter": "Quarter-4",
         "head": "CGR Non-applicability Letter ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_applicability_letter_6817d4e6-0b73-469e-813e-230e7b80cb23.pdf?v=1724913789"
       },
@@ -2433,7 +2186,6 @@
         "head": "IGR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/IGR_8a9b0a9e-00b5-4363-b35b-3d8bbc066ec3.pdf?v=1724914520"
       },
-      
       {
         "id": 97,
         "head": "Reg 745 9",
@@ -2454,7 +2206,6 @@
         "head": "UFR 9",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/UFR_6b7324c0-216c-4de0-af4f-7c72533acb62.pdf?v=1724914526"
       },
-      
       {
         "id": 102,
         "quarter": "Quarter-2",
@@ -2496,7 +2247,7 @@
         "head": "Non Applicability of Related Part Transaction",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Non-Applicability_of_Related_Party_Transaction.pdf?v=1724914815"
       },
-       {
+      {
         "id": 1010,
         "quarter": "Quarter-3",
         "head": "CGR Non-applicability Letter ",
@@ -2532,7 +2283,7 @@
         "head": "UFR 10",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/UFR_a8a41958-ef7b-48df-827b-1ad04308288a.pdf?v=1724916088"
       },
-     {
+      {
         "id": 1017,
         "quarter": "Quarter-4",
         "head": "CGR Non-applicability Letter ",
@@ -2578,7 +2329,7 @@
         "head": "AFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/AFR_1e3c245e-e152-4f57-8438-0306cfb5233d.pdf?v=1724916650"
       },
-       {
+      {
         "id": 1026,
         "head": "Disclosure of large Corporate ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Disclosure_of_Large_Corporate.pdf?v=1724916647"
@@ -2593,7 +2344,7 @@
         "head": "Non Applicability Rpt Disclosure",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Non_Applicability_RPT_disclosure.pdf?v=1724916647"
       },
-       {
+      {
         "id": 1029,
         "header": "2023-24",
         "quarter": "Quarter-1",
@@ -2620,7 +2371,6 @@
         "head": "Reg 74 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_74_5_8294f9d6-0dcc-4a0c-9c56-95e0642c783c.pdf?v=1724930196"
       },
-     
       {
         "id": 1036,
         "head": "SHP 11",
@@ -2631,7 +2381,7 @@
         "head": "UFR",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/UFR_c84187eb-535b-4653-9037-5e9370a87e21.pdf?v=1724930196"
       },
-       {
+      {
         "id": 1038,
         "quarter": "Quarter-2",
         "head": "CGR Non-applicability Letter ",
@@ -2677,7 +2427,7 @@
         "head": "Revised CGR Non Applicability Letter",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Revised_CGR_Non_Applicability_letter_af3af8d3-1eb6-48ef-827f-df2bc0ebed2b.pdf?v=1724930726"
       },
-       {
+      {
         "id": 1046,
         "quarter": "Quarter-3",
         "head": "CGR Non-applicability Letter ",
@@ -2703,7 +2453,6 @@
         "head": "Reg 74 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_74_5_c2379701-89bb-4f61-816e-d6510b3c31a2.pdf?v=1724931464"
       },
-      
       {
         "id": 1051,
         "head": "SHP 11",
@@ -2735,7 +2484,7 @@
         "head": "Reg 24",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_24A_Non_Applicability_letter.pdf?v=1724931791"
       },
-       {
+      {
         "id": 1048,
         "head": "Reg 40",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_40_9_e6239da0-566c-4696-a585-49297c7c81fc.pdf?v=1724931792"
@@ -2750,7 +2499,6 @@
         "head": "Reg 74 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_74_5_715c4fc7-744c-4459-ac81-66a5903391dc.pdf?v=1724931791"
       },
-      
       {
         "id": 1051,
         "head": "SHP 11",
@@ -2793,17 +2541,13 @@
         "head": "Reg 74 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_74_5_9b7abdeb-587c-4a31-b8b7-76ebebb96ead.pdf?v=1724932667"
       },
-      
       {
         "id": 1058,
         "head": "SHP 11",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/SHP_311614c0-499d-4a14-b177-32108ec0edc8.pdf?v=1724932667"
-      }
-      
-      ,
+      },
       {
         "id": 1060,
-       
         "quarter": "Quarter-2",
         "head": "CGR Non-applicability Letter ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_Applicability_Letter_e0cf67c7-cdab-4af6-9990-8b9bcfca11e9.pdf?v=1731501983"
@@ -2823,165 +2567,135 @@
         "head": "Reg 74 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/74_5.pdf?v=1731501983"
       },
-      
       {
         "id": 1064,
         "head": "SHP ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/SHP_ffdccf72-9b62-492b-9f56-1a9a984ef1c0.pdf?v=1731501982"
-      }
-      ,
+      },
       {
         "id": 1066,
         "quarter": "Quarter-3",
         "head": "Reg 74",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Reg_74.pdf?v=1737094063"
-      }
-      ,
+      },
       {
         "id": 9999,
         "head": "Aayush_CGR_non_applicability_Letter",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_CGR_non_applicability_Letter.pdf?v=1738234243"
       },
-      
       {
-        "id":100000,
+        "id": 100000,
         "head": "SHP ",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/SHP.pdf?v=1738234243"
-      }
-      ,
+      },
       {
         "id": 100001,
-     
         "head": "Aayush_Reco_Upload",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Reco_Upload_31.12.2024.pdf?v=1738234243"
-      }
-      ,
+      },
       {
         "id": 100002,
-     
         "head": "Aayush_Investor_Grievance",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Aayush_Investor_Grievance.pdf?v=1738234243"
       },
-
       {
         "id": 1064,
         "quarter": "Quarter-4",
         "head": "Aayush_Reco31-03-2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Reco31032025.pdf?v=1762342999"
-      }
-      ,
+      },
       {
         "id": 9999,
         "head": "CGR Non Applicability",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_Applicability.pdf?v=1762342998"
       },
-      
       {
-        "id":100000,
+        "id": 100000,
         "head": "Non Applicability Annual Secretarial Compliance Report",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Non_Applicability_Annual_Secretarial_Compliance_Report.pdf?v=1762342998"
-      }
-      ,
+      },
       {
         "id": 100001,
-     
         "head": "Non Applicability Initial Disclosure to be made by an entity identified as a Large Corporate",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Non_Applicability_Initial_Disclosure_to_be_made_by_an_entity_identified_as_a_Large_Corporate.pdf?v=1762342999"
-      }
-      ,
+      },
       {
         "id": 100001,
-     
         "head": "   Regulation 74(5)",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Regulation_74_5.pdf?v=1762342999"
-      }
-      ,
+      },
       {
         "id": 100001,
-     
         "head": "SHP 31 March 2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/SHP_31_March_2025.pdf?v=1762343095"
-      }
-      ,
-
-   
-      
-     {
-"id": 100003,
-"quarter": "Quarter-1",
-"header": "2025-26",
-"head": "Regulation 75(5)",
-"link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Certificate_under_74_5__Upload.pdf?v=1752237125"
-},
+      },
+      {
+        "id": 100003,
+        "quarter": "Quarter-1",
+        "header": "2025-26",
+        "head": "Regulation 75(5)",
+        "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Certificate_under_74_5__Upload.pdf?v=1752237125"
+      },
       {
         "id": 100004,
-     
         "head": "SHP-30-06-2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/SHP_30.06.2025.pdf?v=1752737430"
       },
       {
-        "id": 100005,       
+        "id": 100005,
         "head": "Aayush Integrated",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_Integrated.html.pdf?v=1753337042"
       },
       {
-        "id": 100006,       
+        "id": 100006,
         "head": "Aayush reco",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_reco_upload.pdf?v=1753337045"
       },
       {
-        "id": 100007,       
+        "id": 100007,
         "head": "CGR Non Applicability Letter",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/CGR_Non_Applicability_Letter_9aadafb6-6c35-4521-866f-a588cb53c0f6.pdf?v=1753337047"
       },
-{
-"quarter": "Quarter-2",
-        "id": 100009,       
+      {
+        "quarter": "Quarter-2",
+        "id": 100009,
         "head": "Covering Letter 74(5)_30.09 _Upload",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Covering_Letter_74_5__30.09__Upload.pdf?v=1760447578"
       },
       {
-        "id": 100010,       
+        "id": 100010,
         "head": "Aayush SHP 30.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Aayush_SHP_30.09.2025_1.pdf?v=1762243500"
       },
-       {
-        "id": 100011,       
+      {
+        "id": 100011,
         "head": "Reco_upload_30.09.2025",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Reco_upload_30.09.2025.pdf?v=1761655558"
       },
-       {
-        "id": 100012,       
+      {
+        "id": 100012,
         "head": "Covering Letter Non Applicability CGR",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Covering_Letter_Non_Applicability_CGR.pdf?v=1761655634"
       },
-       {
-        "id": 100013,       
+      {
+        "id": 100013,
         "head": "AWL_IGR_30.09.2025 ",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/AWL_IGR_30.09.2025_1.pdf?v=1762243085"
       }
-
-
-
-    
-      
-      
-      
     ]
-  }, {
+  },
+  {
     "id": 12,
     "header": "Right Issue",
     "text": [
-   
-       {
+      {
         "id": 1098,
         "head": "DLOF",
         "link": "https://cdn.shopify.com/s/files/1/0653/9830/9053/files/DLOF_1.pdf?v=1738130175"
       }
-    
-]
+    ]
   },
-{
+  {
     "id": 14,
     "header": "Dividend",
     "text": [
@@ -2990,22 +2704,18 @@
         "head": "Interim dividend FY 2024-25 Sec 124(2)",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Interim_dividend_FY_2024-25_Sec_124_2.pdf?v=1762344755"
       },
-
-   
-       {
+      {
         "id": 100003,
         "head": "1st Interim dividend FY 2025-26 Sec 124(2)",
         "link": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/1st_Interim_dividend_FY_2025-26_Sec_124_2.pdf?v=1762344764"
       }
-     
-]
+    ]
   },
-{
+  {
     "id": 15,
     "header": "MOA / AOA",
     "text": [
-   
-       {
+      {
         "id": 1000001,
         "head": "MOA_Aaysuh_Wellness",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Final_Altered_MOA_Aaysuh_Wellness.pdf?v=1751542836"
@@ -3014,7 +2724,31 @@
         "id": 1000002,
         "head": "AOA_Aaysuh_Wellness",
         "link": "https://cdn.shopify.com/s/files/1/0636/5226/6115/files/Article_of_Association.pdf?v=1751542836"
-      }      
-]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "header": "Board of Directors",
+    "text": [
+      {
+        "id": 1,
+        "head": "COMPOSITION OF BOARD OF DIRECTORS OF THE COMPANY",
+        "image": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Capture.png?v=1762494744",
+        "type": "image"
+      },
+      {
+        "id": 2,
+        "head": "COMPOSITION OF KEY MANEGERIAL PERSONNEL(S) OF THE COMPANY",
+        "image": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Capture1.png?v=1762494947",
+        "type": "image"
+      },
+      {
+        "id": 3,
+        "head": "COMPOSITION OF COMMITTEES OF THE COMPANY",
+        "image": "https://cdn.shopify.com/s/files/1/0674/9614/9171/files/Capture6.png?v=1762495367",
+        "type": "image"
+      }
+    ]
   }
 ]
