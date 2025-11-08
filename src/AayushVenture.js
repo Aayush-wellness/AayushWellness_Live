@@ -9,7 +9,6 @@ import ANewFooter from './ANewfooter';
 import VentureSection1 from './VentureSection1';
 import TextAnimation from './TextAnimation';
 
-
 // Schema.org structured data for Business (unused but kept for future SEO)
 // eslint-disable-next-line no-unused-vars
 const businessSchema = {
@@ -95,6 +94,7 @@ function AnimatedText({ heading, subtext, url, buttonText, isVisible }) {
     </div>
   );
 }
+
 export default function AayushVenture() {
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -102,12 +102,6 @@ export default function AayushVenture() {
   const sliderRef = useRef(null);
   const [csrOpen, setCsrOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
