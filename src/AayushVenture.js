@@ -7,7 +7,7 @@ import closepng from './images/close.png';
 import searchIcon from './images/search-gray.svg';
 import ANewFooter from './ANewfooter';
 import VentureSection1 from './VentureSection1';
-import TextAnimation from './TextAnimation';
+// import TextAnimation from './TextAnimation';
 
 // Schema.org structured data for Business (unused but kept for future SEO)
 // eslint-disable-next-line no-unused-vars
@@ -70,7 +70,8 @@ const breadcrumbSchema = {
 
 export default function AayushVenture() {
   const [isMobile, setIsMobile] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+const [ setCurrentSlide] = useState(0);
+
   const [isVisible, setIsVisible] = useState(false);
   const sliderRef = useRef(null);
   const [csrOpen, setCsrOpen] = useState(false);
@@ -112,7 +113,7 @@ export default function AayushVenture() {
   const mobileImages = [
     { type: "video", src: "https://cdn.shopify.com/videos/c/o/v/265efbceb09b43da91594acdc170d2b6.mp4" }, // Video Slide
   ];
-  const [result, setResult] = React.useState("");
+  const [ setResult] = React.useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
