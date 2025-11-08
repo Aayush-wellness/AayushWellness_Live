@@ -70,9 +70,7 @@ const breadcrumbSchema = {
 
 export default function AayushVenture() {
   const [isMobile, setIsMobile] = useState(false);
-const [ setCurrentSlide] = useState(0);
-
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const [csrOpen, setCsrOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
@@ -113,9 +111,9 @@ const [ setCurrentSlide] = useState(0);
   const mobileImages = [
     { type: "video", src: "https://cdn.shopify.com/videos/c/o/v/265efbceb09b43da91594acdc170d2b6.mp4" }, // Video Slide
   ];
-  const [ setResult] = React.useState("");
+  const [, setResult] = React.useState("");
 
-  const onSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
     const formData = new FormData(event.target);
@@ -156,9 +154,6 @@ const [ setCurrentSlide] = useState(0);
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
-  const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false);
-  const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false);
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false); // Added state for "About Us"
   const [isCsrSubcategoryOpen, setIsCsrSubcategoryOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);  // Added state for CSR subcategories
@@ -173,22 +168,12 @@ const [ setCurrentSlide] = useState(0);
   };
 
   const handleDropdownLinkClick = () => {
-    setIsAyurvedaDropdownOpen(false);
-    setIsWellnessDropdownOpen(false);
-    setIsNewsroomDropdownOpen(false);
     setIsAboutUsDropdownOpen(false); // Close "About Us" dropdown when a link is clicked
     setIsCsrSubcategoryOpen(false);
     setIsSearchOpen(false); // Close CSR subcategories when a link is clicked
   };
 
-  const toggleIcon = (iconIdToToggle, iconIdToToggleOther) => {
-    var iconToToggle = document.getElementById(iconIdToToggle);
-    var iconToToggleOther = document.getElementById(iconIdToToggleOther);
-    if (iconToToggle && iconToToggleOther) {
-      iconToToggle.classList.toggle('svg');
-      iconToToggleOther.classList.toggle('svg');
-    }
-  };
+
 
 
   return (
@@ -1286,7 +1271,7 @@ const [ setCurrentSlide] = useState(0);
 
 
 
-            <img className='md:w-[45%] w-full' src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Vision_Image.jpg?v=1738913950" />
+            <img className='md:w-[45%] w-full' src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Vision_Image.jpg?v=1738913950" alt="Vision" />
 
           </div>
           {/* <hr style={{ appearance: 'none', border: '0px none rgb(255, 255, 255)', borderRadius: '0px', boxSizing: 'border-box', margin: '0px', padding: '0px', opacity: '0.25', background: 'rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box', height: '1px' }} />
@@ -1511,22 +1496,11 @@ const [ setCurrentSlide] = useState(0);
         </div>
       </div>
 
-      <a class="stickywhatsapp" target="_blank" href="https://wa.me/918655900409?text=https://www.aayushwellness.com/aayush-venture Hi"><img src="https://cdn.shopify.com/s/files/1/0606/9298/8070/files/wa-logo-120.png?v=1706167621" width="20" height="20" /> Whatsapp us</a>
-      <a class="stickyemail" target="_blank" href="mailto:info@aayushwellness.com"><img src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/email.png?v=1738847206" width="20" height="20" /> Email Us</a>
+      <a class="stickywhatsapp" target="_blank" rel="noreferrer" href="https://wa.me/918655900409?text=https://www.aayushwellness.com/aayush-venture Hi"><img src="https://cdn.shopify.com/s/files/1/0606/9298/8070/files/wa-logo-120.png?v=1706167621" width="20" height="20" alt="WhatsApp" /> Whatsapp us</a>
+      <a class="stickyemail" target="_blank" rel="noreferrer" href="mailto:info@aayushwellness.com"><img src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/email.png?v=1738847206" width="20" height="20" alt="Email" /> Email Us</a>
 
       <ANewFooter />
     </>
   );
 }
 
-const styles = {
-  container: {
-    textAlign: 'center',
-    padding: '50px',
-  },
-  customText: {
-    fontFamily: 'segma, sans-serif',
-    fontSize: '32px',
-    fontWeight: 'normal',
-  },
-};
