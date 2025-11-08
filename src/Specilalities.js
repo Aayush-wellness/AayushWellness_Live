@@ -171,7 +171,7 @@ const Specialities = () => {
               <div className="single-services">
                 {/* <span className={service.icon} /> */}
                 <div className="w-full flex items-center justify-center">
-               <img class="imgg" style={{borderRadius:"50%"}}  src={service.roundImage} />
+               <img className="imgg" style={{borderRadius:"50%"}}  src={service.roundImage} alt={service.name} />
                </div>
                 <h3>{service.name}</h3>
                 <button className="read-more" onClick={() => openModal(service)}>
@@ -180,7 +180,7 @@ const Specialities = () => {
                 <div className="services-shape" style={{ display: 'none' }}>
                   <img
                     src="https://www.xpresscure.com/img/services-card-shape.png"
-                    alt="Image" 
+                    alt="" 
                   />
                 </div>
               </div>
