@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Slider = () => {
   const [current, setCurrent] = useState(1);
@@ -48,6 +47,7 @@ const Slider = () => {
   useEffect(() => {
     const interval = setInterval(goNext, 4000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -62,6 +62,7 @@ const Slider = () => {
         }, 20);
       }, 600);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
   return (
