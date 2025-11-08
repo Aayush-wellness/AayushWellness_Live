@@ -11,23 +11,23 @@ export default function SectionThird() {
            
             <div className="pl-8 pr-8 flex items-center  w-full overflow-x-scroll no-scrollbar snap-x scroll-smooth md:justify-center   gap-6  md:flex-row  md:space-x-4">
                 
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/1-4-300x300.png.webp" alt="Dabur Lal Tail" className="rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/1-4-300x300.png.webp" alt="Dabur Lal Tail" />
                
                 
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/2-8-300x300.png.webp" alt="Honitus" className="rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/2-8-300x300.png.webp" alt="Honitus" />
                
                 
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/4-4-300x300.png.webp" alt="Vatika" className="rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/4-4-300x300.png.webp" alt="Vatika" />
                
                 
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/3-3-300x300.png.webp" alt="Pudin Hara" className="rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/3-3-300x300.png.webp" alt="Pudin Hara" />
               
                
                     
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"cover"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/4-2-e1719483294438-300x244.png.webp" alt="Red Paste" className="rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md mb-4 md:mb-0 md:w-1/6" style={{height:"100px",width:"100px",objectFit:"cover"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/4-2-e1719483294438-300x244.png.webp" alt="Red Paste" />
                 
                 
-                <img  className="snap-center" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/1-3-e1719495311222-300x218.png.webp" alt="Amla" className="rounded-lg shadow-md md:w-1/6" />
+                <img  className="snap-center rounded-lg shadow-md md:w-1/6" style={{height:"100px",width:"100px",objectFit:"contain"}} src="https://aayushwellness.com/wp-content/uploads/2024/06/1-3-e1719495311222-300x218.png.webp" alt="Amla" />
                 
                 
                 
