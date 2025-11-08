@@ -1,20 +1,19 @@
 import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { ArrowRight, Instagram, Facebook } from "lucide-react"
-import Hls from "hls.js"
 
 const NewFooter = () => {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
-  const [videoSrc, setVideoSrc] = useState("https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483407/zyrxramkyunlff9ffpxd_ekrzl0.m3u8")
+  const [videoSrc, setVideoSrc] = useState("https://res.cloudinary.com/dhofjux9o/video/upload/v1762521948/rnmwqvamasqxg9jgh7y3_tqfefz.mp4")
   const videoRef = useRef(null)
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setVideoSrc("https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483407/zyrxramkyunlff9ffpxd_ekrzl0.m3u8")
+        setVideoSrc("https://res.cloudinary.com/dhofjux9o/video/upload/v1762522210/zyrxramkyunlff9ffpxd_tghiou.mp4")
       } else {
-        setVideoSrc("https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483407/zyrxramkyunlff9ffpxd_ekrzl0.m3u8")
+        setVideoSrc("https://res.cloudinary.com/dhofjux9o/video/upload/v1762521948/rnmwqvamasqxg9jgh7y3_tqfefz.mp4")
       }
     }
 
@@ -29,21 +28,11 @@ const NewFooter = () => {
   useEffect(() => {
     const video = videoRef.current
 
-    if (video && Hls.isSupported()) {
-      const hls = new Hls()
-      hls.loadSource(videoSrc)
-      hls.attachMedia(video)
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play()
-      })
-
-      return () => {
-        hls.destroy()
-      }
-    } else if (video?.canPlayType("application/vnd.apple.mpegurl")) {
+    if (video) {
       video.src = videoSrc
-      video.addEventListener("loadedmetadata", () => {
-        video.play()
+      video.load()
+      video.play().catch(error => {
+        console.log("Video autoplay failed:", error)
       })
     }
   }, [videoSrc])
@@ -123,9 +112,9 @@ const NewFooter = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 md:pl-[3rem] ">
             <div className="min-w-[120px]">
               <p
-             className="text-[white] font-bold text-[25px]"
-             style={{ fontFamily: 'ROGBold' }}
-                // style={{ color: '#FF0000' }}
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
               >
                 Company
               </p>
@@ -162,9 +151,9 @@ const NewFooter = () => {
             </div>
             <div className="min-w-[120px]">
               <p
-               className="text-[white] font-bold text-[25px]"
-               style={{ fontFamily: 'ROGBold' }}
-                // style={{ color: '#FF0000' }}
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
               >
                 Wellness
               </p>
@@ -196,12 +185,12 @@ const NewFooter = () => {
               </ul>
             </div>
             <div className="min-w-[120px]">
-            <p
-  className="text-[white] font-bold text-[25px]"
-  style={{ fontFamily: 'ROGBold' }}
->
-  Newsroom
-</p>
+              <p
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              >
+                Newsroom
+              </p>
 
               <ul>
                 <li>
@@ -232,9 +221,9 @@ const NewFooter = () => {
             </div>
             <div className="min-w-[120px]">
               <p
-               className="text-[white] font-bold text-[25px]"
-               style={{ fontFamily: 'ROGBold' }}
-                // style={{ color: '#FF0000' }}
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
               >
                 Corporate
               </p>
