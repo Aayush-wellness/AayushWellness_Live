@@ -7,7 +7,7 @@ function SectionFive() {
     <div style={{width: '100%', maxWidth: '800px', textAlign: 'center', margin: 'auto auto 80px', outline: 'rgb(112, 112, 112) none 0px', boxSizing: 'border-box'}}>
 
        
-        <h3 style={{fontFamily: '"EB Garamond", serif', fontSize: '35px',  lineHeight: '38.5px', color: 'rgb(19, 115, 51)', letterSpacing: 'normal', marginBottom: '25px', textAlign: 'center',  outline: 'rgb(19, 115, 51) none 0px', marginTop: '20px', boxSizing: 'border-box',color: '#d1a272'}} >Have Questions About Your Health? Talk to Our Wellness Experts</h3>
+        <h3 style={{fontFamily: '"EB Garamond", serif', fontSize: '35px',  lineHeight: '38.5px', letterSpacing: 'normal', marginBottom: '25px', textAlign: 'center',  outline: 'rgb(19, 115, 51) none 0px', marginTop: '20px', boxSizing: 'border-box',color: '#d1a272'}} >Have Questions About Your Health? Talk to Our Wellness Experts</h3>
         <div style={{fontSize: '16px', color: 'rgb(112, 112, 112)',  outline: 'rgb(112, 112, 112) none 0px', boxSizing: 'border-box'}}>
             <div style={{outline: 'rgb(112, 112, 112) none 0px', boxSizing: 'border-box'}}>
                 <p style={{fontSize: '18px', color: 'rgb(112, 112, 112)', lineHeight: '25.2px', marginBottom: '25px', outline: 'rgb(112, 112, 112) none 0px', margin: '0px 0px px', boxSizing: 'border-box'}}>Whether you’re seeking advice on our products or need personalized health guidance, our team of experts is here to help. Let us support you on your journey to better health.</p>
