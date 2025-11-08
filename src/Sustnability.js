@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import SkeletonLoader from './SkeletonLoader';
 import NewFooter from './NewFooter';
-import { FaLeaf, FaRecycle, FaHandsHelping, FaSeedling, FaBoxOpen, FaChartLine, FaGlobe, FaHeartbeat } from 'react-icons/fa';
+import { FaLeaf, FaRecycle, FaChartLine } from 'react-icons/fa';
 import './Sustnability.css';
 
 function Sustnability() {
