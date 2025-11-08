@@ -306,20 +306,22 @@ function PressReleaseSection() {
   }, []);
 
   // Filter logic
-  const filtered = pressReleases.filter((pr) => {
-    const matchesYear = filters.year ? pr.year.toString() === filters.year : true;
-    const matchesType = filters.type ? pr.type === filters.type : true;
-    const matchesName = filters.name
-      ? pr.name.toLowerCase().includes(filters.name.toLowerCase())
-      : true;
-    return matchesYear && matchesType && matchesName;
-  });
+  const filtered = React.useMemo(() => {
+    return pressReleases.filter((pr) => {
+      const matchesYear = filters.year ? pr.year.toString() === filters.year : true;
+      const matchesType = filters.type ? pr.type === filters.type : true;
+      const matchesName = filters.name
+        ? pr.name.toLowerCase().includes(filters.name.toLowerCase())
+        : true;
+      return matchesYear && matchesType && matchesName;
+    });
+  }, [pressReleases, filters.year, filters.type, filters.name]);
 
   // Auto-select first item if none selected (desktop only)
   useEffect(() => {
     if (!isMobile && !selected && filtered.length > 0) setSelected(filtered[0]);
     if (!isMobile && selected && !filtered.find((pr) => pr.id === selected.id)) setSelected(filtered[0] || null);
-  }, [filters, filtered.length, isMobile]);
+  }, [filters, filtered, selected, isMobile]);
 
   // On mobile, if filters change, deselect
   useEffect(() => {
