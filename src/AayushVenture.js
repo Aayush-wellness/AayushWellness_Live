@@ -2,17 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import menu from './images/menu.png';
 import closepng from './images/close.png';
-import searchIcon from './images/search-gray.svg';
-import Footer from './Footer';
-import VentureSection1 from './VentureSection1';
-import TextAnimation from './TextAnimation';
 import ANewFooter from './ANewfooter';
 
-// Schema.org structured data for Business
+// Schema.org structured data for Business (unused but kept for future SEO)
+// eslint-disable-next-line no-unused-vars
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "Corporation",
@@ -49,7 +44,8 @@ const businessSchema = {
   ]
 };
 
-// Breadcrumb schema
+// Breadcrumb schema (unused but kept for future SEO)
+// eslint-disable-next-line no-unused-vars
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -97,18 +93,13 @@ function AnimatedText({ heading, subtext, url, buttonText, isVisible }) {
 }
 
 export default function AayushVenture() {
-  const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sliderRef = useRef(null);
   const [csrOpen, setCsrOpen] = useState(false);
-    const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // Set initial state
-    window.addEventListener('resize', handleResize);
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -116,14 +107,15 @@ export default function AayushVenture() {
       { threshold: 0.1 } // Trigger when 10% of the slider is visible
     );
 
-    if (sliderRef.current) {
-      observer.observe(sliderRef.current);
+    const currentSliderRef = sliderRef.current;
+
+    if (currentSliderRef) {
+      observer.observe(currentSliderRef);
     }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      if (sliderRef.current) {
-        observer.unobserve(sliderRef.current);
+      if (currentSliderRef) {
+        observer.unobserve(currentSliderRef);
       }
     };
   }, []);
