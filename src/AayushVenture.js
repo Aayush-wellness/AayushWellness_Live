@@ -68,33 +68,6 @@ const breadcrumbSchema = {
   ]
 };
 
-function AnimatedText({ heading, subtext, url, buttonText, isVisible }) {
-  return (
-
-    <div className="absolute  md:justify-start md:items-center  pt-[120px] inset-0 flex items-start justify-center px-6 md:px-12 ">
-      <div
-        className={`max-w-lg bg-opacity-75 p-6  text-white space-y-4 transition-all duration-[1000ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'
-          }`}
-      >
-
-        <h2 className="text-[22px] text-white md:text-3xl font-bold transition-all duration-[1000ms] ease-out delay-500">
-          {heading}
-        </h2>
-        <div style={{ borderLeft: '1px solid white', marginLeft: " 10px", padding: "0px 15px" }}>
-          <p className="text-sm md:text-base font-light italic transition-all duration-[1000ms] ease-out delay-700  pb-3">
-            {subtext}
-          </p>
-          <a href={url}>
-            <button style={{ backgroundColor: " black" }} className="px-4 py-2  text-white font-medium rounded-md  transition-all duration-[1000ms] ease-out delay-900">
-              {buttonText} →
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function AayushVenture() {
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
