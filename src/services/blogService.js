@@ -12,7 +12,7 @@ import {
 } from 'firebase/firestore';
 
 // Use the single shared Firebase app and services
-import { db, auth, storage } from '../firebase';
+import { db } from '../firebase';
 
 // Collection name
 const BLOGS_COLLECTION = 'blogs';
