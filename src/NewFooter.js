@@ -32,12 +32,15 @@ const NewFooter = () => {
       video.src = videoSrc
       video.load()
       
+      // Try to play the video
       const playPromise = video.play()
       
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
+        playPromise.catch(error => {
+          console.log("Video autoplay failed:", error)
+          // If autoplay fails, try playing on user interaction
           const playOnInteraction = () => {
-            video.play().catch(() => {})
+            video.play().catch(e => console.log("Play on interaction failed:", e))
             document.removeEventListener('click', playOnInteraction)
             document.removeEventListener('touchstart', playOnInteraction)
           }
@@ -67,6 +70,7 @@ const NewFooter = () => {
         muted
         playsInline
         preload="auto"
+        webkit-playsinline="true"
       />
 
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-10"></div>
@@ -93,6 +97,8 @@ const NewFooter = () => {
                 </span>
               </div>
             </p>
+
+
 
             <form onSubmit={handleSubscribe} className="flex items-center max-w-[500px]">
               {!isSubscribed ? (
@@ -121,105 +127,178 @@ const NewFooter = () => {
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-10 md:pl-[3rem] ">
             <div className="min-w-[120px]">
-              <p className="text-[white] font-bold text-[25px]" style={{ fontFamily: 'ROGBold' }}>
+              <p
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
+              >
                 Company
               </p>
+
               <ul className="list-none p-0">
                 <li className="mb-2">
-                  <Link to="/about-us" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/about-us"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link to="/support" className="text-white no-underline hover:underline  text-[20px]">
+
+                </li>
+                <li className="mb-2">
+                  <Link
+                    to="/support"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about/mission-vision" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/about/mission-vision"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Mission & Vision
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <p className="text-[white] font-bold text-[25px]" style={{ fontFamily: 'ROGBold' }}>
+              <p
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
+              >
                 Wellness
               </p>
               <ul className="list-none p-0">
                 <li>
-                  <Link to="/wellness/modern-science" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/wellness/modern-science"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Modern Science
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ayurveda" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/ayurveda"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Ayurveda
                   </Link>
                 </li>
                 <li>
-                  <Link to="/wellness/health-wellness" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/wellness/health-wellness"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Health & Wellness
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <p className="text-[white] font-bold text-[25px]" style={{ fontFamily: 'ROGBold' }}>
+              <p
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              >
                 Newsroom
               </p>
+
               <ul>
                 <li>
-                  <Link to="/newsroom/in-the-news" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/newsroom/in-the-news"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     In the News
                   </Link>
                 </li>
                 <li>
-                  <Link to="/press-releases" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/press-releases"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Press Release
                   </Link>
+                </li>
+                <li>
+                  {/* <Link
+                    to="/newsroom/library"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
+                    Library
+                  </Link> */}
                 </li>
               </ul>
             </div>
             <div className="min-w-[120px]">
-              <p className="text-[white] font-bold text-[25px]" style={{ fontFamily: 'ROGBold' }}>
+              <p
+                className="text-[white] font-bold text-[25px]"
+                style={{ fontFamily: 'ROGBold' }}
+              // style={{ color: '#FF0000' }}
+              >
                 Corporate
               </p>
               <ul className="list-none p-0">
                 <li>
-                  <Link to="/investors" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/investors"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Investor
                   </Link>
                 </li>
                 <li>
-                  <Link to="/healthcare" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/healthcare"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Healthcare
                   </Link>
                 </li>
                 <li>
-                  <Link to="/growth-accelerator" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/growth-accelerator"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Accelarator
                   </Link>
                 </li>
                 <li>
-                  <Link to="/csr-at-aayush/malnutrition" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/csr-at-aayush/malnutrition"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Malnutrition
                   </Link>
                 </li>
                 <li>
-                  <Link to="/csr-at-aayush/health-check" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/csr-at-aayush/health-check"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Healthcare Check
                   </Link>
                 </li>
                 <li>
-                  <Link to="/sustainability" className="text-white no-underline hover:underline  text-[20px]">
+                  <Link
+                    to="/sustainability"
+                    className="text-white no-underline hover:underline  text-[20px]"
+                  >
                     Sustainability
                   </Link>
+
                 </li>
+
               </ul>
             </div>
           </div>
         </div>
+
 
         <div className="w-full h-px bg-white/30 my-4"></div>
 
@@ -229,9 +308,13 @@ const NewFooter = () => {
             <p className="text-sm text-gray-300">Transforming Lives with Preventive Health Care & Science-Backed Wellness</p>
           </div>
 
+          {/* Social Media Icons - Desktop: Center, Mobile: Above Terms */}
           <div className="flex items-center justify-center gap-4 order-2 md:order-1 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
             <div className="relative group">
-              <Link to="#" className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all">
+              <Link
+                to="#"
+                className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all"
+              >
                 <Instagram size={20} className="text-white" />
               </Link>
               <div className="absolute left-0 bottom-full mb-2 w-48 rounded-md shadow-lg bg-white/30 backdrop-blur-md ring-1 ring-black ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -247,7 +330,10 @@ const NewFooter = () => {
             </div>
 
             <div className="relative group">
-              <Link to="#" className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all">
+              <Link
+                to="#"
+                className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all"
+              >
                 <Facebook size={20} className="text-white" />
               </Link>
               <div className="absolute left-0 bottom-full mb-2 w-48 rounded-md shadow-lg bg-white/30 backdrop-blur-md ring-1 ring-black ring-opacity-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -262,15 +348,43 @@ const NewFooter = () => {
               </div>
             </div>
 
-            <Link to="https://www.youtube.com/@AayushWellnessLimited" className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+            <Link
+              to="https://www.youtube.com/@AayushWellnessLimited"
+              className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white"
+              >
                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
               </svg>
             </Link>
 
-            <Link to="https://www.linkedin.com/company/aayushwellness/?viewAsMember=true" className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+            <Link
+              to="https://www.linkedin.com/company/aayushwellness/?viewAsMember=true"
+              className=" rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white"
+              >
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                 <rect x="2" y="9" width="4" height="12" />
                 <circle cx="4" cy="4" r="2" />
