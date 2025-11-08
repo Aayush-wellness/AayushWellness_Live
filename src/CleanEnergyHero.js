@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./CleanEnergyHero.css";
 import BlurText from "./BlurText";
-import Hls from "hls.js";
 
 const CleanEnergyHero = () => {
   const videoRef = useRef(null);
@@ -13,53 +12,42 @@ const CleanEnergyHero = () => {
     setIsMobile(mobileCheck);
   }, []);
 
-  // Load HLS video dynamically
+  // Load video dynamically
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const videos = {
-       desktop: {
-        src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483376/nidxfgeqigjs3ttwflv1_qwj4do.m3u8",
-        text: "Transforming Wellness , Transforming Lives",
-      },
-      mobile: {
-        src: "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483376/nidxfgeqigjs3ttwflv1_qwj4do.m3u8",
-        text: "Transforming wellness, transforming lives",
-      },
+    const videoSrc = "https://res.cloudinary.com/dhofjux9o/video/upload/v1762496623/corporate_web_gif_1_uog2zs.mp4";
+
+    // Direct MP4 loading (no HLS needed for MP4 files)
+    video.src = videoSrc;
+    video.load();
+
+    // Play video when loaded
+    video.addEventListener("loadeddata", () => {
+      video.play().catch(error => {
+        console.log("Video autoplay failed:", error);
+      });
+    });
+
+    return () => {
+      video.removeEventListener("loadeddata", () => { });
     };
-
-    const videoSrc = isMobile ? videos.mobile.src : videos.desktop.src;
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play();
-      });
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Safari fallback
-      video.src = videoSrc;
-      video.addEventListener("loadedmetadata", () => {
-        video.play();
-      });
-    }
   }, [isMobile]);
 
   return (
     <div className="md:flex md:w-full bg-[#000] block items-center pl-[20px] py-[30px] blocks mt-[90px]">
       {/* Text Content */}
-      <div className="HomeHero_content__DYNN6" style={{fontFamily: "ROGBold"}}>
+      <div className="HomeHero_content__DYNN6" style={{ fontFamily: "ROGBold" }}>
         <BlurText
           text="Science & Ayurveda for a Healthier Tomorrow"
-          
+
           delay={150}
           animateBy="words"
           direction="top"
           className="md:text-6xl mb-8 text-[30px] font-bold text-[#fff] uppercase mt-[60px]" style={{ fontFamily: "ROGBold" }}
         />
-        <p className="HomeHero_copy__GS3c3 !text-[#fff]" style={{fontFamily: "Minionpro"}}>
+        <p className="HomeHero_copy__GS3c3 !text-[#fff]" style={{ fontFamily: "Minionpro" }}>
           Aayush Wellness blends ancient Ayurveda with modern science to create
           premium wellness solutions for your body, mind, and soul.
         </p>
