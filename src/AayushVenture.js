@@ -2,39 +2,72 @@ import React, { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import menu from './images/menu.png';
 import closepng from './images/close.png';
 import searchIcon from './images/search-gray.svg';
+import Footer from './Footer';
 import VentureSection1 from './VentureSection1';
 import TextAnimation from './TextAnimation';
 import ANewFooter from './ANewfooter';
 
-function AnimatedText({ heading, subtext, url, buttonText, isVisible }) {
-  return (
+// Schema.org structured data for Business
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Aayush Ventures",
+  "alternateName": "Aayush Wellness Ventures",
+  "url": "https://www.aayush.health/ventures",
+  "logo": "https://www.aayush.health/logo.png",
+  "description": "Aayush Ventures is the business arm of Aayush Wellness, dedicated to innovative health and wellness solutions across India.",
+  "foundingDate": "2020",
+  "founders": [{
+    "@type": "Person",
+    "name": "Aayush Wellness Team"
+  }],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Wellness Street",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400001",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-XXXXXXXXXX",
+    "contactType": "customer service",
+    "email": "ventures@aayush.health",
+    "availableLanguage": ["English", "Hindi"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/aayushwellness",
+    "https://www.instagram.com/aayushwellness",
+    "https://twitter.com/aayushwellness",
+    "https://www.linkedin.com/company/aayushwellness"
+  ]
+};
 
-    <div className="absolute  md:justify-start md:items-center  pt-[120px] inset-0 flex items-start justify-center px-6 md:px-12 ">
-      <div
-        className={`max-w-lg bg-opacity-75 p-6  text-white space-y-4 transition-all duration-[1000ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-40'
-          }`}
-      >
-
-        <h2 className="text-[22px] text-white md:text-3xl font-bold transition-all duration-[1000ms] ease-out delay-500">
-          {heading}
-        </h2>
-        <div style={{ borderLeft: '1px solid white', marginLeft: " 10px", padding: "0px 15px" }}>
-          <p className="text-sm md:text-base font-light italic transition-all duration-[1000ms] ease-out delay-700  pb-3">
-            {subtext}
-          </p>
-          <a href={url}>
-            <button style={{ backgroundColor: " black" }} className="px-4 py-2  text-white font-medium rounded-md  transition-all duration-[1000ms] ease-out delay-900">
-              {buttonText} →
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-}
+// Breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.aayush.health/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ventures",
+      "item": "https://www.aayush.health/ventures"
+    }
+  ]
+};
 
 export default function AayushVenture() {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,7 +77,7 @@ export default function AayushVenture() {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // Set initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     const currentSlider = sliderRef.current;
@@ -77,6 +110,30 @@ export default function AayushVenture() {
   const mobileImages = [
     { type: "video", src: "https://cdn.shopify.com/videos/c/o/v/265efbceb09b43da91594acdc170d2b6.mp4" }, // Video Slide
   ];
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "a880bc0c-8877-4f1c-9d4a-bb1574c365ed");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
 
   const images = isMobile ? mobileImages : desktopImages;
 
@@ -92,42 +149,18 @@ export default function AayushVenture() {
     autoplaySpeed: 5000,
     arrows: false,
     pauseOnHover: false,
+    beforeChange: (_, next) => setCurrentSlide(next),
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
-  const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false);
-  const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false);
-  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
-  const [isCsrSubcategoryOpen, setIsCsrSubcategoryOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isCorporateDropdownOpen, setIsCorporateDropdownOpen] = useState(false);
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
   };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  console.log("isAyurvedaDropDownOpen: ", isAyurvedaDropdownOpen)
-
-  const handleDropdownLinkClick = () => {
-    setIsAyurvedaDropdownOpen(false);
-    setIsWellnessDropdownOpen(false);
-    setIsNewsroomDropdownOpen(false);
-    setIsAboutUsDropdownOpen(false); // Close "About Us" dropdown when a link is clicked
-    setIsCsrSubcategoryOpen(false);
-    setIsSearchOpen(false); // Close CSR subcategories when a link is clicked
-  };
-
-  const toggleIcon = (iconIdToToggle, iconIdToToggleOther) => {
-    var iconToToggle = document.getElementById(iconIdToToggle);
-    var iconToToggleOther = document.getElementById(iconIdToToggleOther);
-    if (iconToToggle && iconToToggleOther) {
-      iconToToggle.classList.toggle('svg');
-      iconToToggleOther.classList.toggle('svg');
-    }
   };
 
 
@@ -1226,7 +1259,7 @@ export default function AayushVenture() {
 
 
 
-            <img className='md:w-[45%] w-full' src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Vision_Image.jpg?v=1738913950" alt="Vision" />
+            <img className='md:w-[45%] w-full' src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/Vision_Image.jpg?v=1738913950" />
 
           </div>
           {/* <hr style={{ appearance: 'none', border: '0px none rgb(255, 255, 255)', borderRadius: '0px', boxSizing: 'border-box', margin: '0px', padding: '0px', opacity: '0.25', background: 'rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box', height: '1px' }} />
@@ -1369,7 +1402,7 @@ export default function AayushVenture() {
                               height="325"
                               src="https://ipventures.in/wp-content/uploads/2020/11/with-leaf-3.png"
                               className="vc_single_image-img attachment-full"
-                              alt="Venture"
+                              alt=""
                               loading="lazy"
                             />
                           </div>
@@ -1459,10 +1492,22 @@ export default function AayushVenture() {
         </div>
       </div>
 
-      <a className="stickywhatsapp" target="_blank" rel="noreferrer" href="https://wa.me/918655900409?text=https://www.aayushwellness.com/aayush-venture Hi"><img src="https://cdn.shopify.com/s/files/1/0606/9298/8070/files/wa-logo-120.png?v=1706167621" width="20" height="20" alt="WhatsApp" /> Whatsapp us</a>
-      <a className="stickyemail" target="_blank" rel="noreferrer" href="mailto:info@aayushwellness.com"><img src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/email.png?v=1738847206" width="20" height="20" alt="Email" /> Email Us</a>
+      <a class="stickywhatsapp" target="_blank" href="https://wa.me/918655900409?text=https://www.aayushwellness.com/aayush-venture Hi"><img src="https://cdn.shopify.com/s/files/1/0606/9298/8070/files/wa-logo-120.png?v=1706167621" width="20" height="20" /> Whatsapp us</a>
+      <a class="stickyemail" target="_blank" href="mailto:info@aayushwellness.com"><img src="https://cdn.shopify.com/s/files/1/0653/9830/9053/files/email.png?v=1738847206" width="20" height="20" /> Email Us</a>
 
       <ANewFooter />
     </>
   );
 }
+
+const styles = {
+  container: {
+    textAlign: 'center',
+    padding: '50px',
+  },
+  customText: {
+    fontFamily: 'segma, sans-serif',
+    fontSize: '32px',
+    fontWeight: 'normal',
+  },
+};
