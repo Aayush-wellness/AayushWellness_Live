@@ -95,7 +95,7 @@ export default function AayushVenture() {
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
+  // const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
   const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false);
   const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false);
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
