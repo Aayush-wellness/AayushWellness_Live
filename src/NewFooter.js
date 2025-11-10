@@ -63,7 +63,7 @@ const NewFooter = () => {
   return (
     <footer className="relative w-full md:h-[80vh] overflow-hidden text-white font-sans blocks">
       <video
-        ref={videoRef}
+        // ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
         loop
@@ -71,7 +71,12 @@ const NewFooter = () => {
         playsInline
         preload="auto"
         webkit-playsinline="true"
-      />
+        src={videoSrc}
+        key={videoSrc}
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+
 
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60 z-10"></div>
 
