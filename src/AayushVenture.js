@@ -787,7 +787,7 @@ export default function AayushVenture() {
             <Link
               to="/"
               className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
+              // onClick={handleDropdownLinkClick}
             >
               Home
             </Link>
@@ -1196,7 +1196,7 @@ export default function AayushVenture() {
             <Link
               to="/support"
               className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
+              // onClick={handleDropdownLinkClick}
             >
               Support
             </Link>
@@ -1204,7 +1204,7 @@ export default function AayushVenture() {
             <Link
               to="/healthcare"
               className="block py-4 font-extrabold text-[#004037] text-[36px] "
-              onClick={handleDropdownLinkClick}
+              // onClick={handleDropdownLinkClick}
             >
               Healthcare
             </Link>
@@ -1213,7 +1213,7 @@ export default function AayushVenture() {
             <Link
               to="/growth-accelerator"
               className="block py-4 font-extrabold text-[#004037] text-[36px]"
-              onClick={handleDropdownLinkClick}
+              // onClick={handleDropdownLinkClick}
             >
               Accelerator
             </Link>
