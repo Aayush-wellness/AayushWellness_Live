@@ -149,7 +149,7 @@ export default function AayushVenture() {
     autoplaySpeed: 5000,
     arrows: false,
     pauseOnHover: false,
-    beforeChange: (_, next) => setCurrentSlide(next),
+    // beforeChange: (_, next) => setCurrentSlide(next),
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
