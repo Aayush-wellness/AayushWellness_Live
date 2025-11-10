@@ -111,7 +111,7 @@ export default function AayushVenture() {
   };
 
   const handleDropdownLinkClick = () => {
-    setIsAyurvedaDropdownOpen(false);
+    // setIsAyurvedaDropdownOpen(false);
     setIsWellnessDropdownOpen(false);
     setIsNewsroomDropdownOpen(false);
     setIsAboutUsDropdownOpen(false); // Close "About Us" dropdown when a link is clicked
