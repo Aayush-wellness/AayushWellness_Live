@@ -95,7 +95,7 @@ export default function AayushVenture() {
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
+  const [isAyurvedaDropdownOpen, setIsAyurvedaDropdownOpen] = useState(false);
   const [isWellnessDropdownOpen, setIsWellnessDropdownOpen] = useState(false);
   const [isNewsroomDropdownOpen, setIsNewsroomDropdownOpen] = useState(false);
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
@@ -110,8 +110,10 @@ export default function AayushVenture() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  console.log("isAyurvedaDropDownOpen: ", isAyurvedaDropdownOpen)
+
   const handleDropdownLinkClick = () => {
-    // setIsAyurvedaDropdownOpen(false);
+    setIsAyurvedaDropdownOpen(false);
     setIsWellnessDropdownOpen(false);
     setIsNewsroomDropdownOpen(false);
     setIsAboutUsDropdownOpen(false); // Close "About Us" dropdown when a link is clicked
