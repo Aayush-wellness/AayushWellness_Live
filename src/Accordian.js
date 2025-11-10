@@ -9,9 +9,11 @@ import MissionHeader from "./MissionHeader";
 
 let faqs = require("./faqs.json");
 
-// Temporarily disabled due to Cloudinary access issues
-const DESKTOP_VIDEO_URL = "";
-const MOBILE_VIDEO_URL = "";
+// Replace with your Cloudinary .m3u8 video URLs
+const DESKTOP_VIDEO_URL =
+  "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483421/cpu2q2nw2hqz1sxv4tto_zf2piy.m3u8";
+const MOBILE_VIDEO_URL =
+  "https://res.cloudinary.com/ddoz8ya3l/video/upload/v1757483412/wzndszlpi7gdabmjkqtg_phiybb.m3u8";
 
 const Accordionweb = () => {
   const [active, setActive] = useState(faqs[0].id);
